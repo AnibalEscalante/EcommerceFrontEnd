@@ -2,10 +2,13 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { UserRoutingModule } from './user-routing.module';
+import { HomeScreenComponent } from './views/home-screen/home-screen.component';
 
 
 @NgModule({
-  declarations: [],
+  declarations: [
+    HomeScreenComponent
+  ],
   imports: [
     CommonModule,
     UserRoutingModule
