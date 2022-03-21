@@ -1,1 +1,30 @@
-<p>login-screen works!</p>
+<div class="container-fluid">
+    <div class="row text-center">
+        <h2 class="title mb-4">E-Commerce</h2>
+        <div class="col">
+            <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <div class="d-grid gap-2 col my-1 mx-auto">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="ejemplo@dom.com" type="email" formControlName="email" required>
+                        <mat-error *ngIf="email?.invalid">{{getEmailErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="d-grid gap-2 col my-1 mx-auto">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" required>
+                        <mat-error *ngIf="password?.invalid">{{getPasswordErrorMessage()}}</mat-error>
+                        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                            <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+                <button class="btn logIn-btn mb-3" type="submit">
+                    Iniciar Sesión
+                </button>
+            </form>
+            <a class="link-secondary" [routerLink]="['/visitor/register']">Registrarse</a>
+        </div>
+    </div>
+</div>
