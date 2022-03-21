@@ -6,6 +6,8 @@ import { HomeScreenComponent } from './views/home-screen/home-screen.component';
 import { LandingScreenComponent } from './views/landing-screen/landing-screen.component';
 import { LoginScreenComponent } from './views/login-screen/login-screen.component';
 import { RegisterScreenComponent } from './views/register-screen/register-screen.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MaterialModule } from '../shared/material/material.module';
 
 
 @NgModule({
@@ -17,7 +19,10 @@ import { RegisterScreenComponent } from './views/register-screen/register-screen
   ],
   imports: [
     CommonModule,
-    VisitorRoutingModule
+    VisitorRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    MaterialModule
   ]
 })
 export class VisitorModule { }
