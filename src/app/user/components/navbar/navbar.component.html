@@ -1,56 +1,40 @@
-<nav class="navbar">
+<nav class="navbar navbar-expand-lg ">
   <div class="container-fluid">
-    <div class="container h-100">
-      <div class="d-none d-lg-block">
-        <div class="row">
-          <div class="col-6 col-lg-2">
-            <div class="nav">
-              <li class="nav-item">
-                  <h2 type="button" [routerLink]="['/user/home']">EKomerce</h2>
-              </li>
-            </div>
-          </div>
-          <div class="col-6 col-lg-6 p-0">
-              <div class="row">
-                  <div class="col-12 col-lg-12">
-                      <input type="text" [(ngModel)]="term" class="form-control" placeholder="Buscar producto">
-                  </div>
-              </div>
-          </div>
-          <div class="col-6 col-lg-1">
-            <div class="nav">
-              <li class="nav-item">
-                  <h4 type="button" [routerLink]="['/user/home']">Iniciar Sesión</h4>
-              </li>
-            </div>
-          </div>
-          <div class="col-6 col-lg-1">
-            <div class="nav">
-              <li class="nav-item">
-                  <h4 type="button" [routerLink]="['/user/home']">mis compras</h4>
-              </li>
-            </div>
-          </div>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand ms-4" href="#">Ekomerce</a>
+    <div class="collapse navbar-collapse justify-content-md-center" id="navbarTogglerDemo03">
+      <ul class="col-12 navbar-nav me-auto mb-2 mb-lg-0">
+        <div class=" col-3">
+          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
         </div>
-      </div>
-      <div class="d-block d-lg-none">
-        <div class="col-12 col-lg-3">
-          <div class="nav">
-            <li class="nav-item my-2">
-                <h2 type="button" [routerLink]="['/user/home']">EKomerce</h2>
-            </li>
-          </div>
-        </div>
-        <div class="col-12 col-lg-6 p-0">
-            <div class="row">
-                <div class="col-12 col-lg-12">
-                    <input type="text" [(ngModel)]="term" class="form-control" placeholder="Buscar producto">
-                </div>
-            </div>
-        </div>
-      </div>
+        <form class="col-6 search">
+          <input class="form-control me-4" type="search" placeholder="Search" aria-label="Search">
+        </form>
+      </ul>
     </div>
+    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-3 me-3 flex-row">
+      <li class="nav-item " align="rigth">
+        <a class="nav-link active" aria-current="page" href="#">Inisiar Sesion</a>
+      </li>
+      <li class="nav-item" align="rigth">
+        <a class="nav-link" href="#">El carrito</a>
+      </li>
+    </ul>
   </div>
 </nav>
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasLeftLabel">
+  <div class="offcanvas-header">
+    <h5 id="offcanvasLeftLabel">Offcanvas Left</h5>
+    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    ...
+  </div>
+</div>
 <router-outlet></router-outlet>
           
