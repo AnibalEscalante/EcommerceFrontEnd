@@ -3,7 +3,7 @@
   align-items: center;
   padding-top: 40px;
   padding-bottom: 40px;
-  text-align: center!important;
+  text-align: center;
   height: 100%;
 }
 .row {
@@ -17,7 +17,7 @@
 .mat-icon {
   color: #9100F5;
 }
-.logIn-btn {
+.register-btn {
   color: white;
   background-color: #9100F5;
 }
