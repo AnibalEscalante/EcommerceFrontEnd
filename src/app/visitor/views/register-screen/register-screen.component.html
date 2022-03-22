@@ -1,1 +1,54 @@
-<p>register-screen works!</p>
+<div class="container-fluid">
+    <div class="row">
+        <h2 class="title mb-4" [routerLink]="['/visitor/landing']">Ekomerce</h2>
+        <div class="col">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+                <div class="d-grid gap-2 col my-1 mx-auto">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Nombre</mat-label>
+                        <input matInput placeholder="Nombre" type="text" formControlName="name" required>
+                        <mat-error *ngIf="name?.invalid">{{getNameErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="d-grid gap-2 col my-1 mx-auto">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Apellido</mat-label>
+                        <input matInput placeholder="Apellido" type="text" formControlName="lastName" required>
+                        <mat-error *ngIf="lastName?.invalid">{{getLastNameErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="d-grid gap-2 col my-1 mx-auto">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Email</mat-label>
+                        <input matInput placeholder="ejemplo@dom.com" type="email" formControlName="email" required>
+                        <mat-error *ngIf="email?.invalid">{{getEmailErrorMessage()}}</mat-error>
+                    </mat-form-field>
+                </div>
+                <div class="d-grid gap-2 col my-1 mx-auto">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Contraseña</mat-label>
+                        <input matInput [type]="hideP ? 'password' : 'text'" formControlName="password" required>
+                        <mat-error *ngIf="password?.invalid">{{getPasswordErrorMessage()}}</mat-error>
+                        <button mat-icon-button matSuffix (click)="hideP = !hideP" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideP">
+                            <mat-icon>{{hideP ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+                <div class="d-grid gap-2 col my-1 mx-auto">
+                    <mat-form-field appearance="outline">
+                        <mat-label>Confirmar Contraseña</mat-label>
+                        <input matInput [type]="hideCP ? 'password' : 'text'" formControlName="confirmPassword" required>
+                        <mat-error *ngIf="confirmPassword?.invalid">{{getConfirmPasswordErrorMessage()}}</mat-error>
+                        <button mat-icon-button matSuffix (click)="hideCP = !hideCP" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hideCP">
+                            <mat-icon>{{hideCP ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        </button>
+                    </mat-form-field>
+                </div>
+                <button class="btn register-btn mb-3" type="submit">
+                    Registrarse
+                </button>
+            </form>
+            <a class="link-secondary" [routerLink]="['/visitor/login']">Iniciar Sesión</a>
+        </div>
+    </div>
+</div>
