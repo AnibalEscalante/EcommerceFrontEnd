@@ -1,1 +1,62 @@
-<p>navbar works!</p>
+<!-- <nav class="navbar navbar-expand-lg ">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand ms-4" [routerLink]="['/visitor/home']">Ekomerce</a>
+        <div class="collapse navbar-collapse justify-content-md-center" id="navbarTogglerDemo03">
+        <ul class="col-12 navbar-nav me-auto mb-2 mb-lg-0">
+            <div class=" col-3">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            </div>
+            <form class="col-6 search">
+            <input class="form-control me-4" type="search" placeholder="Search" aria-label="Search">
+            </form>
+        </ul>
+        </div>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-3 me-3 flex-row">
+        <li class="nav-item " align="rigth">
+            <a class="nav-link active" aria-current="page" [routerLink]="['/visitor/login']">Inisiar Sesion</a>
+        </li>
+        <li class="nav-item" align="rigth">
+            <a class="nav-link" href="#">El carrito</a>
+        </li>
+        </ul>
+    </div>
+    </nav>
+    <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasLeftLabel">
+    <div class="offcanvas-header">
+        <h5 id="offcanvasLeftLabel">Offcanvas Left</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        ...
+    </div>
+</div> -->
+
+<nav class="navbar">
+    <div class="container-fluid">
+        <form class="form-search">
+            <mat-form-field class="search-full-width" appearance="outline">
+                <mat-label>Buscar</mat-label>
+                <input type="text"
+                    placeholder="Buscar producto"
+                    aria-label="search"
+                    matInput
+                    [formControl]="categoryList"
+                    [matAutocomplete]="auto">
+                <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                    {{option}}
+                </mat-option>
+                </mat-autocomplete>
+            </mat-form-field>
+        </form>
+    </div>
+</nav>
+
+
+
+<router-outlet></router-outlet>
