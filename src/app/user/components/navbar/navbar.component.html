@@ -1,39 +1,53 @@
 <nav class="navbar navbar-expand-lg ">
   <div class="container-fluid">
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <a class="navbar-brand ms-4" href="#">Ekomerce</a>
+    <div class="navbar-brand ms-4">
+      <a class="brand-name" href="#">Ekomerce</a>
+    </div>
     <div class="collapse navbar-collapse justify-content-md-center" id="navbarTogglerDemo03">
-      <ul class="col-12 navbar-nav me-auto mb-2 mb-lg-0">
-        <div class=" col-3">
-          <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasLeft" aria-controls="offcanvasLeft">
-            <span class="navbar-toggler-icon"></span>
+      <ul class="col-12 navbar-nav navbar-search me-auto mb-2 mb-lg-0">
+        <div class=" col-12 col-lg-3">
+          <button class="btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+            <i class="fas fa-bars"></i> Menu
           </button>
-
         </div>
-        <form class="col-6 search">
+        <form class="col-12 col-lg-9 search">
           <input class="form-control me-4" type="search" placeholder="Search" aria-label="Search">
         </form>
       </ul>
     </div>
-    <ul class="navbar-nav me-auto mb-2 mb-lg-0 ms-3 me-3 flex-row">
-      <li class="nav-item " align="rigth">
-        <a class="nav-link active" aria-current="page" href="#">Inisiar Sesion</a>
+    <i class="fa-solid fa-cart-shopping"></i>
+    <ul class="navbar-nav navbar-items me-auto mb-2 mb-lg-0 ms-3 me-3 flex-row">
+      <li class="nav-item item mx-4" align="rigth">
+        <a class="nav-link active" aria-current="page" href="#">Bienvenid@, user</a>
       </li>
-      <li class="nav-item" align="rigth">
-        <a class="nav-link" href="#">El carrito</a>
+      <li class="nav-item item mx-4" align="rigth">
+        <a class="nav-link active" aria-current="page" href="#">Mis compras</a>
+      </li>
+      <li class="nav-item item d-flex align-items-center mx-4" align="rigth">
+        <i class="fas shoping-cart fa-shopping-cart"></i>
       </li>
     </ul>
   </div>
 </nav>
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasLeft" aria-labelledby="offcanvasLeftLabel">
+<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
   <div class="offcanvas-header">
-    <h5 id="offcanvasLeftLabel">Offcanvas Left</h5>
+    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
     <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
-    ...
+    <div>
+      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
+    </div>
+    <div class="dropdown mt-3">
+      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+        Dropdown button
+      </button>
+      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+        <li><a class="dropdown-item" href="#">Action</a></li>
+        <li><a class="dropdown-item" href="#">Another action</a></li>
+        <li><a class="dropdown-item" href="#">Something else here</a></li>
+      </ul>
+    </div>
   </div>
 </div>
 <router-outlet></router-outlet>
