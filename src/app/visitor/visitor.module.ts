@@ -7,13 +7,15 @@ import { LoginScreenComponent } from './views/login-screen/login-screen.componen
 import { RegisterScreenComponent } from './views/register-screen/register-screen.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../shared/material/material.module';
+import { CategoryScreenComponent } from './views/category-screen/category-screen.component';
 
 
 @NgModule({
   declarations: [
     HomeScreenComponent,
     LoginScreenComponent,
-    RegisterScreenComponent
+    RegisterScreenComponent,
+    CategoryScreenComponent
   ],
   imports: [
     CommonModule,
