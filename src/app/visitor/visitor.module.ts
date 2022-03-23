@@ -8,6 +8,7 @@ import { RegisterScreenComponent } from './views/register-screen/register-screen
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../shared/material/material.module';
 import { CategoryScreenComponent } from './views/category-screen/category-screen.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { CategoryScreenComponent } from './views/category-screen/category-screen
     HomeScreenComponent,
     LoginScreenComponent,
     RegisterScreenComponent,
-    CategoryScreenComponent
+    CategoryScreenComponent,
+    NavbarComponent
   ],
   imports: [
     CommonModule,
