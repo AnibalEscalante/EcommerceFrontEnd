@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg ">
+<!-- <nav class="navbar navbar-expand-lg ">
   <div class="container-fluid">
     <div class="navbar-brand ms-4">
       <a class="brand-name" href="#">Ekomerce</a>
@@ -28,27 +28,60 @@
       </li>
     </ul>
   </div>
+</nav> -->
+<nav class="navbar">
+  <div class="container-fluid">
+      <div class="h1">Ekomerce
+        <button class="btn btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#categoryCanvas" aria-controls="categoryCanvas">
+          <span><i class="fas fa-bars"></i></span>
+        </button>
+      </div>
+      <div class="d-flex">
+        <i class="fas user-r fa-user"></i>
+        <i type="button" class="fas shopping-r fa-shopping-cart mx-2"></i>
+      </div>
+      <form class="form-search">
+          <div class="input-group">
+              <input class="form-control" type="search" placeholder="Buscar producto" aria-label="Search" aria-describedby="searchButton">
+              <button class="btn btn-search" type="button" id="searchButton"> 
+                  <span><i class="fas fa-search"></i></span>
+              </button>
+          </div>
+      </form>
+      <div class="d-flex">
+        <h5 class="letter align-items-center mx-2">Bienvenid@, user</h5>
+          <h5 class="letter align-items-center mx-2">Mis compras</h5>
+        <span><i type="button" class="fas fa-shopping-cart mx-2"></i></span>
+        <!-- falta un routerlink en el icono de compras -->
+      </div>
+  </div>
 </nav>
-<div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+<div class="offcanvas offcanvas-start" tabindex="-1" id="categoryCanvas" aria-labelledby="categoryCanvasLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <h4 class="offcanvas-title" id="offcanvasExampleLabel">Buenos dias :D</h4>
+      <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
-    <div>
-      Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-    </div>
-    <div class="dropdown mt-3">
-      <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-        Dropdown button
-      </button>
-      <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-        <li><a class="dropdown-item" href="#">Action</a></li>
-        <li><a class="dropdown-item" href="#">Another action</a></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
-      </ul>
-    </div>
+    <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+      <!-- This is the tree node template for leaf nodes -->
+      <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
+        <!-- use a disabled button to provide padding for tree leaf -->
+        <button mat-icon-button disabled></button>
+        {{node.name}}
+      </mat-tree-node>
+      <!-- This is the tree node template for expandable nodes -->
+      <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+        <button mat-icon-button matTreeNodeToggle
+                [attr.aria-label]="'Toggle ' + node.name">
+          <mat-icon class="mat-icon-rtl-mirror">
+            {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+          </mat-icon>
+        </button>
+        {{node.name}}
+      </mat-tree-node>
+    </mat-tree>
   </div>
 </div>
+
 <router-outlet></router-outlet>
           
