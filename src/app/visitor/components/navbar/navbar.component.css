@@ -6,9 +6,20 @@
   max-width: 500px;
   width: 100%;
 }
-.search-full-width {
-  width: 100%;
+.btn-search {
+  background-color: #F2F3F4;
 }
-.mat-form-field-wrapper {
-  padding-bottom: 0em;
+.h1 {
+  cursor: pointer;
+  color: white;
+}
+.btn-menu {
+  background-color: white;
+  color: #9100F5;
+  padding: 0px 8px 0px 8px;
+  font-size: x-large;
+}
+.fa-shopping-cart {
+  color: white;
+  font-size: xx-large;
 }
