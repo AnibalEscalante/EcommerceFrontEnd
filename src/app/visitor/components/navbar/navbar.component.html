@@ -1,9 +1,9 @@
 
-<nav class="navbar">
+<!-- <nav class="navbar">
     <div class="container-fluid">
         <div class="h1" [routerLink]="['/visitor/home']">Ekomerce</div>
-        <button class="btn btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#categoryCanvas" aria-controls="categoryCanvas">
-            <span><i class="fas fa-bars"></i></span>
+        <button class="btn btn-menu btn-lg" type="button" data-bs-toggle="offcanvas" data-bs-target="#categoryCanvas" aria-controls="categoryCanvas">
+            <i class="fas fa-bars"></i>
         </button>
         <form class="form-search">
             <div class="input-group">
@@ -14,7 +14,29 @@
             </div>
         </form>
         <span><i type="button" class="fas fa-shopping-cart"></i></span>
-        <!-- falta un routerlink en el icono de compras -->
+    </div>
+</nav> -->
+
+<nav class="navbar">
+    <div class="container-fluid">
+        <div class="h1">Ekomerce
+            <button class="btn btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#categoryCanvas" aria-controls="categoryCanvas">
+            <span><i class="fas fa-bars"></i></span>
+            </button>
+        </div>
+        <form class="form-search">
+            <div class="input-group">
+                <input class="form-control" type="search" placeholder="Buscar producto" aria-label="Search" aria-describedby="searchButton">
+                <button class="btn btn-search" type="button" id="searchButton"> 
+                    <span><i class="fas fa-search"></i></span>
+                </button>
+            </div>
+        </form>
+        <div class="d-flex center">
+            <div class="h5" [routerLink]="['/visitor/login']">Iniciar Sesión</div>
+            <div class="h5" [routerLink]="['/visitor/register']">Registrarse</div>
+            <span><i type="button" class="fas fa-shopping-cart"></i></span>
+        </div>
     </div>
 </nav>
 
