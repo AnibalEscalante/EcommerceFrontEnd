@@ -1,34 +1,4 @@
-<!-- <nav class="navbar navbar-expand-lg ">
-  <div class="container-fluid">
-    <div class="navbar-brand ms-4">
-      <a class="brand-name" href="#">Ekomerce</a>
-    </div>
-    <div class="collapse navbar-collapse justify-content-md-center" id="navbarTogglerDemo03">
-      <ul class="col-12 navbar-nav navbar-search me-auto mb-2 mb-lg-0">
-        <div class=" col-12 col-lg-3">
-          <button class="btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
-            <i class="fas fa-bars"></i> Menu
-          </button>
-        </div>
-        <form class="col-12 col-lg-9 search">
-          <input class="form-control me-4" type="search" placeholder="Search" aria-label="Search">
-        </form>
-      </ul>
-    </div>
-    <i class="fa-solid fa-cart-shopping"></i>
-    <ul class="navbar-nav navbar-items me-auto mb-2 mb-lg-0 ms-3 me-3 flex-row">
-      <li class="nav-item item mx-4" align="rigth">
-        <a class="nav-link active" aria-current="page" href="#">Bienvenid@, user</a>
-      </li>
-      <li class="nav-item item mx-4" align="rigth">
-        <a class="nav-link active" aria-current="page" href="#">Mis compras</a>
-      </li>
-      <li class="nav-item item d-flex align-items-center mx-4" align="rigth">
-        <i class="fas shoping-cart fa-shopping-cart"></i>
-      </li>
-    </ul>
-  </div>
-</nav> -->
+
 <nav class="navbar">
   <div class="container-fluid">
       <div class="h1">Ekomerce
@@ -41,7 +11,7 @@
         <i type="button" class="fas shopping-r fa-shopping-cart mx-2"></i>
       </div>
       <form class="form-search">
-          <div class="input-group">
+          <div class="input-group mr-5">
               <input class="form-control" type="search" placeholder="Buscar producto" aria-label="Search" aria-describedby="searchButton">
               <button class="btn btn-search" type="button" id="searchButton"> 
                   <span><i class="fas fa-search"></i></span>
@@ -51,7 +21,7 @@
       <div class="d-flex">
         <h5 class="letter align-items-center mx-2">Bienvenid@, user</h5>
           <h5 class="letter align-items-center mx-2">Mis compras</h5>
-        <span><i type="button" class="fas fa-shopping-cart mx-2"></i></span>
+        <span><i type="button" class="fas shopping fa-shopping-cart mx-2"></i></span>
         <!-- falta un routerlink en el icono de compras -->
       </div>
   </div>
@@ -66,7 +36,7 @@
       <!-- This is the tree node template for leaf nodes -->
       <mat-tree-node *matTreeNodeDef="let node" matTreeNodePadding>
         <!-- use a disabled button to provide padding for tree leaf -->
-        <button mat-icon-button disabled></button>
+        <button class="producto-name" mat-icon-button disabled></button>
         {{node.name}}
       </mat-tree-node>
       <!-- This is the tree node template for expandable nodes -->
