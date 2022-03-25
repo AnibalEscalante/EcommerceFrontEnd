@@ -9,20 +9,62 @@ interface FoodNode {
 
 const TREE_DATA: FoodNode[] = [
   {
-    name: 'Fruit',
-    children: [{name: 'Apple'}, {name: 'Banana'}, {name: 'Fruit loops'}],
+    name: 'Audio',
+    children: [
+      {name: 'Audifonos'}, 
+      {name: 'Audifonos inálambricos'}, 
+      {name: 'Audifonos profesional y DJ'},
+      {name: 'Equipos de música y karaoke'},
+      {name: 'Hi-Fi'},
+      {name: 'Instrumentos musicales'},
+      {name: 'Parlantes'},
+      {name: 'Soundbar y home theater'},
+      {name: 'Tocadiscos y Vinilos'},
+      {name: 'Parlantes bluetooth'}
+    ],
   },
   {
-    name: 'Vegetables',
+    name: 'TV',
     children: [
-      {
-        name: 'Green',
-        children: [{name: 'Broccoli'}, {name: 'Brussels sprouts'}],
-      },
-      {
-        name: 'Orange',
-        children: [{name: 'Pumpkins'}, {name: 'Carrots'}],
-      },
+      {name: 'Accesorios'},
+      {name: 'Proyectores'}, 
+      {name: 'Smart tv'}, 
+      {name: 'Soportes'}, 
+      {name: 'Streaming'},
+     
+    ],
+  },
+  {
+    name: 'Computación',
+    children: [
+      {name: 'Accesorios'},
+      {name: 'Almacenamiento'}, 
+      {name: 'Desktops'}, 
+      {name: 'Kindles & eReaders'}, 
+      {name: 'Monitores'},
+      {name: 'Notebooks'},
+      {name: 'Tablets'},
+      {name: 'Webcams'},
+    ],
+  },
+  {
+    name: 'Videojuegos',
+    children: [
+      {name: 'Accesorios'},
+      {name: 'Consolas'}, 
+      {name: 'Juegos'}, 
+      {name: 'Suscripciones y tarjetas'}
+     
+    ],
+  },
+  {
+    name: 'Computación gamer',
+    children: [
+      {name: 'Accesorios'},
+      {name: 'Consolas'}, 
+      {name: 'Juegos'}, 
+      {name: 'Suscripciones y tarjetas'}
+     
     ],
   },
 ];
