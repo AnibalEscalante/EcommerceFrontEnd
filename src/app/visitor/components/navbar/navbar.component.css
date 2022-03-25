@@ -12,14 +12,32 @@
 .h1 {
   cursor: pointer;
   color: white;
+  margin-bottom: 0px;
+}
+.h5 {
+  cursor: pointer;
+  color: white;
+  margin-bottom: 0px;
+  margin-right: 1rem;
+}
+.fa-shopping-cart:hover {
+  color: #ceacec;
+}
+.fa-shopping-cart:visited {
+  color: red !important;
 }
 .btn-menu {
   background-color: white;
   color: #9100F5;
-  padding: 0px 8px 0px 8px;
+  padding: 1px 8px 0px 8px;
   font-size: x-large;
+  border-color: black;
 }
 .fa-shopping-cart {
   color: white;
   font-size: xx-large;
+  margin-right: 1rem;
+}
+.center {
+  align-items: center;
 }
