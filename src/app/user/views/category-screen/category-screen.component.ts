@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./category-screen.component.less']
 })
 export class CategoryScreenComponent implements OnInit {
-
+ 
   constructor() { }
 
   ngOnInit(): void {
