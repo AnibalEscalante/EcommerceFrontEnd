@@ -56,9 +56,12 @@
   .navbar {
     background-color: #9100F5;
   }
-  .form-search {
+  .form-search-d {
     min-width: 150px;
-    max-width: 500px;
+    width: 40%;
+  }
+  .form-search-r {
+    min-width: 150px;
     width: 100%;
   }
   .btn-search {
@@ -67,77 +70,43 @@
   .h1 {
     cursor: pointer;
     color: white;
+    margin-bottom: 0px;
+  }
+  .h5 {
+    cursor: pointer;
+    color: white;
+    margin-bottom: 0px;
+    margin-right: 1rem;
+  }
+  .fa-user {
+    color: white;
+    font-size: xx-large;
+    margin-right: 0.5rem;
+  }
+  .fa-shopping-cart {
+    color: white;
+    font-size: xx-large;
+  }
+  .mr-rem {
+    margin-right: 0.5rem;
   }
   .btn-menu {
     background-color: white;
     color: #9100F5;
-    padding: 0px 8px 0px 8px;
+    line-height: 0;
+    padding: 5px 8px 5px 8px;
     font-size: x-large;
   }
-  .shopping {
-    color: white;
-    font-size: xx-large;
-    margin-top: 10px;
+  .bc-mouse-selected:hover {
+    background-color: #ceacea;
   }
-  .shopping-r {
-    color: white;
-    font-size: xx-large;
-    margin-bottom: 10px;
+  .bc-mouse-focus:focus {
+    background-color: #ceacea;
   }
-  .user-r {
-    color: white;
-    font-size: xx-large;
-    margin-bottom: 10px;
+  .btn-no-shadow:focus {
+    box-shadow: none;
   }
-
-  .letter{
-    color: white;
-    font-size:15px;
-    cursor: pointer;
-    margin-top: 20px;
-  }
-  .leter:hover{
-    color: #cca9e4;
-  }
-  .product-name{
-    cursor: pointer;
+  .c-mouse-selected:hover {
+    color: #ceacea;
   }
   
-  @media (max-width: 1040px) {
-    .letter {
-        display: none;
-    }
-    .fa-shopping-cart{
-      display: none;
-    }
-  }
-
-  @media (max-width: 1040px) {
-    .form-search{
-      max-width: 100%;
-    }
-  }
-  @media (max-width: 1040px) {
-    .user-r{
-      display: block;
-    }
-    .shopping-r{
-      display: block;
-    }
-  }
-  @media (min-width: 1040px) {
-    .user-r{
-      display: none;
-    }
-    .shopping-r{
-      display: none;
-    }
-  }
- /*---------- off canvas start ---------*/
- .offcanvas-header{
-   background-color:#9100F5;
- }
- .offcanvas-title{
-   color: white;
-
- }
