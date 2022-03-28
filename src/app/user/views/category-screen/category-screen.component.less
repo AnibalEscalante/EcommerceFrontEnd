@@ -25,6 +25,47 @@
     margin-right: 10px;
 }
 .accordion-button{
-    padding: 2px;
-    margin: 4px;
+    padding: 10px;
+    margin: 0px;
+}
+.accordion-button:focus{
+    background-color: #ffffff;
+    color: black;
+    box-shadow: none;
+}
+.bc-mouse-selected:hover{
+    
+    background-color: #ceacea;
+}
+
+.bc-mouse-focus:focus{
+    background-color: #ceacea;
+}
+
+.btn-no-shadow:focus{
+    box-shadow: none;
+}
+
+.c-mouse-selected:hover{
+    color: #ceacea;
+}
+
+h2{
+    margin: 0;
+}
+.accordion-button:not(.collapsed)::after{
+    transform: none;
+    background-image:none;
+}
+.accordion-button:not(.collapsed) {
+    color: black;
+    background-color: #ceacea;
+}
+.accordion-button:not {
+    color: black;
+    background-color: #ceacea;
+}
+
+.accordion-button:not(.collapsed){
+    background-color: #ceacea;
 }
