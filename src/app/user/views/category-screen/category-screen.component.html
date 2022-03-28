@@ -1,14 +1,12 @@
 <app-navbar></app-navbar>
 <div class="container">
-    <div class="container-fluid">
+    <div class="container-fluid d-none d-lg-block">
       <div class="card recomended my-4">
         <div class="row">
           <div class="col-6 body">
-            <button class="btn btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"  aria-controls="offcanvasRight">
-              <span><i class="fas fa-bars"></i></span>
-            </button>
+            <h5 class="result-letter mx-3">Resultados(5)</h5>
           </div>
-          <div class="col-6 body filter">
+          <div class=" col-6 body filter">
             <select class="form-select" aria-label="Default select example">
               <option selected>Ordenar por</option>
               <option value="1">One</option>
@@ -18,8 +16,11 @@
           </div>
         </div>
       </div>
-        <div class="row align-items-start d-none d-lg-flex">
+        <div class="row align-items-start">
             <div class="col-12 col-lg-3">
+              <div class="card my-4">
+                <h2 class="product-title">Audifonos</h2>
+                </div>
                 <div class="card my-4">
                     <div class="card-body">
                       <div class="accordion" id="accordionExample">
@@ -261,47 +262,47 @@
   <div class="offcanvas-body">
     <div class="accordion" id="accordionExample">
       <div class="accordion-item">
-        <h2 class="accordion-header" id="headingOne">
-          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <h2 class="accordion-header" id="headingFour">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
             Marca
           </button>
         </h2>
-        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+        <div id="collapseFour" class="accordion-collapse collapse show" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
           <div class="accordion-body">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
               <label class="form-check-label" for="flexCheckDefault">
-                Default checkbox
+                Sony
               </label>
             </div>
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
               <label class="form-check-label" for="flexCheckDefault">
-                Default checkbox
+                Panasonic
               </label>
             </div>
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
               <label class="form-check-label" for="flexCheckDefault">
-                Default checkbox
+                LG
               </label>
             </div>
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
               <label class="form-check-label" for="flexCheckDefault">
-                Default checkbox
+                Motorola
               </label>
             </div>
           </div>
         </div>
       </div>
       <div class="accordion-item">
-        <h2 class="accordion-header" id="headingTwo">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        <h2 class="accordion-header" id="headingFive">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
             Precio
           </button>
         </h2>
-        <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+        <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
           <div class="accordion-body">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
@@ -331,12 +332,12 @@
         </div>
       </div>
       <div class="accordion-item">
-        <h2 class="accordion-header" id="headingThree">
-          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        <h2 class="accordion-header" id="headingSix">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
             Descuento
           </button>
         </h2>
-        <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+        <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
           <div class="accordion-body">
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
