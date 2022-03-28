@@ -2,8 +2,8 @@
 
     <div class="container-fluid d-none d-lg-flex">
         <div class="d-flex align-items-center">
-            <div class="h1 c-mouse-selected me-2">Ekomerce</div>
-            <button class="btn btn-menu bc-mouse-selected bc-mouse-focus btn-no-shadow" type="button" data-bs-toggle="offcanvas" data-bs-target="#categoryCanvas" aria-controls="categoryCanvas">
+            <h1 class="ekomerce c-mouse-selected me-2">Ekomerce</h1>
+            <button class="btn btn-menu bc-mouse-selected btn-no-shadow" type="button" data-bs-toggle="offcanvas" data-bs-target="#categoryCanvas" aria-controls="categoryCanvas">
                 <span><i class="fas fa-bars"></i></span>
             </button>
         </div>
@@ -16,21 +16,21 @@
             </div>
         </form>
         <div class="d-flex align-items-center">
-            <div class="h5 c-mouse-selected" [routerLink]="['/visitor/login']">Iniciar Sesión</div>
-            <div class="h5 c-mouse-selected" [routerLink]="['/visitor/register']">Registrarse</div>
+            <h3 class="redirect c-mouse-selected" [routerLink]="['/visitor/login']">Iniciar Sesión</h3>
+            <h3 class="redirect c-mouse-selected" [routerLink]="['/visitor/register']">Registrarse</h3>
             <span><i type="button" class="fas fa-shopping-cart c-mouse-selected mr-rem"></i></span>
         </div>
     </div>
 
     <!-- responsive start -->
     <div class="container-fluid d-bloc d-lg-none">
-        <div class="d-flex align-items-center mb-1">
-            <button class="btn btn-menu bc-mouse-selected bc-mouse-focus btn-no-shadow" type="button" data-bs-toggle="offcanvas" data-bs-target="#categoryCanvas" aria-controls="categoryCanvas">
+        <div class="d-flex align-items-center mb-2">
+            <button class="btn btn-menu bc-mouse-selected btn-no-shadow" type="button" data-bs-toggle="offcanvas" data-bs-target="#categoryCanvas" aria-controls="categoryCanvas">
                 <span><i class="fas fa-bars"></i></span>
             </button>
-            <div class="h1 c-mouse-selected ms-2">Ekomerce</div>
+            <h1 class="ekomerce-r c-mouse-selected ms-2">Ekomerce</h1>
         </div>
-        <div class="d-flex align-items-center">
+        <div class="d-flex align-items-center mb-2">
             <span><i type="button" class="fas fa-sign-in-alt c-mouse-selected" [routerLink]="['/visitor/login']"></i></span>
             <span><i type="button" class="fas fa-shopping-cart c-mouse-selected"></i></span>
         </div>
@@ -49,23 +49,25 @@
 
 <div class="offcanvas offcanvas-start" tabindex="-1" id="categoryCanvas" aria-labelledby="categoryCanvasLabel">
     <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Offcanvas</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        <h4 class="offcanvas-title" id="offcanvasExampleLabel">Categorias</h4>
+        <span type="button" class="material-icons button-close" data-bs-dismiss="offcanvas" aria-label="Close">close</span>
     </div>
-    <div class="offcanvas-body">
-        <div>
-        Some text as placeholder. In real life you can have the elements you have chosen. Like, text, images, lists, etc.
-        </div>
-        <div class="dropdown mt-3">
-        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
-            Dropdown button
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-        </ul>
-        </div>
+    <div class="offcanvas-body p-1">
+        <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+            <mat-tree-node class="ps-3" *matTreeNodeDef="let node" matTreeNodePadding>
+              <button class="product-name" mat-icon-button disabled></button>
+              <div type="button" [routerLink]="['/visitor/category']" class="sub-category-name">{{node.name}}</div>
+            </mat-tree-node>
+            <mat-tree-node *matTreeNodeDef="let node;when: hasChild" matTreeNodePadding>
+              <button mat-icon-button matTreeNodeToggle
+                      [attr.aria-label]="'Toggle ' + node.name">
+                <mat-icon class="mat-icon-rtl-mirror">
+                  {{treeControl.isExpanded(node) ? 'expand_more' : 'chevron_right'}}
+                </mat-icon>
+              </button>
+              <div class="category-name">{{node.name}}</div>
+            </mat-tree-node>
+          </mat-tree>
     </div>
 </div>
 
