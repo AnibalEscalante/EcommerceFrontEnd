@@ -9,6 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../shared/material/material.module';
 import { CategoryScreenComponent } from './views/category-screen/category-screen.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
+import { FooterComponent } from '../shared/components/footer/footer.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { NavbarComponent } from './components/navbar/navbar.component';
     LoginScreenComponent,
     RegisterScreenComponent,
     CategoryScreenComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,

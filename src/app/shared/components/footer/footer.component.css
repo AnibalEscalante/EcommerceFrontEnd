@@ -1,0 +1,30 @@
+.logo {
+  width: 55px;
+}
+p {
+  font-size: large;
+  margin-bottom: 0.5rem;
+}
+.terms {
+  margin-bottom: 0px;
+  text-align: center;
+}
+.terms:hover {
+  color: #9100F5;
+}
+.fab {
+  font-size: 30px;
+  margin-right: 0.5rem;
+}
+.fa-instagram-square:hover {
+  color: #dd2a7b;
+}
+.fa-twitter:hover {
+  color: #08a0e9;
+}
+.fa-facebook-square:hover {
+  color: #3b5998;
+}
+.fa-youtube:hover {
+  color: #ff0000;
+}
