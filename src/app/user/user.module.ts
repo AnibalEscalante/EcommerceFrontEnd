@@ -8,6 +8,8 @@ import { MaterialModule } from '../shared/material/material.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CategoryComponent } from './components/category/category.component';
 import { CategoryScreenComponent } from './views/category-screen/category-screen.component';
+import { BasketScreenComponent } from './views/basket-screen/basket-screen.component';
+import { ProductInfoScreenComponent } from './views/product-info-screen/product-info-screen.component';
 
 
 @NgModule({
@@ -15,7 +17,9 @@ import { CategoryScreenComponent } from './views/category-screen/category-screen
     HomeScreenComponent,
     NavbarComponent,
     CategoryComponent,
-    CategoryScreenComponent
+    CategoryScreenComponent,
+    BasketScreenComponent,
+    ProductInfoScreenComponent
   ],
   imports: [
     CommonModule,

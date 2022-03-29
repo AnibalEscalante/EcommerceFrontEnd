@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { BasketScreenComponent } from './views/basket-screen/basket-screen.component';
 import { CategoryScreenComponent } from './views/category-screen/category-screen.component';
 import { HomeScreenComponent } from './views/home-screen/home-screen.component';
+import { ProductInfoScreenComponent } from './views/product-info-screen/product-info-screen.component';
 
 const routes: Routes = [
   /* {
@@ -16,6 +18,14 @@ const routes: Routes = [
   {
     path: 'category',
     component: CategoryScreenComponent
+  },
+  {
+    path: 'category/product',
+    component: ProductInfoScreenComponent
+  },
+  {
+    path: 'basket',
+    component: BasketScreenComponent
   }
 ];
 
