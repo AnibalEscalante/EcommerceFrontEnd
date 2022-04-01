@@ -1,22 +1,20 @@
 <app-navbar></app-navbar>
 <div class="container">
     <div class="container-fluid">
-        <div class="card my-4">
+        <div class="card card-contents my-4">
             <div class="row">
-                <div class="col-12 col-lg-6 card-content">
-                    <div class="card">
+                <div class="col-12 col-lg-6 photo-content">
+                    <div class="card card-photo">
                         <img src="/assets/img/a1.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                        </div>
-                      </div>
+                    </div>
                 </div>
-                <div class="col-12 col-lg-6 card-content">
+                <div class="col-12 col-lg-6 card-features">
                     <div class="card card-specification">
                         <h5 class="card-title">SONY</h5>
                         <p class="card-text">AUDIFONOS SONY BT WH-CH510 AZUL</p>
                         <div class="card-body product-body">
                             <div class="row">
-                                <div class="col-6">
+                                <div class="col-12 col-lg-6 ">
                                     <h4>Caracteristicas</h4>
                                     <ul>
                                         <li>caracteristica 1</li>
@@ -25,7 +23,7 @@
                                         <li>caracteristica 1</li>
                                     </ul>
                                 </div>
-                                <div class="col-6 price">
+                                <div class="col-12 col-lg-6 price">
                                     <div class="row">
                                         <div class="col-6"> 
                                             <h3>Normal</h3>
@@ -60,12 +58,12 @@
                 </div>
             </div>
         </div>
-        <div class="card my-4">
+        <div class="card card-contents my-4">
             <h2 class="brand-title">Marcas relacionadas</h2>
             <div class="card-body brand-related-body">
-                <div class="row">
+                <div class="row all-products">
                     <div class="col-12 col-lg-2 col-md-6 my-2">
-                        <div class="card">
+                        <div class="card product-info">
                             <img src="/assets/img/a1.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                               <h5 class="card-title">SONY</h5>
@@ -76,7 +74,7 @@
                           </div>  
                     </div>
                     <div class="col-12 col-lg-2 col-md-6 my-2">
-                        <div class="card">
+                        <div class="card product-info">
                             <img src="/assets/img/a1.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                               <h5 class="card-title">SONY</h5>
@@ -87,7 +85,7 @@
                           </div>  
                     </div>
                     <div class="col-12 col-lg-2 col-md-6 my-2">
-                        <div class="card">
+                        <div class="card product-info">
                             <img src="/assets/img/a1.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                               <h5 class="card-title">SONY</h5>
@@ -98,7 +96,7 @@
                           </div>  
                     </div>
                     <div class="col-12 col-lg-2 col-md-6 my-2">
-                        <div class="card">
+                        <div class="card product-info">
                             <img src="/assets/img/a1.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                               <h5 class="card-title">SONY</h5>
@@ -109,7 +107,7 @@
                           </div>  
                     </div>
                     <div class="col-12 col-lg-2 col-md-6 my-2">
-                        <div class="card">
+                        <div class="card product-info">
                             <img src="/assets/img/a1.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                               <h5 class="card-title">SONY</h5>
@@ -120,7 +118,7 @@
                           </div>  
                     </div>
                     <div class="col-12 col-lg-2 col-md-6 my-2">
-                        <div class="card">
+                        <div class="card product-info">
                             <img src="/assets/img/a1.jpg" class="card-img-top" alt="...">
                             <div class="card-body">
                               <h5 class="card-title">SONY</h5>
@@ -133,37 +131,76 @@
                 </div>
             </div>
         </div>
-        <div class="card my-4">
-            <div class="row">
-                <div class="col-12 col-lg-5">
-                    <h2 class="brand-title">Especificaciones</h2>
-                    <div class="card card-specification-content">
-                        <div class="card-body body-specification">
-                            <div class="specification-pair">
-                                <p class="m-0 ps-3">Marca</p>
-                            </div>
-                            <div class="specification-odd ">
-                                <p class="m-0 ps-3">Tipo</p>
-                            </div>
-                            <div class="specification-pair">
-                                <p class="m-0 ps-3">Peso</p>
-                            </div>
-                            <div class="specification-odd ">
-                                <p class="m-0 ps-3">Auricular</p>
-                            </div>
-                            <div class="specification-pair">
-                                <p class="m-0 ps-3">Compatibilidad</p>
-                            </div>
-                            <div class="specification-odd ">
-                                <p class="m-0 ps-3">Conexión Bluetooth</p>
+        <div class="card card-contents my-4">
+            <h2 class="brand-title">Especificaciones</h2>
+            <div class="card-body body-specification">
+                <div class="row all-products">
+                    <div class="col-12 col-lg-5">
+                        <div class="card card-specification-content">
+                            <div class="card-body body-specification">
+                                <div class="specification-pair">
+                                    <p class="m-0 ps-3">Marca</p>
+                                </div>
+                                <div class="specification-odd ">
+                                    <p class="m-0 ps-3">Tipo</p>
+                                </div>
+                                <div class="specification-pair">
+                                    <p class="m-0 ps-3">Peso</p>
+                                </div>
+                                <div class="specification-odd ">
+                                    <p class="m-0 ps-3">Auricular</p>
+                                </div>
+                                <div class="specification-pair">
+                                    <p class="m-0 ps-3">Compatibilidad</p>
+                                </div>
+                                <div class="specification-odd ">
+                                    <p class="m-0 ps-3">Conexión Bluetooth</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-12-">
+                    <div class="col-12-">
 
+                    </div>
                 </div>
             </div>
         </div>
+        <div class="card card-contents my-4">
+            <h2 class="brand-title">Comentarios</h2>
+            <div class="card-body body-specification">
+                <div class="row all-products">
+                    <div class="col-12 col-lg-5">
+                        <div class="card card-specification-content">
+                            <div class="card-body body-specification">
+                                <div class="card comment m-2">
+                                    <h4 class="m-0">Excelente producto</h4>
+                                    <h5>Por user</h5>
+                                    <div class="card-body p-1">
+                                      <h5 class="">Producto recomendado</h5>
+                                      <p class="card-text">
+                                          Muy buena calidad del producto y llego en buenas condiciones.
+                                      </p>
+                                    </div>
+                                </div>
+                                <div class="card comment m-2">
+                                    <h4 class="m-0">Excelente producto</h4>
+                                    <h5>Por user</h5>
+                                    <div class="card-body p-1">
+                                      <h5 class="">Producto recomendado</h5>
+                                      <p class="card-text">
+                                          Muy buena calidad del producto y llego en buenas condiciones.
+                                      </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12-">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </div>
 </div>
