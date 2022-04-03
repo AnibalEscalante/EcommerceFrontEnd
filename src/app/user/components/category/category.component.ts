@@ -38,7 +38,7 @@ const PRODUCT_DATA: Product[] = [
   styleUrls: ['./category.component.less']
 })
 export class CategoryComponent implements OnInit {
-  @Input() products!: Product;
+  @Input() product!: Product;
   constructor() { }
 
   ngOnInit(): void {
