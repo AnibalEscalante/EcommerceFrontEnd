@@ -44,25 +44,25 @@
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
-                                  Default checkbox
+                                  Sony
                                 </label>
                               </div>
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
-                                  Default checkbox
+                                  Panasonic
                                 </label>
                               </div>
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
-                                  Default checkbox
+                                  Xiaomi
                                 </label>
                               </div>
                               <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                                 <label class="form-check-label" for="flexCheckDefault">
-                                  Default checkbox
+                                  JBL
                                 </label>
                               </div>
                             </div>
@@ -172,59 +172,19 @@
         <div class="row align-items-start">
             <div class="col-12 col-lg-9">
                 <div class="row">
-                    <div class="col-12 col-lg-4 col-md-6 my-4">
-                        <div class="card">
-                            <img src="/assets/img/a1.jpg" class="card-img-top" alt="...">
-                            <div class="card-body">
-                              <h5 class="card-title">SONY</h5>
-                              <p class="card-text">AUDIFONOS SONY BT WH-CH510 AZUL</p>
-                              <h3 class="card-text">$150.000</h3>
-                              <i class="fas fa-cart-plus"></i>
-                            </div>
-                          </div>
-                    </div>
-                    <div class="col-12 col-lg-4 col-md-6 my-4">
-                      <div class="card">
-                          <img src="/assets/img/a1.jpg" class="card-img-top" alt="...">
-                          <div class="card-body">
-                            <h5 class="card-title">SONY</h5>
-                            <p class="card-text">AUDIFONOS SONY BT WH-CH510 AZUL</p>
-                            <h3 class="card-text">$150.000</h3>
-                            <i class="fas fa-cart-plus"></i>
-                          </div>
-                        </div>
-                    </div>
-                  <div class="col-12 col-lg-4 col-md-6 my-4">
-                    <div class="card">
-                        <img src="/assets/img/a1.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">SONY</h5>
-                          <p class="card-text">AUDIFONOS SONY BT WH-CH510 AZUL</p>
-                          <h3 class="card-text">$150.000</h3>
-                          <i class="fas fa-cart-plus"></i>
-                        </div>
-                      </div>
+                  <div *ngFor="let product of products" class="col-6 col-lg-4 my-4">
+                    <app-category [product]="product"></app-category>
                   </div>
-                  <div class="col-12 col-lg-4 col-md-6 my-4">
-                    <div class="card">
-                        <img src="/assets/img/a1.jpg" class="card-img-top" alt="...">
-                        <div class="card-body">
-                          <h5 class="card-title">SONY</h5>
-                          <p class="card-text">AUDIFONOS SONY BT WH-CH510 AZUL</p>
-                          <h3 class="card-text">$150.000</h3>
-                          <i class="fas fa-cart-plus"></i>
-                        </div>
-                      </div>
-                  </div>
+                   
                 </div>
             </div>
         </div>
     </div>
     <div class="row">
-      <div class="col-3">
+      <div class="col col-lg-3">
         
       </div>
-      <div class="col-9">
+      <div class="col-12 col-lg-9">
         <div class="card recomended my-4">
           <mat-paginator 
             [length]="100"
