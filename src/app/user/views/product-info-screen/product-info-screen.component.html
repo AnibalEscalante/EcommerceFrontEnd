@@ -5,13 +5,13 @@
             <div class="row">
                 <div class="col-12 col-lg-6 photo-content">
                     <div class="card card-photo">
-                        <img src="/assets/img/a1.jpg" class="card-img-top" alt="...">
+                        <img *ngIf="product" src="/assets/img/{{product.image}}.jpg" class="card-img-top" alt="...">
                     </div>
                 </div>
                 <div class="col-12 col-lg-6 card-features">
                     <div class="card card-specification">
-                        <h5 class="card-title">SONY</h5>
-                        <p class="card-text">AUDIFONOS SONY BT WH-CH510 AZUL</p>
+                        <h5 *ngIf="product" class="card-title">{{product.brand}}</h5>
+                        <p *ngIf="product" class="card-text">{{product.description}}</p>
                         <div class="card-body product-body">
                             <div class="row">
                                 <div class="col-12 col-lg-6 ">
