@@ -10,3 +10,6 @@
 .col-same-p {
   padding: calc(var(--bs-gutter-x) * 0.5);
 }
+img {
+  border-radius: 5px;
+}
