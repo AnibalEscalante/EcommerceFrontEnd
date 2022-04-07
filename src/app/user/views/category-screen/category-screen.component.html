@@ -145,7 +145,7 @@
             <div class="col-12 col-lg-9">
                 <div class="row">
                     <div *ngFor="let product of products" class="col-6 col-lg-4 my-4">
-                      <app-category [product]="product"></app-category>
+                      <app-product [product]="product"></app-product>
                     </div>
                 </div>
             </div>
@@ -194,7 +194,7 @@
             <div class="col-12 col-lg-9">
                 <div class="row">
                   <div *ngFor="let product of products" class="col-6 col-lg-4 my-4">
-                    <app-category [product]="product"></app-category>
+                    <app-product [product]="product"></app-product>
                   </div>
                    
                 </div>
@@ -217,6 +217,7 @@
         </div>
     </div>
 </div>
+<app-footer></app-footer>
 <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
   <div class="offcanvas-header">
     <h5 id="offcanvasRightLabel">Offcanvas right</h5>

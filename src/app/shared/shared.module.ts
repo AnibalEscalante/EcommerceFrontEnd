@@ -6,11 +6,14 @@ import { UserRoutingModule } from '../user/user-routing.module';
 import { VisitorRoutingModule } from '../visitor/visitor-routing.module';
 
 
-
 @NgModule({
   declarations: [
     ProductComponent,
     FooterComponent
+  ],
+  exports: [
+    FooterComponent,
+    ProductComponent
   ],
   imports: [
     CommonModule,

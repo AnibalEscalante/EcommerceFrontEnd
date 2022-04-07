@@ -9,8 +9,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../shared/material/material.module';
 import { CategoryScreenComponent } from './views/category-screen/category-screen.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { FooterComponent } from '../shared/components/footer/footer.component';
-import { ProductComponent } from '../shared/components/product/product.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -19,16 +18,15 @@ import { ProductComponent } from '../shared/components/product/product.component
     LoginScreenComponent,
     RegisterScreenComponent,
     CategoryScreenComponent,
-    NavbarComponent,
-    FooterComponent,
-    ProductComponent
+    NavbarComponent
   ],
   imports: [
     CommonModule,
     VisitorRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    MaterialModule
+    MaterialModule,
+    SharedModule
   ]
 })
 export class VisitorModule { }
