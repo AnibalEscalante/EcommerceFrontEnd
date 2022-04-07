@@ -10,6 +10,7 @@ import { MaterialModule } from '../shared/material/material.module';
 import { CategoryScreenComponent } from './views/category-screen/category-screen.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { FooterComponent } from '../shared/components/footer/footer.component';
+import { ProductComponent } from '../shared/components/product/product.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { FooterComponent } from '../shared/components/footer/footer.component';
     RegisterScreenComponent,
     CategoryScreenComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ProductComponent
   ],
   imports: [
     CommonModule,
