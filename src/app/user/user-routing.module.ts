@@ -20,7 +20,7 @@ const routes: Routes = [
     component: CategoryScreenComponent
   },
   {
-    path: 'category/:id',
+    path: 'product/:id',
     component: ProductInfoScreenComponent
   },
   {
