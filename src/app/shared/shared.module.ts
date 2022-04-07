@@ -4,11 +4,14 @@ import { ProductComponent } from './components/product/product.component';
 import { FooterComponent } from './components/footer/footer.component';
 
 
-
 @NgModule({
   declarations: [
     ProductComponent,
     FooterComponent
+  ],
+  exports: [
+    FooterComponent,
+    ProductComponent
   ],
   imports: [
     CommonModule

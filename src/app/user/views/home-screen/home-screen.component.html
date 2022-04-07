@@ -1,26 +1,77 @@
 <app-navbar></app-navbar>
-<div class="container">
-  <div class="container-fluid">
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div class="carousel-item active" align="center">
-          <img src="/assets/img/p2.jpg" class=" w-100" alt="...">
+<div class="container-fluid p-0">
+  <div id="carouselProducts" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators d-none d-md-flex">
+      <button class="carousel-btn active" type="button" data-bs-target="#carouselProducts" data-bs-slide-to="0" aria-current="true" aria-label="Slide 1"></button>
+      <button class="carousel-btn" type="button" data-bs-target="#carouselProducts" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button class="carousel-btn" type="button" data-bs-target="#carouselProducts" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button class="carousel-btn" type="button" data-bs-target="#carouselProducts" data-bs-slide-to="3" aria-label="Slide 4"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item active" align="center">
+        <img src="/assets/img/carousel/celular.png" class="img-carousel" alt="...">
+      </div>
+      <div class="carousel-item " align="center">
+        <img src="/assets/img/carousel/teclado.png" class="img-carousel" alt="...">
+      </div>
+      <div class="carousel-item" align="center">
+        <img src="/assets/img/carousel/audifonos.png" class="img-carousel" alt="...">
+      </div>
+      <div class="carousel-item" align="center">
+        <img src="/assets/img/carousel/mice.png" class="img-carousel" alt="...">
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselProducts" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselProducts" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+</div>
+<div class="container-fluid my-2">
+  <div class="row justify-content-center">
+    <div class="col-10 col-lg-4 col-same-p">
+      <img src="/assets/img/desct-home/monitor descuento.png" class="img-carousel" alt="...">
+    </div>
+    <div class="col-10 col-lg-4 col-same-p">
+      <img src="/assets/img/desct-home/notebook descuento.png" class="img-carousel" alt="...">
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-10 col-lg-8">
+      <div class="row">
+        <div class="col-12 col-lg-4 col-same-p">
+          <img src="/assets/img/desct-home/ps4.png" class="img-carousel" alt="...">
         </div>
-        <div class="carousel-item " align="center">
-          <img src="/assets/img/1.jpg" class=" w-100 justify-content-center" alt="...">
+        <div class="col-12 col-lg-4 col-same-p">
+          <img src="/assets/img/desct-home/switch.png" class="img-carousel" alt="...">
         </div>
-        <div class="carousel-item" align="center">
-          <img src="/assets/img/p2.jpg" class=" w-100" alt="...">
+        <div class="col-12 col-lg-4 col-same-p">
+          <img src="/assets/img/desct-home/xbox serie x.png" class="img-carousel" alt="...">
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-10 col-lg-8">
+      <div class="row">
+        <div class="col-6 col-lg-3 col-same-p">
+          <img src="/assets/img/desct-home/silla colo.png" class="img-carousel" alt="...">
+        </div>
+        <div class="col-6 col-lg-3 col-same-p">
+          <img src="/assets/img/desct-home/silla cougar.png" class="img-carousel" alt="...">
+        </div>
+        <div class="col-6 col-lg-3 col-same-p">
+          <img src="/assets/img/desct-home/grafica asus.png" class="img-carousel" alt="...">
+        </div>
+        <div class="col-6 col-lg-3 col-same-p">
+          <img src="/assets/img/desct-home/grafica nvidia.png" class="img-carousel" alt="...">
+        </div>
+      </div>
     </div>
   </div>
 </div>
+<app-footer></app-footer>

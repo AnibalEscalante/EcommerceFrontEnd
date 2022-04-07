@@ -10,6 +10,7 @@ import { CategoryComponent } from './components/category/category.component';
 import { CategoryScreenComponent } from './views/category-screen/category-screen.component';
 import { BasketScreenComponent } from './views/basket-screen/basket-screen.component';
 import { ProductInfoScreenComponent } from './views/product-info-screen/product-info-screen.component';
+import { SharedModule } from '../shared/shared.module';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ProductInfoScreenComponent } from './views/product-info-screen/product-
     UserRoutingModule,
     MaterialModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    SharedModule
   ]
 })
 export class UserModule { }
