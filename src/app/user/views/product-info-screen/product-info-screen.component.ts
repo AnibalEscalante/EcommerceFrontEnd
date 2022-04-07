@@ -1,14 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Product } from 'src/app/core/models/product.model';
 
-
-interface Product{
-  id: string;
-  brand: string;
-  description: string;
-  price: string;
-  image: string;
-}
 const PRODUCT_DATA: Product[] = [
   {
     id: '1',
@@ -59,9 +52,14 @@ export class ProductInfoScreenComponent implements OnInit {
    public products!: Product[]
     constructor(
     private activatedRoute: ActivatedRoute
-  ) { 
+  ) {
     this.id = this.activatedRoute.snapshot.params['id'];
-    console.log(this.id)
+    this.products = PRODUCT_DATA;
+    for(let product of this.products){
+      if (this.id === product.id){
+        this.product = product;
+      }
+    }
   }
 
   ngOnInit(): void {
