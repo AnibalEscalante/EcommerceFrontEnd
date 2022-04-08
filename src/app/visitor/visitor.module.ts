@@ -10,6 +10,7 @@ import { MaterialModule } from '../shared/material/material.module';
 import { CategoryScreenComponent } from './views/category-screen/category-screen.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SharedModule } from '../shared/shared.module';
+import { CategoryComponent } from '../shared/components/category/category.component';
 
 
 @NgModule({

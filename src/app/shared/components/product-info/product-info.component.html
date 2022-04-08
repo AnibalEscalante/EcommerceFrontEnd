@@ -1,0 +1,142 @@
+<div class="container">
+    <div class="container-fluid">
+        <div class="card card-contents my-4">
+            <div class="row">
+                <div class="col-12 col-lg-6 photo-content">
+                    <div class="card card-photo">
+                        <img *ngIf="product" src="/assets/img/{{product.image}}.jpg" class="card-img-top" alt="...">
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6 card-features">
+                    <div class="card card-specification">
+                        <h5 *ngIf="product" class="card-title">{{product.brand}}</h5>
+                        <p *ngIf="product" class="card-text">{{product.description}}</p>
+                        <div class="card-body product-body">
+                            <div class="row">
+                                <div class="col-12 col-lg-6 ">
+                                    <h4 class="mb-1">Caracteristicas</h4>
+                                    <ul class="p-1">
+                                        <li class="m-2">Tipo: Audífonos bluetooth</li>
+                                        <li class="m-2" >Largo del cable: no aplica</li>
+                                        <li class="m-2">Peso: 48g</li>
+                                        <li class="m-2">Salida auxiliar de 3.5 mm: No</li>
+                                    </ul>
+                                </div>
+                                <div class="col-12 col-lg-6 price">
+                                    <div class="row">
+                                        <div class="col-6"> 
+                                            <h3>Normal</h3>
+                                        </div>
+                                        <div class="col-6">
+                                            <h3 class="card-text d-flex">$150.000</h3>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6"> 
+                                            <h3>Internet</h3>
+                                        </div>
+                                        <div class="col-6">
+                                            <h3 class="card-text d-flex">$140.000</h3>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-6"> 
+                                            <h3>Descuento</h3>
+                                        </div>
+                                        <div class="col-6">
+                                            <h3 class="card-text d-flex">40%</h3>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <button type="button" class="btn basket-btn">Agregar al carro</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card card-contents my-4">
+            <h2 class="brand-title">Marcas relacionadas</h2>
+            <div class="card-body brand-related-body">
+                <div class="row all-products">
+                    <div *ngFor="let product of products" class="col-12 col-lg-2 col-md-6 my-2">
+                        <app-product [product]="product"></app-product>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card card-contents my-4">
+            <h2 class="brand-title">Especificaciones</h2>
+            <div class="card-body body-specification">
+                <div class="row all-products">
+                    <div class="col-12 col-lg-5">
+                        <div class="card card-specification-content">
+                            <div class="card-body body-specification">
+                                <div class="specification-pair">
+                                    <p class="m-0 ps-3">Marca</p>
+                                </div>
+                                <div class="specification-odd ">
+                                    <p class="m-0 ps-3">Tipo</p>
+                                </div>
+                                <div class="specification-pair">
+                                    <p class="m-0 ps-3">Peso</p>
+                                </div>
+                                <div class="specification-odd ">
+                                    <p class="m-0 ps-3">Auricular</p>
+                                </div>
+                                <div class="specification-pair">
+                                    <p class="m-0 ps-3">Compatibilidad</p>
+                                </div>
+                                <div class="specification-odd ">
+                                    <p class="m-0 ps-3">Conexión Bluetooth</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12-">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="card card-contents my-4">
+            <h2 class="brand-title">Comentarios</h2>
+            <div class="card-body body-specification">
+                <div class="row all-products">
+                    <div class="col-12 col-lg-5">
+                        <div class="card card-specification-content">
+                            <div class="card-body body-specification">
+                                <div class="card comment m-2">
+                                    <h4 class="m-0">Excelente producto</h4>
+                                    <h5>Por user</h5>
+                                    <div class="card-body p-1">
+                                      <h5 class="">Producto recomendado</h5>
+                                      <p class="card-text">
+                                          Muy buena calidad del producto y llego en buenas condiciones.
+                                      </p>
+                                    </div>
+                                </div>
+                                <div class="card comment m-2">
+                                    <h4 class="m-0">Excelente producto</h4>
+                                    <h5>Por user</h5>
+                                    <div class="card-body p-1">
+                                      <h5 class="">Producto recomendado</h5>
+                                      <p class="card-text">
+                                          Muy buena calidad del producto y llego en buenas condiciones.
+                                      </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12-">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
