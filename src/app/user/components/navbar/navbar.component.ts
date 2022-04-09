@@ -82,7 +82,7 @@ interface ExampleFlatNode {
 })
 
 export class NavbarComponent{
-  
+  showFiller = false;
   private _transformer = (node: FoodNode, level: number) => {
     return {
       expandable: !!node.children && node.children.length > 0,
@@ -110,5 +110,6 @@ export class NavbarComponent{
   }
 
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
+
 
 }
