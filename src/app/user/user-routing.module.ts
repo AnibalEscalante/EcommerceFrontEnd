@@ -4,6 +4,7 @@ import { BasketScreenComponent } from './views/basket-screen/basket-screen.compo
 import { CategoryScreenComponent } from './views/category-screen/category-screen.component';
 import { HomeScreenComponent } from './views/home-screen/home-screen.component';
 import { ProductInfoScreenComponent } from './views/product-info-screen/product-info-screen.component';
+import { ProfileScreenComponent } from './views/profile-screen/profile-screen.component';
 
 const routes: Routes = [
   /* {
@@ -26,6 +27,10 @@ const routes: Routes = [
   {
     path: 'basket',
     component: BasketScreenComponent
+  },
+  {
+    path: 'profile',
+    component: ProfileScreenComponent
   }
 ];
 
