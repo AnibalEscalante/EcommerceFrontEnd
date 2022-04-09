@@ -9,6 +9,7 @@ import { CategoryScreenComponent } from './views/category-screen/category-screen
 import { BasketScreenComponent } from './views/basket-screen/basket-screen.component';
 import { ProductInfoScreenComponent } from './views/product-info-screen/product-info-screen.component';
 import { SharedModule } from '../shared/shared.module';
+import { ProfileScreenComponent } from './views/profile-screen/profile-screen.component';
 
 
 @NgModule({
@@ -17,7 +18,8 @@ import { SharedModule } from '../shared/shared.module';
     NavbarComponent,
     CategoryScreenComponent,
     BasketScreenComponent,
-    ProductInfoScreenComponent
+    ProductInfoScreenComponent,
+    ProfileScreenComponent
   ],
   imports: [
     CommonModule,
