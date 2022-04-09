@@ -59,6 +59,17 @@ export class CategoryComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.refresh();
+  }
+
+  refresh(): void { 
+      const firstTime = localStorage.getItem('first')
+    if(!firstTime){
+      localStorage.setItem('first','loaded')
+      location.reload()
+    }else {
+      localStorage.removeItem('first') 
+    }
   }
 
 }
