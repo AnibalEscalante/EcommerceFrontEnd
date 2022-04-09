@@ -11,6 +11,7 @@ import { CategoryScreenComponent } from './views/category-screen/category-screen
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SharedModule } from '../shared/shared.module';
 import { CategoryComponent } from '../shared/components/category/category.component';
+import { ProductInfoScreenComponent } from './views/product-info-screen/product-info-screen.component';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { CategoryComponent } from '../shared/components/category/category.compon
     LoginScreenComponent,
     RegisterScreenComponent,
     CategoryScreenComponent,
-    NavbarComponent
+    NavbarComponent,
+    ProductInfoScreenComponent
   ],
   imports: [
     CommonModule,
