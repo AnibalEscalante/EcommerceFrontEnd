@@ -1,7 +1,7 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col-12 mb-3">
-            <a class="title" [routerLink]="['/visitor/home']">Ekomerce</a>
+            <a class="title underline-none" [routerLink]="['/visitor/home']">Ekomerce</a>
         </div>
         <div class="col-12">
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
@@ -22,11 +22,11 @@
                         </button>
                     </mat-form-field>
                 </div>
-                <button class="btn logIn-btn mb-3" type="submit">
+                <button class="btn logIn-btn" type="submit">
                     Iniciar Sesión
                 </button>
             </form>
-            <a class="link-secondary" [routerLink]="['/visitor/register']">Registrarse</a>
+            <a class="link-secondary underline-none" [routerLink]="['/visitor/register']">Registrarse</a>
         </div>
     </div>
 </div>
