@@ -2,7 +2,7 @@
 
     <div class="container-fluid d-none d-lg-flex">
         <div class="d-flex align-items-center">
-            <h1 class="ekomerce c-mouse-selected me-2">Ekomerce</h1>
+            <h1 class="ekomerce c-mouse-selected" [routerLink]="['/visitor/home']">Ekomerce</h1>
             <button class="btn btn-menu bc-mouse-selected btn-no-shadow" type="button" data-bs-toggle="offcanvas" data-bs-target="#categoryCanvas" aria-controls="categoryCanvas">
                 <span><i class="fas fa-bars"></i></span>
             </button>
@@ -27,7 +27,7 @@
             <button class="btn btn-menu bc-mouse-selected btn-no-shadow" type="button" data-bs-toggle="offcanvas" data-bs-target="#categoryCanvas" aria-controls="categoryCanvas">
                 <span><i class="fas fa-bars"></i></span>
             </button>
-            <h1 class="ekomerce-r c-mouse-selected ms-2">Ekomerce</h1>
+            <h1 class="ekomerce c-mouse-selected ms-2 me-0" [routerLink]="['/visitor/home']">Ekomerce</h1>
         </div>
         <div class="d-md-flex d-none align-items-center mb-2">
             <h3 class="redirect c-mouse-selected" [routerLink]="['/visitor/login']">Iniciar Sesión</h3>
@@ -35,7 +35,7 @@
         </div>
         <div class="d-flex d-md-none align-items-center mb-2">
             <span><i type="button" class="fas fa-sign-in-alt c-mouse-selected" [routerLink]="['/visitor/login']"></i></span>
-            <span type="button" [routerLink]="['/visitor/login']">
+            <span type="button" [routerLink]="['/visitor/register']">
                 <i class="fas fa-clipboard c-mouse-selected"></i>
                 <i class="fas fa-user-plus"></i>
             </span>
