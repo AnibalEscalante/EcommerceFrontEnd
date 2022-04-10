@@ -1,7 +1,9 @@
 <div class="container-fluid">
     <div class="row">
-        <h2 class="title mb-4">Ekomerce</h2>
-        <div class="col">
+        <div class="col-12 mb-3">
+            <a class="link-secondary title" [routerLink]="['/visitor/home']">Ekomerce</a>
+        </div>
+        <div class="col-12">
             <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
                 <div class="d-grid gap-2 col my-1 mx-auto">
                     <mat-form-field appearance="outline">
