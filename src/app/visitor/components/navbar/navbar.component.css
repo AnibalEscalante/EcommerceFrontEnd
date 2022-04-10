@@ -40,9 +40,15 @@
   font-size: xx-large;
   margin-right: 0.5rem;
 }
-.fa-shopping-cart {
+.fa-clipboard {
   color: white;
   font-size: xx-large;
+}
+.fa-user-plus {
+  position: absolute;
+  right: 15px;
+  top: 23px;
+  color: #9100F5;
 }
 .mr-rem {
   margin-right: 0.5rem;
