@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./basket-screen.component.less']
 })
 export class BasketScreenComponent implements OnInit {
+  
+  public isOptional: boolean
 
-  constructor() { }
+  constructor() {
+    this.isOptional = false;
+  }
 
   ngOnInit(): void {
   }
