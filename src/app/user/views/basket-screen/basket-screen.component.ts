@@ -6,10 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./basket-screen.component.less']
 })
 export class BasketScreenComponent implements OnInit {
-
-  constructor() { }
+  
+  constructor() {}
 
   ngOnInit(): void {
   }
-
 }

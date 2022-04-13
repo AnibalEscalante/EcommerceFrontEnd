@@ -1,0 +1,95 @@
+.steep-phase {
+  font-size: 50px;
+  color: #9100F5;
+}
+.p-bar-1 {
+  max-width: 3000px;
+  min-width: 40px;
+  position: relative;
+  margin-left: 44px;
+  margin-right: 7px;
+  top: 2rem;
+  border-radius: 0%;
+}
+.p-bar-2 {
+  max-width: 3000px;
+  min-width: 40px;
+  position: relative;
+  margin-left: 7px;
+  margin-right: 44px;
+  top: 2rem;
+  border-radius: 0%;
+}
+.p-color-1 {
+  background-color: #9100F5;
+}
+.p-color-2 {
+  background-color: #9100F5;
+}
+.total {
+  margin-bottom: 0px;
+  font-size: large;
+}
+.card {
+  border-width: 0px;
+}
+.title-list {
+  margin-bottom: 0px;
+  font-size: x-large;
+  padding: 1.5rem;
+}
+.title-resume {
+  margin-bottom: 0px;
+  font-size: x-large;
+  padding: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+  color: #9100F5;
+}
+.col-img-product {
+  flex-grow: 0;
+}
+.fa-image {
+  font-size: 80px;
+}
+.fa-image::before {
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+.btn:focus {
+  box-shadow: none;
+}
+.btn-secondary {
+  background-color: #f1f2f3;
+}
+.btn-secondary:hover {
+  background-color: #c4c4c4;
+}
+.icon-cant {
+  color: black;
+}
+.cant-product {
+  font-size: large;
+  margin-bottom: 0px;
+  align-self: center;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  font-weight: 500;
+  border-style: solid;
+  border-width: 1px;
+  border-color: #6C757D;
+}
+.product-options {
+  display: flex;
+  justify-content: flex-end;
+  border-top-style: solid;
+  border-top-color: #c4c4c4;
+  border-top-width: 1px;
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+}
