@@ -1,2 +1,91 @@
 <app-navbar></app-navbar>
+<div class="container">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12 col-lg-4">
+                <div class="card my-4">
+                    <h1 class="p-3 m-0">Hola, user</h1>
+                </div>
+                <div class="card my-4">
+                    <div class="card-body body-information">
+                        <div class="information">
+                            <h2 class="p-3 m-0">Datos Personales</h2>
+                        </div>
+                        <div class="information">
+                            <h2 class="p-3 m-0">Mis compras</h2>
+                        </div>
+                        <div class="information">
+                            <h2 class="p-3 m-0">Direcciones</h2>
+                        </div>
+                        <div class="information">
+                            <h2 class="p-3 m-0">Metodos de pago</h2>
+                        </div>
+                        <div class="information">
+                            <h2 class="p-3 m-0">Mis compras</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-lg-8">
+                <div class="card my-4">
+                    <h1 class="p-3 m-0">Datos Personales</h1>
+                </div>
+                <div class="card my-4">
+                    <div class="card-body">
+                        <div class="content">
+                            <mat-form-field class="example-form-field mx-2" appearance="fill">
+                                <mat-label>Nombre</mat-label>
+                                <input matInput type="text" [(ngModel)]="value">
+                                <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                                  <mat-icon>close</mat-icon>
+                                </button>
+                            </mat-form-field>
+    
+                            <mat-form-field class="example-form-field mx-2" appearance="fill">
+                                <mat-label>Primer apellido</mat-label>
+                                <input matInput type="text" [(ngModel)]="value">
+                                <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                                    <mat-icon>close</mat-icon>
+                                </button>
+                            </mat-form-field>
+    
+                            <mat-form-field class="example-form-field mx-2" appearance="fill">
+                                <mat-label>Segundo apellido</mat-label>
+                                <input matInput type="text" [(ngModel)]="value">
+                                <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                                    <mat-icon>close</mat-icon>
+                                </button>
+                            </mat-form-field>
+    
+                            <mat-form-field class="example-form-field mx-2" appearance="fill">
+                                <mat-label>cedula</mat-label>
+                                <input matInput type="text" [(ngModel)]="value">
+                                <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                                    <mat-icon>close</mat-icon>
+                                </button>
+                            </mat-form-field>
+    
+                            <mat-form-field class="example-form-field mx-2" appearance="fill">
+                                <mat-label>celular</mat-label>
+                                <input matInput type="text" [(ngModel)]="value">
+                                <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                                    <mat-icon>close</mat-icon>
+                                </button>
+                            </mat-form-field> 
+    
+                            <mat-form-field  class="example-form-field mx-2" appearance="fill">
+                                <mat-label>Enter your email</mat-label>
+                                <input matInput placeholder="pat@example.com" [formControl]="email" required>
+                                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
+                            </mat-form-field>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
 <app-footer></app-footer>
