@@ -7,13 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasketScreenComponent implements OnInit {
   
-  public isOptional: boolean
-
-  constructor() {
-    this.isOptional = false;
-  }
+  constructor() {}
 
   ngOnInit(): void {
   }
-
 }
