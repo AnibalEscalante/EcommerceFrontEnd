@@ -24,19 +24,48 @@
         </div> 
     </div>
     <div class="row justify-content-evenly mt-3">
-        <div class="col-6">
+        <div class="col-7">
             <div class="card">
                 <h5 class="title-list">Carro: 2 productos</h5>
             </div>
             <!-- for start here -->
             <div class="col-12">
-                <div class="card mt-3">
-                    <!-- product image -->
-                    <!-- product brand -->
-                    <!-- product name -->
-                    <!-- product code -->
-                    <!-- product value -->
-                    <!-- (buttton) product amount -->
+                <div class="card mt-3 p-3">
+                    <div class="row">
+                        <div class="col col-img-product">
+                            <i class="far fa-image"></i>
+                        </div>
+                        <div class="col">
+                            <p>Marca del producto</p> <!-- <--- product brand -->
+                            <p>Nombre del producto</p> <!-- <--- product name -->
+                        </div>
+                        <div class="col">
+                            <p>Precio: ($39.990)</p> <!-- <--- product price -->
+                        </div>
+                        <div class="col">
+                            <p>Code:9292992</p> <!-- <--- product code -->
+                            <div class="input-group">
+                                <button type="button" class="btn btn-secondary">
+                                    <span><i class="fas fa-minus icon-cant"></i></span>
+                                </button>
+                                <p class="cant-product">1</p> <!-- <--- product amount -->
+                                <button type="button" class="btn btn-secondary">
+                                    <samp><i class="fas fa-plus icon-cant"></i></samp>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col product-options">
+                            <p type="button" class="mb-0 me-4">Eliminar de la lista</p>
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="true" id="product-id" checked> <!-- <--- dinamic ID -->
+                                <label class="form-check-label" for="product-id"> <!-- <--- dinamic ID -->
+                                  <p class="mb-0">Agregar a la compra</p>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                     <!-- (buttton) revome product-->
                 </div>
             </div>
