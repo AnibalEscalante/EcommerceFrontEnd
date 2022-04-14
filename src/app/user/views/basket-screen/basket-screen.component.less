@@ -1,3 +1,7 @@
+.container-fluid{
+    height:calc(100% - 64px);
+}
+
 .steep-phase{
     font-size: 50px;
     color: #9100F5;
@@ -59,9 +63,19 @@
 ////////////// Product Item //////////////
 //////////////////////////////////////////
 
-.col-img-product{
+.product-item{
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-bottom: 0.5rem;
+}
+
+.fg-0{
     flex-grow: 0;
 }
+
+////////////// Img Product ///////////////
 
 .fa-image{
     font-size: 80px;
@@ -73,6 +87,45 @@
     border-radius: 5px;
     padding-left: 0.5rem;
     padding-right: 0.5rem;
+}
+
+////////////// Info Product //////////////
+
+.product-brand{
+    font-size: larger;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+
+.product-name{
+    font-size: large;
+    font-weight: 400;
+    margin-bottom: 0px;
+    cursor: pointer;
+}
+
+.product-price{
+    font-size: large;
+    font-weight: 400;
+    vertical-align: middle;
+    margin-bottom: 0px;
+}
+
+.text-align{
+    vertical-align: middle;
+}
+
+.product-code{
+    text-align: end;
+    font-weight: 300;
+    margin-bottom: 0.5rem;
+}
+
+////////// Quantity of products //////////
+
+.input-group{
+    justify-content: flex-end;
 }
 
 .btn:focus{
@@ -105,7 +158,9 @@
     border-color: #6C757D;
 }
 
-.product-options{
+////////////// Item Options //////////////
+
+.item-options{
     display: flex;
     justify-content: flex-end;
     border-top-style: solid;
@@ -113,4 +168,17 @@
     border-top-width: 1px;
     margin-top: 1rem;
     padding-top: 0.5rem;
+}
+
+.form-check-label{
+    cursor: pointer;
+}
+
+.form-check-input{
+    box-shadow: none;
+    border-color: #9100F5;
+}
+
+.form-check-input:checked{
+    background-color: #9100F5;
 }

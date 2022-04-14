@@ -29,44 +29,67 @@
                 <h5 class="title-list">Carro: 2 productos</h5>
             </div>
             <!-- for start here -->
-            <div class="col-12">
-                <div class="card mt-3 p-3">
-                    <div class="row">
-                        <div class="col col-img-product">
-                            <i class="far fa-image"></i>
-                        </div>
-                        <div class="col">
-                            <p>Marca del producto</p> <!-- <--- product brand -->
-                            <p>Nombre del producto</p> <!-- <--- product name -->
-                        </div>
-                        <div class="col">
-                            <p>Precio: ($39.990)</p> <!-- <--- product price -->
-                        </div>
-                        <div class="col">
-                            <p>Code:9292992</p> <!-- <--- product code -->
-                            <div class="input-group">
-                                <button type="button" class="btn btn-secondary">
-                                    <span><i class="fas fa-minus icon-cant"></i></span>
-                                </button>
-                                <p class="cant-product">1</p> <!-- <--- product amount -->
-                                <button type="button" class="btn btn-secondary">
-                                    <samp><i class="fas fa-plus icon-cant"></i></samp>
-                                </button>
-                            </div>
+            <div class="card product-item">
+                <!-- <div class="row">
+                    <div class="col fg-0">
+                        <i class="far fa-image"></i>
+                    </div>
+                    <div class="col">
+                        <p class="product-brand">Marca del producto</p>
+                        <p class="product-name">Nombre del producto</p>
+                    </div>
+                    <div class="col fg-0 text-align">
+                        <p class="product-price">$39.990</p>
+                    </div>
+                    <div class="col fg-05">
+                        <p class="product-code">Code: 1111111111</p>
+                        <div class="input-group">
+                            <button type="button" class="btn btn-secondary">
+                                <span><i class="fas fa-minus icon-cant"></i></span>
+                            </button>
+                            <p class="cant-product">1</p>
+                            <button type="button" class="btn btn-secondary">
+                                <samp><i class="fas fa-plus icon-cant"></i></samp>
+                            </button>
                         </div>
                     </div>
-                    <div class="row">
-                        <div class="col product-options">
-                            <p type="button" class="mb-0 me-4">Eliminar de la lista</p>
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="true" id="product-id" checked> <!-- <--- dinamic ID -->
-                                <label class="form-check-label" for="product-id"> <!-- <--- dinamic ID -->
-                                  <p class="mb-0">Agregar a la compra</p>
-                                </label>
-                            </div>
+                </div> -->
+
+                <div class="row content">
+                    <div class="col fg-0">
+                        <i class="far fa-image"></i>
+                    </div>
+                    <div class="col">
+                        <p class="product-brand">Marca del producto</p> <!-- <--- product brand -->
+                        <p class="product-name">Nombre del producto</p> <!-- <--- product name -->
+                    </div>
+                    <div class="col fg-0 text-align">
+                        <p class="product-price">$39.990</p> <!-- <--- product price -->
+                    </div>
+                    <div class="col fg-05">
+                        <p class="product-code">Code: 1111111111</p> <!-- <--- product code -->
+                        <div class="input-group">
+                            <button type="button" class="btn btn-secondary">
+                                <span><i class="fas fa-minus icon-cant"></i></span>
+                            </button>
+                            <p class="cant-product">1</p> <!-- <--- product amount -->
+                            <button type="button" class="btn btn-secondary">
+                                <samp><i class="fas fa-plus icon-cant"></i></samp>
+                            </button>
                         </div>
                     </div>
-                    <!-- (buttton) revome product-->
+                </div>
+
+                <div class="row">
+                    <div class="col item-options">
+                        <p type="button" class="mb-0 me-4">Eliminar de la lista</p> <!-- (buttton) revome product-->
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="true" id="product-id" checked> <!-- <--- dinamic ID -->
+                            <label class="form-check-label" for="product-id"> <!-- <--- dinamic ID -->
+                            <p class="mb-0">Agregar a la compra</p>
+                            </label>
+                        </div>
+                    </div>
                 </div>
             </div>
             <!-- for end here -->
