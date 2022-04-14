@@ -32,53 +32,64 @@
                 </div>
                 <div class="card my-4">
                     <div class="card-body">
-                        <div class="content">
-                            <mat-form-field class="example-form-field mx-2" appearance="fill">
-                                <mat-label>Nombre</mat-label>
-                                <input matInput type="text" [(ngModel)]="value">
-                                <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-                                  <mat-icon>close</mat-icon>
-                                </button>
-                            </mat-form-field>
-    
-                            <mat-form-field class="example-form-field mx-2" appearance="fill">
-                                <mat-label>Primer apellido</mat-label>
-                                <input matInput type="text" [(ngModel)]="value">
-                                <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-                                    <mat-icon>close</mat-icon>
-                                </button>
-                            </mat-form-field>
-    
-                            <mat-form-field class="example-form-field mx-2" appearance="fill">
-                                <mat-label>Segundo apellido</mat-label>
-                                <input matInput type="text" [(ngModel)]="value">
-                                <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-                                    <mat-icon>close</mat-icon>
-                                </button>
-                            </mat-form-field>
-    
-                            <mat-form-field class="example-form-field mx-2" appearance="fill">
-                                <mat-label>cedula</mat-label>
-                                <input matInput type="text" [(ngModel)]="value">
-                                <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-                                    <mat-icon>close</mat-icon>
-                                </button>
-                            </mat-form-field>
-    
-                            <mat-form-field class="example-form-field mx-2" appearance="fill">
-                                <mat-label>celular</mat-label>
-                                <input matInput type="text" [(ngModel)]="value">
-                                <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
-                                    <mat-icon>close</mat-icon>
-                                </button>
-                            </mat-form-field> 
-    
-                            <mat-form-field  class="example-form-field mx-2" appearance="fill">
-                                <mat-label>Enter your email</mat-label>
-                                <input matInput placeholder="pat@example.com" [formControl]="email" required>
-                                <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-                            </mat-form-field>
-
+                        <div class="row content">
+                            <form  [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+                                <div class=" col-4">
+                                    <mat-form-field class="example-form-field mx-2" appearance="outline">
+                                        <mat-label>Nombre</mat-label>
+                                        <input matInput type="text" formControlName="name" [(ngModel)]="value">
+                                        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                                        <mat-icon>close</mat-icon>
+                                        </button>
+                                    </mat-form-field>
+                                </div>
+                                <div class=" col-4"> 
+                                    <mat-form-field class="example-form-field mx-2" appearance="outline">
+                                        <mat-label>Nombre</mat-label>
+                                        <input matInput type="text" formControlName="lastNameP" [(ngModel)]="value">
+                                        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                                        <mat-icon>close</mat-icon>
+                                        </button>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-4">
+                                    <mat-form-field class="example-form-field mx-2" appearance="outline">
+                                        <mat-label>Nombre</mat-label>
+                                        <input matInput type="text" formControlName="lastNameM" [(ngModel)]="value">
+                                        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                                        <mat-icon>close</mat-icon>
+                                        </button>
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-4">
+                                    <mat-form-field class="example-form-field mx-2" appearance="outline">
+                                        <mat-label>Nombre</mat-label>
+                                        <input matInput type="text" formControlName="run" [(ngModel)]="value">
+                                        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                                        <mat-icon>close</mat-icon>
+                                        </button>
+                                    </mat-form-field>
+                                </div>
+                               <!--  <div class="col-4">
+                                    <mat-form-field class="example-form-field mx-2" appearance="outline">
+                                        <mat-label>Nombre</mat-label>
+                                        <input matInput type="text" [(ngModel)]="value">
+                                        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                                        <mat-icon>close</mat-icon>
+                                        </button>
+                                    </mat-form-field>
+                                </div> -->
+        
+                                <div class=" col-4">
+                                    <mat-form-field  class="example-form-field mx-2" appearance="outline">
+                                        <mat-label>Enter your email</mat-label>
+                                        <input matInput placeholder="pat@example.com"  formControlName="email" required>
+                                        <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                                            <mat-icon>close</mat-icon>
+                                            </button>
+                                    </mat-form-field>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
