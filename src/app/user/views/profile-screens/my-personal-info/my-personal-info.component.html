@@ -9,13 +9,13 @@
                 <div class="card my-4">
                     <div class="card-body body-information">
                         <div class="information">
-                            <h2 class="p-3 m-0">Datos Personales</h2>
+                            <h2 class="p-3 m-0" [routerLink]="['/user/profile/info']">Datos Personales</h2>
                         </div>
                         <div class="information">
-                            <h2 class="p-3 m-0">Mis compras</h2>
+                            <h2 class="p-3 m-0" [routerLink]="['/user/profile/myshopping']">Mis compras</h2>
                         </div>
                         <div class="information">
-                            <h2 class="p-3 m-0">Direcciones</h2>
+                            <h2 class="p-3 m-0" [routerLink]="['/user/profile/myaddress']">Direcciones</h2>
                         </div>
                         <div class="information">
                             <h2 class="p-3 m-0">Metodos de pago</h2>
@@ -70,7 +70,7 @@
                                         </button>
                                     </mat-form-field>
                                 </div>
-                                <div class="input col-12 col-xl-4 col-sm-6">
+                                <!-- <div class="input col-12 col-xl-4 col-sm-6">
                                     <mat-form-field class="example-form-field mx-2" appearance="outline">
                                         <mat-label>Nombre</mat-label>
                                         <input matInput type="text" [(ngModel)]="value">
@@ -78,7 +78,7 @@
                                         <mat-icon>close</mat-icon>
                                         </button>
                                     </mat-form-field>
-                                </div>
+                                </div> -->
         
                                 <div class="input col-12 col-xl-4 col-sm-6">
                                     <mat-form-field  class="example-form-field mx-2" appearance="outline">
