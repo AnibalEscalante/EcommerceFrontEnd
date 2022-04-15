@@ -24,13 +24,13 @@
         </div> 
     </div>
     <div class="row justify-content-evenly mt-3">
-        <div class="col-7">
+        <div class="col-11 col-lg-7">
             <div class="card">
                 <h5 class="title-list">Carro: 2 productos</h5>
             </div>
             <!-- for start here -->
-            <div class="card product-item">
-                <!-- <div class="row">
+            <div class="card product-item d-none d-md-block">
+                <div class="row align-items-center">
                     <div class="col fg-0">
                         <i class="far fa-image"></i>
                     </div>
@@ -43,7 +43,7 @@
                     </div>
                     <div class="col fg-05">
                         <p class="product-code">Code: 1111111111</p>
-                        <div class="input-group">
+                        <div class="input-group justify-content-end">
                             <button type="button" class="btn btn-secondary">
                                 <span><i class="fas fa-minus icon-cant"></i></span>
                             </button>
@@ -53,36 +53,11 @@
                             </button>
                         </div>
                     </div>
-                </div> -->
-
-                <div class="row content">
-                    <div class="col fg-0">
-                        <i class="far fa-image"></i>
-                    </div>
-                    <div class="col">
-                        <p class="product-brand">Marca del producto</p> <!-- <--- product brand -->
-                        <p class="product-name">Nombre del producto</p> <!-- <--- product name -->
-                    </div>
-                    <div class="col fg-0 text-align">
-                        <p class="product-price">$39.990</p> <!-- <--- product price -->
-                    </div>
-                    <div class="col fg-05">
-                        <p class="product-code">Code: 1111111111</p> <!-- <--- product code -->
-                        <div class="input-group">
-                            <button type="button" class="btn btn-secondary">
-                                <span><i class="fas fa-minus icon-cant"></i></span>
-                            </button>
-                            <p class="cant-product">1</p> <!-- <--- product amount -->
-                            <button type="button" class="btn btn-secondary">
-                                <samp><i class="fas fa-plus icon-cant"></i></samp>
-                            </button>
-                        </div>
-                    </div>
                 </div>
 
                 <div class="row">
                     <div class="col item-options">
-                        <p type="button" class="mb-0 me-4">Eliminar de la lista</p> <!-- (buttton) revome product-->
+                        <p type="button" class="mb-0 me-4">Eliminar de la lista</p>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="true" id="product-id" checked> <!-- <--- dinamic ID -->
                             <label class="form-check-label" for="product-id"> <!-- <--- dinamic ID -->
@@ -92,15 +67,117 @@
                     </div>
                 </div>
             </div>
+
+            <!-- responsive tablet start -->
+            <!-- incomplete -->
+            <div class="card product-item d-none d-sm-block d-md-none">
+                <div class="row align-items-center">
+                    <div class="col-12 d-flex justify-content-between">
+                        <p class="product-code-r">Code: 1111111111</p>
+                        <span class="material-icons button-close">close</span>
+                    </div>
+                    <div class="col-12 mb-2">
+                        <p class="product-brand">Marca del producto</p>
+                        <p class="product-name">Nombre del producto</p>
+                    </div>
+                    <div class="col-12 my-1 d-flex justify-content-center">
+                        <i class="far fa-image"></i>
+                    </div>
+                    <div class="col-12 my-1 d-flex justify-content-center">
+                        <p class="product-price">$39.990</p>
+                    </div>
+                    <div class="col-12 mt-1">
+                        <div class="input-group justify-content-center">
+                            <button type="button" class="btn btn-secondary">
+                                <span><i class="fas fa-minus icon-cant"></i></span>
+                            </button>
+                            <p class="cant-product">1</p>
+                            <button type="button" class="btn btn-secondary">
+                                <samp><i class="fas fa-plus icon-cant"></i></samp>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col item-options">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="true" id="product-id" checked> <!-- <--- dinamic ID -->
+                            <label class="form-check-label" for="product-id"> <!-- <--- dinamic ID -->
+                            <p class="mb-0">Agregar a la compra</p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- responsive tablet end -->
+
+            <!-- responsive movile start -->
+            
+            <div class="card product-item d-sm-none">
+                <div class="row align-items-center">
+                    <div class="col-12 d-flex justify-content-between">
+                        <p class="product-code-r">Code: 1111111111</p>
+                        <span class="material-icons button-close">close</span>
+                    </div>
+                    <div class="col-12 mb-2">
+                        <p class="product-brand">Marca del producto</p>
+                        <p class="product-name">Nombre del producto</p>
+                    </div>
+                    <div class="col-12 my-1 d-flex justify-content-center">
+                        <i class="far fa-image"></i>
+                    </div>
+                    <div class="col-12 my-1 d-flex justify-content-center">
+                        <p class="product-price">$39.990</p>
+                    </div>
+                    <div class="col-12 mt-1">
+                        <div class="input-group justify-content-center">
+                            <button type="button" class="btn btn-secondary">
+                                <span><i class="fas fa-minus icon-cant"></i></span>
+                            </button>
+                            <p class="cant-product">1</p>
+                            <button type="button" class="btn btn-secondary">
+                                <samp><i class="fas fa-plus icon-cant"></i></samp>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col item-options">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="true" id="product-id" checked> <!-- <--- dinamic ID -->
+                            <label class="form-check-label" for="product-id"> <!-- <--- dinamic ID -->
+                            <p class="mb-0">Agregar a la compra</p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- responsive movile end -->
+    
             <!-- for end here -->
         </div>
-        <div class="col-4 col-lg-3">
-            <div class="card">
+
+        <div class="col-4 col-lg-3 d-none d-lg-block">
+            <div class="card shadow">
                 <h5 class="title-resume">Resumen de Compra</h5>
                 <!-- total value -->
                 <!-- (buttton) next-->
             </div>
         </div>
+
+        <!-- responsive start -->
+
+        <div class="col-11 d-lg-none summary-purchase">
+            <div class="card shadow">
+                <h5 class="title-resume">Resumen de Compra</h5>
+                <!-- total value -->
+                <!-- (buttton) next-->
+            </div>
+        </div>
+
+        <!-- responsive end -->
     </div>
     
 </div>
