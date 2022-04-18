@@ -29,7 +29,7 @@
                 <h5 class="title-list">Carro: 2 productos</h5>
             </div>
             <!-- for start here -->
-            <div class="card product-item d-none d-sm-block">
+            <div class="card product-item standard-size">
                 <div class="row align-items-center">
                     <div class="col fg-0">
                         <i class="far fa-image"></i>
@@ -38,10 +38,11 @@
                         <p class="product-brand">Marca del producto</p>
                         <p class="product-name">Nombre del producto</p>
                     </div>
-                    <div class="col fg-0 text-align">
+                    <div class="col price">
                         <p class="product-price">$39.990</p>
+                        <p class="product-dcto">40% dcto.</p>
                     </div>
-                    <div class="col fg-05">
+                    <div class="col fg-075">
                         <p class="product-code">Code: 1111111111</p>
                         <div class="input-group justify-content-end">
                             <button type="button" class="btn btn-secondary">
@@ -68,23 +69,21 @@
                 </div>
             </div>
 
-            <!-- responsive movile 1 start -->
-            <div class="card product-item movile-1">
+            <!-- responsive movile 600px start -->
+            <div class="card product-item movile-600">
                 <div class="row align-items-center">
-                    <div class="col-12 d-flex justify-content-between">
-                        <p class="product-code-r">Code: 1111111111</p>
-                        <span class="material-icons button-close">close</span>
+                    <div class="col fg-0">
+                        <i class="far fa-image"></i>
                     </div>
-                    <div class="col-12 mb-2">
+                    <div class="col mb-2">
+                        <p class="product-code-r">Code: 1111111111</p>
                         <p class="product-brand">Marca del producto</p>
                         <p class="product-name">Nombre del producto</p>
                     </div>
-                    <div class="col my-1 d-flex justify-content-center">
-                        <i class="far fa-image"></i>
-                    </div>
-                    <div class="col mt-1">
-                        <div class="mb-2 d-flex justify-content-center">
-                            <p class="product-price">$39.990</p>
+                    <div class="col">
+                        <div class="price">
+                            <p class="product-price mb-1">$39.990</p>
+                            <p class="product-dcto mb-2">40% dcto.</p>
                         </div>
                         <div class="input-group justify-content-center">
                             <button type="button" class="btn btn-secondary">
@@ -100,6 +99,7 @@
 
                 <div class="row">
                     <div class="col item-options">
+                        <p type="button" class="mb-0 me-4">Eliminar de la lista</p>
                         <div class="form-check">
                             <input class="form-check-input" type="checkbox" value="true" id="product-id" checked> <!-- <--- dinamic ID -->
                             <label class="form-check-label" for="product-id"> <!-- <--- dinamic ID -->
@@ -109,35 +109,82 @@
                     </div>
                 </div>
             </div>
-            <!-- responsive movile 1 end -->
+            <!-- responsive movile 600px end -->
 
-            <!-- responsive movile 2 start -->
+            <!-- responsive movile 450px start -->
+            <div class="card product-item movile-450">
+                <div class="row align-items-center">
+                    <div class="col-12 d-flex justify-content-between">
+                        <p class="product-brand">Marca del producto</p>
+                        <p class="product-code">Code: 1111111111</p>
+                    </div>
+                    <div class="col-12 mb-2">
+                        <p class="product-name">Nombre del producto</p>
+                    </div>
+                    <div class="col fg-0 mt-1 d-flex justify-content-start">
+                        <i class="far fa-image"></i>
+                    </div>
+                    <div class="col price">
+                        <p class="product-price">$1.539.990</p>
+                        <p class="product-dcto mb-2">40% dcto.</p>
+                    </div>
+                    <div class="col fg-075">
+                        <div class="input-group justify-content-center">
+                            <button type="button" class="btn btn-secondary">
+                                <span><i class="fas fa-minus icon-cant"></i></span>
+                            </button>
+                            <p class="cant-product">1</p>
+                            <button type="button" class="btn btn-secondary">
+                                <samp><i class="fas fa-plus icon-cant"></i></samp>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col item-options">
+                        <p type="button" class="mb-0 me-4">Eliminar de la lista</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="true" id="product-id" checked> <!-- <--- dinamic ID -->
+                            <label class="form-check-label" for="product-id"> <!-- <--- dinamic ID -->
+                            <p class="mb-0">Agregar a la compra</p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- responsive movile 450px end -->
+
+            <!-- responsive movile 340px start -->
             
-            <div class="card product-item movile-2">
+            <div class="card product-item movile-340">
                 <div class="row align-items-center">
                     <div class="col-12 d-flex justify-content-between">
-                        <p class="product-code-r">Code: 1111111111</p>
+                        <p class="product-code-r mb-0">Code: 1111111111</p>
                         <span class="material-icons button-close">close</span>
                     </div>
                     <div class="col-12 mb-2">
                         <p class="product-brand">Marca del producto</p>
                         <p class="product-name">Nombre del producto</p>
                     </div>
-                    <div class="col-12 my-1 d-flex justify-content-center">
-                        <i class="far fa-image"></i>
+                    <div class="col d-flex justify-content-start">
+                        <i class="far fa-image fa-image-r"></i>
                     </div>
-                    <div class="col-12 my-1 d-flex justify-content-center">
-                        <p class="product-price">$39.990</p>
-                    </div>
-                    <div class="col-12 mt-1">
-                        <div class="input-group justify-content-center">
-                            <button type="button" class="btn btn-secondary">
-                                <span><i class="fas fa-minus icon-cant"></i></span>
-                            </button>
-                            <p class="cant-product">1</p>
-                            <button type="button" class="btn btn-secondary">
-                                <samp><i class="fas fa-plus icon-cant"></i></samp>
-                            </button>
+                    <div class="col">
+                        <div class="price">
+                            <p class="product-price mb-0">$1.539.990</p>
+                            <p class="product-dcto mb-2">40% dcto.</p>
+                        </div>
+                        <div class="col-12 mt-1">
+                            <div class="input-group justify-content-center">
+                                <button type="button" class="btn btn-secondary">
+                                    <span><i class="fas fa-minus icon-cant"></i></span>
+                                </button>
+                                <p class="cant-product">1</p>
+                                <button type="button" class="btn btn-secondary">
+                                    <samp><i class="fas fa-plus icon-cant"></i></samp>
+                                </button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -153,7 +200,55 @@
                     </div>
                 </div>
             </div>
-            <!-- responsive movile 2 end -->
+            <!-- responsive movile 340px end -->
+
+            <!-- last responsive movile start -->
+
+            <div class="card product-item movile">
+                <div class="row align-items-center">
+                    <div class="col-12 d-flex justify-content-between">
+                        <p class="product-code-r mb-0">Code: 1111111111</p>
+                        <span class="material-icons button-close">close</span>
+                    </div>
+                    <div class="col-12 mb-2">
+                        <p class="product-brand">Marca del producto</p>
+                        <p class="product-name">Nombre del producto</p>
+                    </div>
+                    <div class="col-12 mb-2 d-flex justify-content-center">
+                        <i class="far fa-image fa-image-last"></i>
+                    </div>
+                    <div class="col">
+                        <div class="price">
+                            <p class="product-price mb-0">$1.539.990</p>
+                            <p class="product-dcto mb-2">40% dcto.</p>
+                        </div>
+                        <div class="col-12 mt-1">
+                            <div class="input-group justify-content-center">
+                                <button type="button" class="btn btn-secondary">
+                                    <span><i class="fas fa-minus icon-cant"></i></span>
+                                </button>
+                                <p class="cant-product">1</p>
+                                <button type="button" class="btn btn-secondary">
+                                    <samp><i class="fas fa-plus icon-cant"></i></samp>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col item-options">
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="true" id="product-id" checked> <!-- <--- dinamic ID -->
+                            <label class="form-check-label" for="product-id"> <!-- <--- dinamic ID -->
+                            <p class="mb-0">Agregar a la compra</p>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- last responsive movile start -->
     
             <!-- for end here -->
         </div>
