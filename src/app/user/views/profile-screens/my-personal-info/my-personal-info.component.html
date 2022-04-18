@@ -34,8 +34,9 @@
                     <div class="card-body">
                         <form  [formGroup]="updateForm" (ngSubmit)="onSubmit()">
                             <div class="row content">
+
                                 <div class="input col-12 col-xl-4 col-sm-6">
-                                    <mat-form-field class="example-form-field mx-2" appearance="outline">
+                                    <mat-form-field class="form-field mx-2" appearance="outline">
                                         <mat-label>Nombre</mat-label>
                                         <input matInput type="text" formControlName="name" [(ngModel)]="value">
                                         <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
@@ -44,7 +45,7 @@
                                     </mat-form-field>
                                 </div>
                                 <div class="input col-12 col-xl-4 col-sm-6"> 
-                                    <mat-form-field class="example-form-field mx-2" appearance="outline">
+                                    <mat-form-field class="form-field mx-2" appearance="outline">
                                         <mat-label>Apellido Paterno</mat-label>
                                         <input matInput type="text" formControlName="lastNameP" [(ngModel)]="value">
                                         <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
@@ -53,7 +54,7 @@
                                     </mat-form-field>
                                 </div>
                                 <div class="input col-12 col-xl-4 col-sm-6">
-                                    <mat-form-field class="example-form-field mx-2" appearance="outline">
+                                    <mat-form-field class="form-field mx-2" appearance="outline">
                                         <mat-label>Apellido Materno</mat-label>
                                         <input matInput type="text" formControlName="lastNameM" [(ngModel)]="value">
                                         <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
@@ -62,7 +63,7 @@
                                     </mat-form-field>
                                 </div>
                                 <div class="input col-12 col-xl-4 col-sm-6">
-                                    <mat-form-field class="example-form-field mx-2" appearance="outline">
+                                    <mat-form-field class="form-field mx-2" appearance="outline">
                                         <mat-label>Nombre</mat-label>
                                         <input matInput type="text" formControlName="run" [(ngModel)]="value">
                                         <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
@@ -71,8 +72,8 @@
                                     </mat-form-field>
                                 </div>
                                 <!-- <div class="input col-12 col-xl-4 col-sm-6">
-                                    <mat-form-field class="example-form-field mx-2" appearance="outline">
-                                        <mat-label>Nombre</mat-label>
+                                    <mat-form-field class="form-field mx-2" appearance="outline">
+                                        <mat-label>Numero celular</mat-label>
                                         <input matInput type="text" [(ngModel)]="value">
                                         <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
                                         <mat-icon>close</mat-icon>
@@ -81,7 +82,7 @@
                                 </div> -->
         
                                 <div class="input col-12 col-xl-4 col-sm-6">
-                                    <mat-form-field  class="example-form-field mx-2" appearance="outline">
+                                    <mat-form-field  class="form-field mx-2" appearance="outline">
                                         <mat-label>Enter your email</mat-label>
                                         <input matInput placeholder="pat@example.com"  formControlName="email" required>
                                         <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
