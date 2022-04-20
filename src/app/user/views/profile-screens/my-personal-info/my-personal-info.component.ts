@@ -24,6 +24,7 @@ export class MyPersonalInfoComponent implements OnInit {
       lastNameP: ['', [Validators.required, Validators.pattern('[a-zA-Z]{2,32}')]],
       lastNameM: ['', [Validators.required, Validators.pattern('[a-zA-Z]{2,32}')]],
       run: ['', [Validators.required, Validators.pattern('[a-zA-Z]{2,32}')]],
+      phone: ['', [Validators.required, Validators.pattern('[0-9]{9}')]],
       email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$")]],
     });
   }
@@ -35,7 +36,9 @@ export class MyPersonalInfoComponent implements OnInit {
   get lastNameP() { return this.updateForm?.get('lastNameP'); }
   get lastNameM() { return this.updateForm?.get('lastNameM'); }
   get run() { return this.updateForm?.get('run'); }
+  get phone() { return this.updateForm?.get('phone'); }
   get email() { return this.updateForm?.get('email'); }
+
   public getNameErrorMessage() {
     if (this.name?.hasError('required')) {
       return 'Se requiere su Nombre';
