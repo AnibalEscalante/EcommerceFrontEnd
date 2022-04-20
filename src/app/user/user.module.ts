@@ -13,6 +13,7 @@ import { ProfileScreenComponent } from './views/profile-screen/profile-screen.co
 import { MyShoppingsComponent } from './views/profile-screens/my-shoppings/my-shoppings.component';
 import { MyPersonalInfoComponent } from './views/profile-screens/my-personal-info/my-personal-info.component';
 import { MyAddressComponent } from './views/profile-screens/my-address/my-address.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { MyAddressComponent } from './views/profile-screens/my-address/my-addres
     ProfileScreenComponent,
     MyShoppingsComponent,
     MyPersonalInfoComponent,
-    MyAddressComponent
+    MyAddressComponent,
+    SidebarComponent
   ],
   imports: [
     CommonModule,
