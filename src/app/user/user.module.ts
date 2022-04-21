@@ -10,10 +10,10 @@ import { BasketScreenComponent } from './views/basket-screen/basket-screen.compo
 import { ProductInfoScreenComponent } from './views/product-info-screen/product-info-screen.component';
 import { SharedModule } from '../shared/shared.module';
 import { ProfileScreenComponent } from './views/profile-screen/profile-screen.component';
-import { MyShoppingsComponent } from './views/profile-screens/my-shoppings/my-shoppings.component';
 import { MyPersonalInfoComponent } from './views/profile-screens/my-personal-info/my-personal-info.component';
 import { MyAddressComponent } from './views/profile-screens/my-address/my-address.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { MyShoppingComponent } from './views/profile-screens/my-shopping/my-shopping.component';
 
 
 @NgModule({
@@ -24,10 +24,10 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     BasketScreenComponent,
     ProductInfoScreenComponent,
     ProfileScreenComponent,
-    MyShoppingsComponent,
     MyPersonalInfoComponent,
     MyAddressComponent,
-    SidebarComponent
+    SidebarComponent,
+    MyShoppingComponent
   ],
   imports: [
     CommonModule,
