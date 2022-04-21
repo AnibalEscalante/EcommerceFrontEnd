@@ -4,10 +4,9 @@ import { BasketScreenComponent } from './views/basket-screen/basket-screen.compo
 import { CategoryScreenComponent } from './views/category-screen/category-screen.component';
 import { HomeScreenComponent } from './views/home-screen/home-screen.component';
 import { ProductInfoScreenComponent } from './views/product-info-screen/product-info-screen.component';
-import { ProfileScreenComponent } from './views/profile-screen/profile-screen.component';
 import { MyAddressComponent } from './views/profile-screens/my-address/my-address.component';
 import { MyPersonalInfoComponent } from './views/profile-screens/my-personal-info/my-personal-info.component';
-import { MyShoppingsComponent } from './views/profile-screens/my-shoppings/my-shoppings.component';
+import { MyShoppingComponent } from './views/profile-screens/my-shopping/my-shopping.component';
 
 const routes: Routes = [
   /* {
@@ -37,7 +36,7 @@ const routes: Routes = [
   },
   {
     path: 'profile/myshopping',
-    component: MyShoppingsComponent
+    component: MyShoppingComponent
   },
   {
     path: 'profile/myaddress',
