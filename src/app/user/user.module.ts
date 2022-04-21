@@ -14,6 +14,7 @@ import { MyShoppingsComponent } from './views/profile-screens/my-shoppings/my-sh
 import { MyPersonalInfoComponent } from './views/profile-screens/my-personal-info/my-personal-info.component';
 import { MyAddressComponent } from './views/profile-screens/my-address/my-address.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ProductItemComponent } from './components/product-item/product-item.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     MyShoppingsComponent,
     MyPersonalInfoComponent,
     MyAddressComponent,
-    SidebarComponent
+    SidebarComponent,
+    ProductItemComponent
   ],
   imports: [
     CommonModule,
