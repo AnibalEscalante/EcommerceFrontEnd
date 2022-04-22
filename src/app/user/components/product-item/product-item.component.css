@@ -14,12 +14,12 @@
 .fg-075 {
   flex-grow: 0.75;
 }
-@media (min-width: 341px) {
+@media (min-width: 355px) {
   .movile {
     display: none;
   }
 }
-@media (min-width: 451px) {
+@media (min-width: 461px) {
   .movile-340 {
     display: none;
   }
@@ -34,12 +34,12 @@
     display: none;
   }
 }
-@media (max-width: 340px) {
+@media (max-width: 355px) {
   .movile-340 {
     display: none;
   }
 }
-@media (max-width: 450px) {
+@media (max-width: 460px) {
   .movile-450 {
     display: none;
   }
