@@ -7,7 +7,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BasketScreenComponent implements OnInit {
   
-  constructor() {}
+  public pos: string;
+
+  constructor() {
+    this.pos = 'step1'
+  }
+
+  public changePos(newPos:string){
+    this.pos = newPos;
+  }
 
   ngOnInit(): void {
   }

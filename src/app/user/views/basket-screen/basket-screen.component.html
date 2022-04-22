@@ -6,48 +6,72 @@
                 <div class="progress">
                   <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
-                <button type="button" class="btn steep-phase start-0">1</button>
-                <button type="button" class="btn steep-phase start-50">2</button>
-                <button type="button" class="btn steep-phase start-100">3</button>
+                <button (click)="changePos('step1')" type="button" class="btn steep-phase start-0">1</button>
+                <button (click)="changePos('step2')" type="button" class="btn steep-phase start-50">2</button>
+                <button (click)="changePos('step3')" type="button" class="btn steep-phase start-100">3</button>
             </div>
         </div> 
     </div>
-    <div class="row justify-content-evenly mt-2">
-        <div class="col-11 col-lg-7">
-            <div class="card">
-                <h5 class="title-list">Carro: 2 productos</h5>
-            </div>
-            <div class="content-list"> <!-- a for here -->
-                <app-product-item></app-product-item>
-            </div>
-        </div>
 
-        <div class="col-4 col-lg-3 d-none d-lg-block">
-            <div class="card resume">
-                <h5 class="title-resume">Resumen de Compra</h5>
-                <div class="d-flex justify-content-between p-2">
-                    <p class="total-price">Total:</p>
-                    <p class="total-price">$ 45.000</p>
+    <!-- start step 1 -->
+
+    <div *ngIf="pos === 'step1'" class="step-1">
+        <div class="row justify-content-evenly mt-2">
+            <div class="col-11 col-lg-7">
+                <div class="card">
+                    <h5 class="title-list">Carro: 2 productos</h5>
                 </div>
-                <button type="button" class="btn btn-continue">Continuar compra</button>
-            </div>
-        </div>
-
-        <!-- responsive start -->
-
-        <div class="col-11 d-lg-none summary-purchase">
-            <div class="card resume shadow">
-                <h5 class="title-resume">Resumen de Compra</h5>
-                <div class="d-flex justify-content-between p-2">
-                    <p class="total-price">Total:</p>
-                    <p class="total-price">$ 45.000</p>
+                <div class="content-list"> <!-- a for here -->
+                    <app-product-item></app-product-item>
                 </div>
-                <button type="button" class="btn btn-continue">Continuar compra</button>
             </div>
-        </div>
-
-        <!-- responsive end -->
-    </div>
     
+            <div class="col-4 col-lg-3 d-none d-lg-block">
+                <div class="card resume">
+                    <h5 class="title-resume">Resumen de Compra</h5>
+                    <div class="d-flex justify-content-between p-2">
+                        <p class="total-price">Total:</p>
+                        <p class="total-price">$ 45.000</p>
+                    </div>
+                    <button (click)="changePos('step2')" type="button" class="btn btn-continue">Continuar compra</button>
+                </div>
+            </div>
+    
+            <!-- responsive start -->
+    
+            <div class="col-11 d-lg-none summary-purchase">
+                <div class="card resume shadow">
+                    <h5 class="title-resume">Resumen de Compra</h5>
+                    <div class="d-flex justify-content-between p-2">
+                        <p class="total-price">Total:</p>
+                        <p class="total-price">$ 45.000</p>
+                    </div>
+                    <button (click)="changePos('step2')" type="button" class="btn btn-continue">Continuar compra</button>
+                </div>
+            </div>
+    
+            <!-- responsive end -->
+        </div>
+    </div>
+
+    <!-- end step 1 -->
+
+    <!-- start step 2 -->
+
+    <div *ngIf="pos === 'step2'" class="step-2">
+        <h1 class="m-4 text-center">step2</h1>
+    </div>
+
+    <!-- end step 2 -->
+
+    <!-- start step 3 -->
+
+    <div *ngIf="pos === 'step3'" class="step-3">
+        <h1 class="m-4 text-center">step3</h1>
+    </div>
+
+    <!-- end step 3 -->
+
+
 </div>
 <app-footer></app-footer>

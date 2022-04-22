@@ -31,6 +31,9 @@
   margin-top: 1rem;
   border-radius: 5px;
 }
+.btn:focus {
+  box-shadow: none;
+}
 .resume {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
