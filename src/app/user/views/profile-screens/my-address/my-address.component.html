@@ -7,7 +7,14 @@
             </div>
             <div class="col-12 col-lg-8">
                 <div class="card myAddress my-4">
-                    <h1 class="p-3 m-0">Mi direccion</h1>
+                  <div class="row">
+                    <div class="col">
+                        <h1 class="p-3 m-0">Mi direccion</h1>
+                    </div>
+                    <div class="button-edit col">
+                          <i type="button" class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#editAddress"></i>
+                    </div>
+                </div>
                 </div>
                 <div class="card myAddress my-4">
                     <div class="card-body">
@@ -46,9 +53,9 @@
 
                           </div>
                         </form>
-                        <div class="button-save">
+                       <!--  <div class="button-save">
                           <button type="button" class="btn btn-save">Guardar</button>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -58,3 +65,60 @@
 
 
 <app-footer></app-footer>
+
+<div class="modal fade " id="editAddress" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <form class="example-form">
+          <div class="row">
+            <mat-form-field class="col example-full-width" appearance="outline">
+              <mat-label>Nombre</mat-label>
+              <input matInput>
+            </mat-form-field>
+            <mat-form-field class="col example-full-width" appearance="outline">
+              <mat-label>Apellidos</mat-label>
+              <input matInput>
+            </mat-form-field>
+          </div>
+          <p>
+            <mat-form-field class="example-full-width" appearance="outline">
+              <mat-label>Dirección</mat-label>
+              <textarea matInput placeholder="Ex. 100 Main St">1600 Amphitheatre Pkwy</textarea>
+            </mat-form-field>
+  
+          </p>
+          <div class="row">
+            <mat-form-field class="col example-full-width " appearance="outline">
+              <mat-label>Ciudad</mat-label>
+              <input matInput placeholder="Ej. Santiago">
+            </mat-form-field>
+            <mat-form-field class="col example-full-width " appearance="outline">
+              <mat-label>Comuna</mat-label>
+              <input matInput placeholder="Ej. Maipú">
+            </mat-form-field>
+            <mat-form-field class="col example-full-width" appearance="outline">
+              <mat-label>Codigo postal</mat-label>
+              <input matInput #postalCode maxlength="5" placeholder="Ex. 94105" value="94043">
+              <mat-hint align="end">{{postalCode.value.length}} / 5</mat-hint>
+            </mat-form-field>
+
+          </div>
+        </form>
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <div class="button-save-pw">
+          <div class="button-save">
+            <button type="button" class="btn btn-save">Guardar</button>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>

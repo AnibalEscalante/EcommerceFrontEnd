@@ -7,6 +7,7 @@ import { ProductInfoScreenComponent } from './views/product-info-screen/product-
 import { MyAddressComponent } from './views/profile-screens/my-address/my-address.component';
 import { MyPersonalInfoComponent } from './views/profile-screens/my-personal-info/my-personal-info.component';
 import { MyShoppingComponent } from './views/profile-screens/my-shopping/my-shopping.component';
+import { PaymentMethodComponent } from './views/profile-screens/payment-method/payment-method.component';
 
 const routes: Routes = [
   /* {
@@ -41,6 +42,10 @@ const routes: Routes = [
   {
     path: 'profile/myaddress',
     component: MyAddressComponent
+  },
+  {
+    path: 'profile/mypaymentmethod',
+    component: PaymentMethodComponent
   }
 ];
 
