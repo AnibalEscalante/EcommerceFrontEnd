@@ -34,6 +34,10 @@
 .btn:focus {
   box-shadow: none;
 }
+.btn:disabled {
+  background-color: #6C757D;
+  opacity: 100;
+}
 .resume {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -66,4 +70,22 @@
   font-weight: 500;
   font-size: large;
   border-radius: 20px;
+}
+.direction-card {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.fa-map-marker-alt {
+  font-size: 25px;
+}
+.direction {
+  font-size: large;
+  margin-bottom: 0px;
+  margin-left: 0.5rem;
+}
+.edit-direction {
+  margin-bottom: 0px;
 }
