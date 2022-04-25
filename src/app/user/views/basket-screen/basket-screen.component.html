@@ -59,8 +59,29 @@
     <!-- start step 2 -->
 
     <div *ngIf="pos === 'step2'" class="step-2">
-        <h1 class="m-4 text-center">step2</h1>
-        <button (click)="changePos('step3')" type="button" class="btn btn-continue">Continuar compra</button>
+        <div class="row justify-content-evenly mt-2">
+            <div class="col-11 col-lg-7">
+                <div class="card direction-card">
+                    <div class="d-flex align-items-baseline">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p class="direction">Dirección:</p>
+                        <p class="direction">Calle Colo-Colo, 523, Cerro O'Higgins</p>
+                    </div>
+                    <div>
+                        <p type="button" class="edit-direction">
+                            cambiar
+                            <i class="fas fa-edit"></i>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-4 col-lg-3">
+                <div class="card p-2">
+                    <h5 class="title-resume">Resumen de Compra</h5>
+                    <button (click)="changePos('step3')" type="button" class="btn btn-continue">Ir a pagar</button>
+                </div>
+            </div>
+        </div>
     </div>
 
     <!-- end step 2 -->

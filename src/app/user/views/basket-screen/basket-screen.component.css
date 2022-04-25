@@ -71,3 +71,21 @@
   font-size: large;
   border-radius: 20px;
 }
+.direction-card {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  align-items: baseline;
+  justify-content: space-between;
+}
+.fa-map-marker-alt {
+  font-size: 25px;
+}
+.direction {
+  font-size: large;
+  margin-bottom: 0px;
+  margin-left: 0.5rem;
+}
+.edit-direction {
+  margin-bottom: 0px;
+}

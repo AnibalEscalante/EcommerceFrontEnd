@@ -11,7 +11,7 @@ export class BasketScreenComponent implements OnInit {
   public widthBar: string;
 
   constructor() {
-    this.pos = 'step1',
+    this.pos = 'step2',
     this.widthBar = '0%'
   }
 
