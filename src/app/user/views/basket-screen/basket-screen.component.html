@@ -4,11 +4,11 @@
         <div class="col-10 justify-content-center mt-2">
             <div class="position-relative m-4">
                 <div class="progress">
-                  <div class="progress-bar" role="progressbar" style="width: 50%;" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                  <div [ngStyle]="{'width': widthBar}" class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
                 </div>
                 <button (click)="changePos('step1')" type="button" class="btn steep-phase start-0">1</button>
-                <button (click)="changePos('step2')" type="button" class="btn steep-phase start-50">2</button>
-                <button (click)="changePos('step3')" type="button" class="btn steep-phase start-100">3</button>
+                <button [disabled]="pos !== 'step2' && pos !== 'step3'" (click)="changePos('step2')" type="button" class="btn steep-phase start-50">2</button>
+                <button [disabled]="pos !== 'step3'" (click)="changePos('step3')" type="button" class="btn steep-phase start-100">3</button>
             </div>
         </div> 
     </div>
@@ -60,6 +60,7 @@
 
     <div *ngIf="pos === 'step2'" class="step-2">
         <h1 class="m-4 text-center">step2</h1>
+        <button (click)="changePos('step3')" type="button" class="btn btn-continue">Continuar compra</button>
     </div>
 
     <!-- end step 2 -->
