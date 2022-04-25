@@ -7,8 +7,16 @@
             </div>
             <div class="col-12 col-lg-8">
                 <div class="card personal-info my-4">
-                    <h1 class="p-3 m-0">Datos Personales</h1>
+                    <div class="row">
+                        <div class="col">
+                            <h1 class="p-3 m-0">Datos Personales</h1>
+                        </div>
+                        <div class="button-edit col">
+                              <i type="button" class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#editPersonalInfo"></i>
+                        </div>
+                    </div>
                 </div>
+                
                 <div class="card personal-info my-4">
                     <div class="card-body">
                         <form  [formGroup]="updateForm" (ngSubmit)="onSubmit()">
@@ -71,13 +79,20 @@
                                 </div>
                             </div>
                         </form>
-                        <div class="button-save-info">
+                       <!--  <div class="button-save-info">
                             <button type="button" class="btn btn-save-info">Guardar</button>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
                 <div class="card change-password my-4">
-                    <h1 class="p-3 m-0">Cambiar contraseña</h1>
+                    <div class="row">
+                        <div class="col">
+                            <h1 class="p-3 m-0">Cambiar contraseña</h1>
+                        </div>
+                        <div class="button-edit col">
+                              <i type="button" class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#editPassword"></i>
+                        </div>
+                    </div>
                 </div>
                 <div class="card change-password my-4">
                     <div class="card-body">
@@ -86,7 +101,7 @@
 
                                 <div class="input col">
                                     <mat-form-field class="form-field mx-2" appearance="outline">
-                                        <mat-label>Nombre</mat-label>
+                                        <mat-label>Contraseña</mat-label>
                                         <input matInput type="text" formControlName="name" [(ngModel)]="value">
                                         <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
                                         <mat-icon>close</mat-icon>
@@ -95,7 +110,7 @@
                                 </div>
                                 <div class="input col"> 
                                     <mat-form-field class="form-field mx-2" appearance="outline">
-                                        <mat-label>Apellido Paterno</mat-label>
+                                        <mat-label>Repetir contraseña</mat-label>
                                         <input matInput type="text" formControlName="lastNameP" [(ngModel)]="value">
                                         <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
                                         <mat-icon>close</mat-icon>
@@ -104,15 +119,144 @@
                                 </div>
                             </div>
                         </form>
-                        <div class="button-save-pw">
+                        <!-- <div class="button-save-pw">
                             <button type="button" class="btn btn-save-pw">Guardar</button>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </div>
-
-
 <app-footer></app-footer>
+
+
+<!-- /////////////////////////////////////////////////modal///////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////////////////////////////////////////////////////////////////////
+-->
+<div class="modal fade " id="editPersonalInfo" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form  [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+                <div class="row content">
+
+                    <div class="input col-12 col-xl-4 col-sm-6">
+                        <mat-form-field class="form-field mx-2" appearance="outline">
+                            <mat-label>Nombre</mat-label>
+                            <input matInput type="text" formControlName="name" [(ngModel)]="value">
+                            <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                            <mat-icon>close</mat-icon>
+                            </button>
+                        </mat-form-field>
+                    </div>
+                    <div class="input col-12 col-xl-4 col-sm-6"> 
+                        <mat-form-field class="form-field mx-2" appearance="outline">
+                            <mat-label>Apellido Paterno</mat-label>
+                            <input matInput type="text" formControlName="lastNameP" [(ngModel)]="value">
+                            <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                            <mat-icon>close</mat-icon>
+                            </button>
+                        </mat-form-field>
+                    </div>
+                    <div class="input col-12 col-xl-4 col-sm-6">
+                        <mat-form-field class="form-field mx-2" appearance="outline">
+                            <mat-label>Apellido Materno</mat-label>
+                            <input matInput type="text" formControlName="lastNameM" [(ngModel)]="value">
+                            <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                            <mat-icon>close</mat-icon>
+                            </button>
+                        </mat-form-field>
+                    </div>
+                    <div class="input col-12 col-xl-4 col-sm-6">
+                        <mat-form-field class="form-field mx-2" appearance="outline">
+                            <mat-label>Nombre</mat-label>
+                            <input matInput type="text" formControlName="run" [(ngModel)]="value">
+                            <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                            <mat-icon>close</mat-icon>
+                            </button>
+                        </mat-form-field>
+                    </div>
+                    <div class="input col-12 col-xl-4 col-sm-6">
+                        <mat-form-field class="form-field mx-2" appearance="outline">
+                            <mat-label>Numero celular</mat-label>
+                            <input matInput type="text" formControlName="phone" [(ngModel)]="value">
+                            <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                            <mat-icon>close</mat-icon>
+                            </button>
+                        </mat-form-field>
+                    </div>
+
+                    <div class="input col-12 col-xl-4 col-sm-6">
+                        <mat-form-field  class="form-field mx-2" appearance="outline">
+                            <mat-label>Enter your email</mat-label>
+                            <input matInput placeholder="pat@example.com"  formControlName="email" required>
+                            <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                                <mat-icon>close</mat-icon>
+                            </button>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <div class="button-save-pw">
+            <button type="button" class="btn btn-save-pw">Guardar</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="modal fade " id="editPassword" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form  [formGroup]="updateForm" (ngSubmit)="onSubmit()">
+                <div class="row content">
+
+                    <div class="input col">
+                        <mat-form-field class="form-field mx-2" appearance="outline">
+                            <mat-label>Contraseña</mat-label>
+                            <input matInput type="text" formControlName="name" [(ngModel)]="value">
+                            <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                            <mat-icon>close</mat-icon>
+                            </button>
+                        </mat-form-field>
+                    </div>
+                    <div class="input col"> 
+                        <mat-form-field class="form-field mx-2" appearance="outline">
+                            <mat-label>Repetir contraseña</mat-label>
+                            <input matInput type="text" formControlName="lastNameP" [(ngModel)]="value">
+                            <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="value=''">
+                            <mat-icon>close</mat-icon>
+                            </button>
+                        </mat-form-field>
+                    </div>
+                </div>
+            </form>
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          <div class="button-save-pw">
+            <button type="button" class="btn btn-save-pw">Guardar</button>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
