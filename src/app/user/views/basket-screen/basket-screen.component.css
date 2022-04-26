@@ -9,7 +9,7 @@
 }
 .progress {
   position: relative;
-  background-color: #6C757D;
+  background-color: #adb5bd;
   top: -5px;
   height: 10px;
 }
@@ -35,7 +35,7 @@
   box-shadow: none;
 }
 .btn:disabled {
-  background-color: #6C757D;
+  background-color: #adb5bd;
   opacity: 100;
 }
 .resume {
@@ -77,6 +77,7 @@
   padding: 1rem;
   align-items: baseline;
   justify-content: space-between;
+  margin-bottom: 1rem;
 }
 .fa-map-marker-alt {
   font-size: 25px;
@@ -86,6 +87,67 @@
   margin-bottom: 0px;
   margin-left: 0.5rem;
 }
-.edit-direction {
+.edit {
   margin-bottom: 0px;
+}
+.email-card {
+  padding: 1rem;
+}
+.type-delivery-title {
+  font-size: 25px;
+  margin-bottom: 0px;
+}
+.type-delivery {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: #c4c4c4;
+  padding: 1rem;
+  cursor: pointer;
+}
+.type-delivery-active {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-style: solid;
+  border-width: 2px;
+  border-radius: 5px;
+  border-color: #9100F5;
+  padding: 1rem;
+  cursor: pointer;
+}
+.fa-delivery-option {
+  font-size: 25px;
+  margin-right: 1rem;
+}
+.fa-delivery-option-active {
+  font-size: 25px;
+  margin-right: 1rem;
+  color: #9100F5;
+}
+.date-store {
+  font-size: large;
+  margin-bottom: 0px;
+}
+.direction-store {
+  font-size: larger;
+  color: #6C757D;
+  margin-bottom: 0px;
+  font-weight: 300;
+}
+.email {
+  margin-bottom: 0px;
+  font-size: large;
+}
+.price-delivery {
+  font-size: larger;
+  margin-bottom: 0px;
+  font-weight: 500;
+  color: green;
+}
+.aa {
+  display: flex;
 }

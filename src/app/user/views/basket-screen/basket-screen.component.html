@@ -68,17 +68,50 @@
                         <p class="direction">Calle Colo-Colo, 523, Cerro O'Higgins</p>
                     </div>
                     <div>
-                        <p type="button" class="edit-direction">
+                        <p type="button" class="edit">
                             cambiar
                             <i class="fas fa-edit"></i>
                         </p>
+                    </div>
+                </div>
+                <div class="card email-card">
+                    <div class="col d-flex justify-content-between mb-3">
+                        <p class="email">correoElectronico@gmail.com</p>
+                        <div>
+                            <p type="button" class="edit">
+                                cambiar
+                                <i class="fas fa-edit"></i>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col mb-3">
+                        <h5 class="type-delivery-title">Tipo de entrega:</h5>
+                    </div>
+                    <div (click)="changeActiveStore()" [ngClass]="{'type-delivery': !activeStore, 'type-delivery-active': activeStore}" class="col mb-3">
+                        <div class="d-flex align-items-center">
+                            <i [ngClass]="{'fa-delivery-option': !activeStore, 'fa-delivery-option-active': activeStore}" class="fas fa-store"></i>
+                            <div class="me-2">
+                                <p class="date-store">Retiro desde 30 Septiembre</p>
+                                <p class="direction-store">Amazon Viña del Mar</p>
+                            </div>
+                            <div class="d-flex align-self-end">
+                                <p type="button" class="edit">
+                                    cambiar
+                                    <i class="fas fa-edit"></i>
+                                </p>
+                            </div>
+                        </div>
+                        <p class="price-delivery">Gratis</p>
+                    </div>
+                    <div (click)="changeActiveDelivery()" [ngClass]="{'type-delivery': !activeDelivery, 'type-delivery-active': activeDelivery}" class="col type-delivery">
+                        <i [ngClass]="{'fa-delivery-option': !activeDelivery, 'fa-delivery-option-active': activeDelivery}" class="fas fa-truck"></i>
                     </div>
                 </div>
             </div>
             <div class="col-4 col-lg-3">
                 <div class="card p-2">
                     <h5 class="title-resume">Resumen de Compra</h5>
-                    <button (click)="changePos('step3')" type="button" class="btn btn-continue">Ir a pagar</button>
+                    <button [disabled]="activeDelivery == false && activeStore == false" (click)="changePos('step3')" type="button" class="btn btn-continue">Ir a pagar</button>
                 </div>
             </div>
         </div>
