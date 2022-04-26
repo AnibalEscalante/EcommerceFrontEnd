@@ -9,10 +9,36 @@ export class BasketScreenComponent implements OnInit {
   
   public pos: string;
   public widthBar: string;
+  public activeStore: boolean;
+  public activeDelivery: boolean;
 
   constructor() {
     this.pos = 'step2',
-    this.widthBar = '0%'
+    this.widthBar = '0%',
+    this.activeStore = false,
+    this.activeDelivery = false
+  }
+
+  public changeActiveDelivery(){
+    if (this.activeDelivery == false && this.activeStore == false)
+      this.activeDelivery = true;
+    else{
+      if (this.activeDelivery == false){
+        this.activeDelivery = true;
+        this.activeStore = false;
+      }
+    }
+  }
+
+  public changeActiveStore(){
+    if (this.activeDelivery == false && this.activeStore == false)
+      this.activeStore = true;
+    else{
+      if (this.activeStore == false){
+        this.activeStore = true;
+        this.activeDelivery = false;
+      }
+    }
   }
 
   public changePos(newPos:string){
