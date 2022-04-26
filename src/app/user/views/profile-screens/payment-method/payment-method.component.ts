@@ -1,14 +1,19 @@
 import { Component, OnInit } from '@angular/core';
 
+
+
 @Component({
   selector: 'app-payment-method',
   templateUrl: './payment-method.component.html',
-  styleUrls: ['./payment-method.component.less']
+  styleUrls: ['./payment-method.component.less'],
+  
 })
 export class PaymentMethodComponent implements OnInit {
-
-  constructor() { }
-
+  
+  public paymentMethodExist: boolean;
+  constructor() { 
+    this.paymentMethodExist = true;
+  }
   ngOnInit(): void {
   }
 
