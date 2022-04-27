@@ -60,12 +60,11 @@
 
     <div *ngIf="pos === 'step2'" class="step-2">
         <div class="row justify-content-evenly mt-2">
-            <div class="col-11 col-lg-7">
+            <div class="col-11 col-lg-7 mb-3">
                 <div class="card direction-card">
                     <div class="d-flex align-items-baseline">
                         <i class="fas fa-map-marker-alt"></i>
-                        <p class="direction">Dirección:</p>
-                        <p class="direction">Calle Colo-Colo, 523, Cerro O'Higgins</p>
+                        <p class="direction">Dirección: Calle Colo-Colo, 523, Cerro O'Higgins</p>
                     </div>
                     <div>
                         <p type="button" class="edit">
@@ -75,8 +74,9 @@
                     </div>
                 </div>
                 <div class="card email-card">
+                    <h5 class="bill">Envío de factura y comprobante</h5>
                     <div class="col d-flex justify-content-between mb-3">
-                        <p class="email">correoElectronico@gmail.com</p>
+                        <p class="email">Correo: correoElectronico@gmail.com</p>
                         <div>
                             <p type="button" class="edit">
                                 cambiar
@@ -101,17 +101,33 @@
                                 </p>
                             </div>
                         </div>
-                        <p class="price-delivery">Gratis</p>
+                        <p class="price-pick-up">Gratis</p>
                     </div>
                     <div (click)="changeActiveDelivery()" [ngClass]="{'type-delivery': !activeDelivery, 'type-delivery-active': activeDelivery}" class="col type-delivery">
-                        <i [ngClass]="{'fa-delivery-option': !activeDelivery, 'fa-delivery-option-active': activeDelivery}" class="fas fa-truck"></i>
+                        <div class="d-flex align-items-center">
+                            <i [ngClass]="{'fa-delivery-option': !activeDelivery, 'fa-delivery-option-active': activeDelivery}" class="fas fa-truck"></i>
+                            <div class="me-2">
+                                <p class="date-delivery">Llega entre el 20 y 24 de Mayo</p>
+                            </div>
+                            <p type="button" class="edit">
+                                cambiar fecha
+                                <i class="fas fa-edit"></i>
+                            </p>
+                        </div>
+                        <p class="price-delivery">$1.590</p>
                     </div>
                 </div>
             </div>
-            <div class="col-4 col-lg-3">
-                <div class="card p-2">
+            <div class="col-11 col-lg-4">
+                <div class="card resume-buy">
                     <h5 class="title-resume">Resumen de Compra</h5>
-                    <button [disabled]="activeDelivery == false && activeStore == false" (click)="changePos('step3')" type="button" class="btn btn-continue">Ir a pagar</button>
+                    <div class="d-flex justify-content-between p-2"> <!-- if there are more charges, show here -->
+                        <p class="total-price">Total:</p>
+                        <p class="total-price">$ 45.000</p>
+                    </div>
+                    <div class="center-btn">
+                        <button [disabled]="activeDelivery == false && activeStore == false" (click)="changePos('step3')" type="button" class="btn btn-buy">Ir a pagar</button>
+                    </div>
                 </div>
             </div>
         </div>
@@ -129,4 +145,3 @@
 
 
 </div>
-<app-footer></app-footer>
