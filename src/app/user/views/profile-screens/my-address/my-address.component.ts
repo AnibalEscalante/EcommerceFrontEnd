@@ -13,10 +13,12 @@ export class MyAddressComponent implements OnInit {
   public updateForm: FormGroup;
   public hideP: boolean;
   public hideCP: boolean;
+  public addressExist: boolean;
 
   constructor(
     private formBuilder: FormBuilder
   ) {
+    this.addressExist = false;
     this.hideP = true;
     this.hideCP = true;
     this.updateForm = this.formBuilder.group({
