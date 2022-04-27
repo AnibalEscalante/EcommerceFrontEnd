@@ -12,7 +12,7 @@ export class PaymentMethodComponent implements OnInit {
   
   public paymentMethodExist: boolean;
   constructor() { 
-    this.paymentMethodExist = true;
+    this.paymentMethodExist = false;
   }
   ngOnInit(): void {
   }
