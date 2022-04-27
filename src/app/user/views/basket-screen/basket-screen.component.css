@@ -138,16 +138,50 @@
   margin-bottom: 0px;
   font-weight: 300;
 }
+.bill {
+  font-size: 25px;
+}
 .email {
   margin-bottom: 0px;
-  font-size: large;
+  font-size: larger;
 }
-.price-delivery {
+.price-pick-up {
   font-size: larger;
   margin-bottom: 0px;
   font-weight: 500;
   color: green;
 }
-.aa {
+.price-delivery {
+  font-size: larger;
+  margin-bottom: 0px;
+}
+.date-delivery {
+  font-size: large;
+  margin-bottom: 0px;
+}
+.resume-buy {
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   display: flex;
+  justify-content: space-between;
+}
+.btn-buy {
+  background-color: #9100F5;
+  color: white;
+  font-weight: 500;
+  font-size: large;
+  width: 100%;
+  border-radius: 20px;
+}
+.center-btn {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+@media (max-width: 992px) {
+  .btn-buy {
+    max-width: 300px;
+  }
 }
