@@ -165,6 +165,9 @@
 .email {
   margin-bottom: 0px;
   font-size: larger;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
 .price-free {
   font-size: larger;
