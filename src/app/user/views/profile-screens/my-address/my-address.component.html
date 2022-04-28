@@ -11,9 +11,7 @@
                     <div class="col">
                         <h1 class="p-3 m-0">Mi direccion</h1>
                     </div>
-                   <!--  <div *ngIf="!addressExist" class="button-edit col">
-                          <i type="button" class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#editAddress"></i>
-                    </div> -->
+           
                 </div>
                 </div>
                 <div class="card myAddress my-4">
@@ -28,21 +26,7 @@
                     </div>
 
                     <div *ngIf="!addressExist" class="card-body">
-                      <div class="card">
-                        <div>
-                          <div class="row">
-                            <div class="col">
-                              <h4 class="address">Calle colo-colo, concon, valparaiso</h4> 
-                            </div>
-                        
-                            <div *ngIf="!addressExist" class="col button-edit">
-                              <i class="far fa-trash-alt mx-3" data-bs-toggle="modal" data-bs-target="#deleteAddress"></i>
-                              <i type="button" class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#editAddress"></i>
-                            </div>
-                          </div>
-                          
-                        </div>
-                      </div>
+                      <app-address></app-address>
                       <div class="button-add-other-address">
                         <button type="button" class="btn btn-add-address" data-bs-toggle="modal" data-bs-target="#addAddress">Agregar otra Dirección</button>
                       </div>
@@ -67,7 +51,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title m-0" id="exampleModalLabel">Modal title</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -157,6 +141,35 @@
           </div>
         </form>
 
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <div class="button-save-pw">
+          <div class="button-save">
+            <button type="button" class="btn btn-save">Guardar</button>
+          </div>
+      </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- -------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------ 
+------------------------------------------------------------------------------------------------------------------------ 
+--------------------------------------------------Eliminar direccion----------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------ 
+------------------------------------------------------------------------------------------------------------------------ 
+------------------------------------------------------------------------------------------------------------------------ 
+-->
+<div class="modal fade " id="addAddress" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title m-0" id="exampleModalLabel">Eliminar direccion</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4>Esta</h4>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>

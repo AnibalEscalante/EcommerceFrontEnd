@@ -15,7 +15,9 @@ import { MyAddressComponent } from './views/profile-screens/my-address/my-addres
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MyShoppingComponent } from './views/profile-screens/my-shopping/my-shopping.component';
 import { ProductItemComponent } from './components/product-item/product-item.component';
-import { PaymentMethodComponent } from './views/profile-screens/payment-method/payment-method.component';
+import { AddressComponent } from './components/address/address.component';
+import { MyPaymentMethodComponent } from './views/profile-screens/my-payment-method/my-payment-method.component';
+import { PaymentMethodComponent } from './components/payment-method/payment-method.component';
 
 
 @NgModule({
@@ -31,6 +33,8 @@ import { PaymentMethodComponent } from './views/profile-screens/payment-method/p
     SidebarComponent,
     MyShoppingComponent,
     ProductItemComponent,
+    AddressComponent,
+    MyPaymentMethodComponent,
     PaymentMethodComponent
   ],
   imports: [
