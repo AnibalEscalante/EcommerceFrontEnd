@@ -20,20 +20,7 @@
                     </div>
                     <!-- Metodo de pago existe -->
                     <div *ngIf="!paymentMethodExist" class="card-body">
-                        <div class="card">
-                            <div>
-                              <div class="row">
-                                <div class="col">
-                                  <h4 class="myPayment">Master card, 4120 **** **** ****</h4> 
-                                </div>
-                                <div class="col button-edit">
-                                  <i class="far fa-trash-alt mx-3" data-bs-toggle="modal" data-bs-target="#deleteAddress"></i>
-                                  <i type="button" class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#editAddress"></i>
-                                </div>
-                              </div>
-                              
-                            </div>
-                          </div>
+                        <app-payment-method></app-payment-method>
                         <div class="button-add-other">
                             <button type="button" class="btn btn-add" data-bs-toggle="modal" data-bs-target="#addPaymentMethod">Agregar otro metodo de pago</button>
                         </div>

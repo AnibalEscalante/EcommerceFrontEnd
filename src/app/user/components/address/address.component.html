@@ -1,0 +1,15 @@
+<div class="card">
+    <div>
+      <div class="row">
+        <div class="col">
+          <h4 class="address">Calle colo-colo, concon, valparaiso</h4> 
+        </div>
+    
+        <div *ngIf="!addressExist" class="col button-edit">
+          <i class="far fa-trash-alt mx-3" data-bs-toggle="modal" data-bs-target="#deleteAddress"></i>
+          <i type="button" class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#editAddress"></i>
+        </div>
+      </div>
+      
+    </div>
+  </div>
