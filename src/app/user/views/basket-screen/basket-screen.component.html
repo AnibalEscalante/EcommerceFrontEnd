@@ -67,55 +67,117 @@
                         <p class="direction">Dirección: Calle Colo-Colo, 523, Cerro O'Higgins</p>
                     </div>
                     <div>
-                        <p type="button" class="edit">
+                        <p type="button" class="mb-0">
                             cambiar
                             <i class="fas fa-edit"></i>
                         </p>
                     </div>
                 </div>
-                <div class="card email-card">
+
+                <!-- responsive start -->
+
+                <div class="card direction-card-r">
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <p class="direction">Dirección:</p>
+                            <p class="direction">Calle Colo-Colo, 523, Cerro O'Higgins</p>
+                        </div>
+                    </div>
+                    <p type="button" class="mb-0"><i class="fas fa-edit"></i></p>
+                </div>
+
+                <!-- responsive end -->
+
+                <div class="card p-3">
                     <h5 class="bill">Envío de factura y comprobante</h5>
                     <div class="col d-flex justify-content-between mb-3">
                         <p class="email">Correo: correoElectronico@gmail.com</p>
-                        <div>
-                            <p type="button" class="edit">
+
+                        <div class="btn-edit">
+                            <p type="button" class="mb-0">
                                 cambiar
                                 <i class="fas fa-edit"></i>
                             </p>
                         </div>
+
+                        <!-- responsive start -->
+
+                        <div class="btn-edit-r">
+                            <p type="button" class="mb-0">
+                                <i class="fas fa-edit"></i>
+                            </p>
+                        </div>
+
+                        <!-- responsive end -->
+
                     </div>
                     <div class="col mb-3">
                         <h5 class="type-delivery-title">Tipo de entrega:</h5>
                     </div>
-                    <div (click)="changeActiveStore()" [ngClass]="{'type-delivery': !activeStore, 'type-delivery-active': activeStore}" class="col mb-3">
-                        <div class="d-flex align-items-center">
-                            <i [ngClass]="{'fa-delivery-option': !activeStore, 'fa-delivery-option-active': activeStore}" class="fas fa-store"></i>
-                            <div class="me-2">
-                                <p class="date-store">Retiro desde 30 Septiembre</p>
-                                <p class="direction-store">Amazon Viña del Mar</p>
+
+                    <div class="delivery-options">
+                        <div (click)="changeActiveStore()" [ngClass]="{'type-delivery': !activeStore, 'type-delivery-active': activeStore}" class="col mb-3">
+                            <div class="d-flex align-items-center">
+                                <i [ngClass]="{'fa-delivery-option': !activeStore, 'fa-delivery-option-active': activeStore}" class="fas fa-store"></i>
+                                <div class="me-2">
+                                    <p class="date-store">Retiro desde 30 Septiembre</p>
+                                    <p class="direction-store">Amazon Viña del Mar</p>
+                                </div>
+                                <div class="d-flex align-self-end">
+                                    <p type="button" class="mb-0">
+                                        cambiar
+                                        <i class="fas fa-edit"></i>
+                                    </p>
+                                </div>
                             </div>
-                            <div class="d-flex align-self-end">
-                                <p type="button" class="edit">
+                            <p class="price-free">Gratis</p>
+                        </div>
+                        <div (click)="changeActiveDelivery()" [ngClass]="{'type-delivery': !activeDelivery, 'type-delivery-active': activeDelivery}" class="col">
+                            <div class="d-flex align-items-center">
+                                <i [ngClass]="{'fa-delivery-option': !activeDelivery, 'fa-delivery-option-active': activeDelivery}" class="fas fa-truck"></i>
+                                <div class="me-2">
+                                    <p class="date-delivery">Llega entre el 20 y 24 de Mayo</p>
+                                </div>
+                                <p type="button" class="mb-0">
                                     cambiar
                                     <i class="fas fa-edit"></i>
                                 </p>
                             </div>
+                            <p class="price-delivery">$1.590</p>
                         </div>
-                        <p class="price-pick-up">Gratis</p>
                     </div>
-                    <div (click)="changeActiveDelivery()" [ngClass]="{'type-delivery': !activeDelivery, 'type-delivery-active': activeDelivery}" class="col type-delivery">
-                        <div class="d-flex align-items-center">
-                            <i [ngClass]="{'fa-delivery-option': !activeDelivery, 'fa-delivery-option-active': activeDelivery}" class="fas fa-truck"></i>
-                            <div class="me-2">
-                                <p class="date-delivery">Llega entre el 20 y 24 de Mayo</p>
+
+                    <!-- responsive start -->
+
+                    <div class="delivery-options-r mt-4">
+                        <div (click)="changeActiveStore()" [ngClass]="{'type-delivery-r': !activeStore, 'type-delivery-active-r': activeStore}" class="mb-3 ">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <i [ngClass]="{'fa-delivery-option': !activeStore, 'fa-delivery-option-active': activeStore}" class="fas fa-store"></i>
+                                <p type="button" class="mb-0"><i class="fas fa-edit"></i></p>
                             </div>
-                            <p type="button" class="edit">
-                                cambiar fecha
-                                <i class="fas fa-edit"></i>
-                            </p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <div class="me-2">
+                                    <p class="date-store">Retiro desde 30 Septiembre</p>
+                                    <p class="direction-store">Amazon Viña del Mar</p>
+                                </div>
+                                <p class="price-free">Gratis</p>
+                            </div>
                         </div>
-                        <p class="price-delivery">$1.590</p>
+                        <div (click)="changeActiveDelivery()" [ngClass]="{'type-delivery-r': !activeDelivery, 'type-delivery-active-r': activeDelivery}">
+                            <div class="d-flex justify-content-between align-items-center mb-2">
+                                <i [ngClass]="{'fa-delivery-option': !activeDelivery, 'fa-delivery-option-active': activeDelivery}" class="fas fa-truck"></i>
+                                <p type="button" class="mb-0"><i class="fas fa-edit"></i></p>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="date-delivery me-2">Llega entre el 20 y 24 de Mayo</p>
+                                <p class="price-delivery">$1.590</p>
+                            </div>
+                        </div>
                     </div>
+
+                    <!-- responsive end -->
+
                 </div>
             </div>
             <div class="col-11 col-lg-4">
