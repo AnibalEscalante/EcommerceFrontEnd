@@ -61,13 +61,14 @@
     <div *ngIf="pos === 'step2'" class="step-2">
         <div class="row justify-content-evenly mt-2">
             <div class="col-11 col-lg-7 mb-3">
+
                 <div class="card direction-card">
                     <div class="d-flex align-items-baseline">
                         <i class="fas fa-map-marker-alt"></i>
                         <p class="direction">Dirección: Calle Colo-Colo, 523, Cerro O'Higgins</p>
                     </div>
                     <div>
-                        <p type="button" class="mb-0">
+                        <p type="button" class="mb-0" data-bs-toggle="modal" data-bs-target="#changeDirectionModal">
                             cambiar
                             <i class="fas fa-edit"></i>
                         </p>
@@ -84,7 +85,7 @@
                             <p class="direction">Calle Colo-Colo, 523, Cerro O'Higgins</p>
                         </div>
                     </div>
-                    <p type="button" class="mb-0"><i class="fas fa-edit"></i></p>
+                    <i type="button" class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#changeDirectionModal"></i>
                 </div>
 
                 <!-- responsive end -->
@@ -206,4 +207,28 @@
     <!-- end step 3 -->
 
 
+</div>
+
+
+<!----------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------->
+<!-------------------------------------------------- MODALS HERE -------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------->
+<!----------------------------------------------------------------------------------------------------------------->
+
+<div class="modal fade" id="changeDirectionModal" tabindex="-1" aria-labelledby="changeDirectionModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="changeDirectionLabel">Cambiar dirección</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancelar</button>
+        <button type="button" class="btn btn-save">Guardar</button>
+      </div>
+    </div>
+  </div>
 </div>
