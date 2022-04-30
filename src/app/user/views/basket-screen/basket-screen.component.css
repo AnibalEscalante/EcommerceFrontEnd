@@ -255,3 +255,6 @@
 .btn-cancel:hover {
   background-color: #f1f2f3;
 }
+select:hover {
+  box-shadow: none;
+}
