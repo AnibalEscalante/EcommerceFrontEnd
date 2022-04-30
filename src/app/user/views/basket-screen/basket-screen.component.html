@@ -224,6 +224,20 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
+
+        <select (change)="selectRegion()" [(ngModel)]="selectedRegion" class="form-select mb-3" aria-label="Floating label select region">
+          <option [value]="region.number" *ngFor="let region of regionsAndCommunes; index as i">
+            {{region.name}}
+          </option>
+        </select>
+          
+        <select class="form-select" id="CommunSelect" aria-label="Floating label select comunne">
+          <option selected>Seleccione una comuna</option>
+          <option *ngFor="let commune of communes">
+            {{commune}}
+          </option>
+        </select>
+
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancelar</button>
