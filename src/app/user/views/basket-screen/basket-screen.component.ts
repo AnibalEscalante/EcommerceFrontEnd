@@ -457,15 +457,16 @@ export class BasketScreenComponent implements OnInit {
     }
   ];
 
-  public communes: string[] | null;
-  public selectedRegion: string = '';
+  public communes: string[];
+  public selectedRegion: string;
 
   constructor() {
     this.pos = 'step2',
     this.widthBar = '0%',
     this.activeStore = false,
-    this.activeDelivery = false
-    this.communes = null;
+    this.activeDelivery = false,
+    this.communes = [],
+    this.selectedRegion = ''
   }
 
   public changeActiveDelivery(){
@@ -507,7 +508,6 @@ export class BasketScreenComponent implements OnInit {
       }
     }
   }
-
 
   ngOnInit(): void {
   }
