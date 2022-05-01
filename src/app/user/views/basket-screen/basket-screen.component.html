@@ -225,18 +225,49 @@
       </div>
       <div class="modal-body">
 
-        <select (change)="selectRegion()" [(ngModel)]="selectedRegion" class="form-select mb-3" aria-label="Floating label select region">
-          <option [value]="region.number" *ngFor="let region of regionsAndCommunes; index as i">
-            {{region.name}}
-          </option>
-        </select>
-          
-        <select class="form-select" id="CommunSelect" aria-label="Floating label select comunne">
-          <option selected>Seleccione una comuna</option>
-          <option *ngFor="let commune of communes">
-            {{commune}}
-          </option>
-        </select>
+        <!-- <form> -->
+					<div class="form-floating mb-3">
+						<select (change)="selectRegion()" [(ngModel)]="selectedRegion" class="form-select" aria-label="Floating label select region">
+							<option [value]="'-1'">Selecione una región</option>
+							<option [value]="region.number" *ngFor="let region of regionsAndCommunes">
+								{{region.name}}
+							</option>
+						</select>
+						<label for="floatingSelect">Región *</label>
+					</div>
+						
+					<div class="form-floating mb-3">
+						<select class="form-select" id="CommunSelect" aria-label="Floating label select comunne">
+							<option *ngIf="selectedRegion === '-1'" [value]="-1">Seleccione primero una región</option>
+							<option *ngIf="selectedRegion !== '-1'" [value]="-1">Seleccione una comuna</option>
+							<option *ngFor="let commune of communes">
+								{{commune}}
+							</option>
+						</select>
+						<label for="floatingSelect">Comuna *</label>
+					</div>
+	
+					<mat-form-field appearance="outline">
+							<mat-label>Codigo postal</mat-label>
+							<input type="number" matInput #postalCode maxlength="7" placeholder="Ex. 9410511" required>
+							<mat-hint align="end">{{postalCode.value.length}} / 7</mat-hint>
+					</mat-form-field>
+	
+					<mat-form-field appearance="outline">
+						<mat-label>Calle</mat-label>
+						<input matInput #street placeholder="Av. Colo-Colo" required>
+					</mat-form-field>
+	
+					<mat-form-field appearance="outline">
+						<mat-label>Número</mat-label>
+						<input type="number" matInput #number placeholder="1919" required>
+					</mat-form-field>
+	
+					<mat-form-field appearance="outline">
+						<mat-label>Departamento</mat-label>
+						<input type="number" matInput #number>
+					</mat-form-field>
+				<!-- </form> -->
 
       </div>
       <div class="modal-footer">

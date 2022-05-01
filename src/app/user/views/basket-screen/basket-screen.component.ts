@@ -466,7 +466,7 @@ export class BasketScreenComponent implements OnInit {
     this.activeStore = false,
     this.activeDelivery = false,
     this.communes = [],
-    this.selectedRegion = ''
+    this.selectedRegion = '-1'
   }
 
   public changeActiveDelivery(){
