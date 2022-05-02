@@ -9,7 +9,6 @@ import { CategoryScreenComponent } from './views/category-screen/category-screen
 import { BasketScreenComponent } from './views/basket-screen/basket-screen.component';
 import { ProductInfoScreenComponent } from './views/product-info-screen/product-info-screen.component';
 import { SharedModule } from '../shared/shared.module';
-import { ProfileScreenComponent } from './views/profile-screen/profile-screen.component';
 import { MyPersonalInfoComponent } from './views/profile-screens/my-personal-info/my-personal-info.component';
 import { MyAddressComponent } from './views/profile-screens/my-address/my-address.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -18,6 +17,7 @@ import { ProductItemComponent } from './components/product-item/product-item.com
 import { AddressComponent } from './components/address/address.component';
 import { MyPaymentMethodComponent } from './views/profile-screens/my-payment-method/my-payment-method.component';
 import { PaymentMethodComponent } from './components/payment-method/payment-method.component';
+import { MyPasswordComponent } from './views/profile-screens/my-password/my-password.component';
 
 
 @NgModule({
@@ -27,7 +27,6 @@ import { PaymentMethodComponent } from './components/payment-method/payment-meth
     CategoryScreenComponent,
     BasketScreenComponent,
     ProductInfoScreenComponent,
-    ProfileScreenComponent,
     MyPersonalInfoComponent,
     MyAddressComponent,
     SidebarComponent,
@@ -35,7 +34,8 @@ import { PaymentMethodComponent } from './components/payment-method/payment-meth
     ProductItemComponent,
     AddressComponent,
     MyPaymentMethodComponent,
-    PaymentMethodComponent
+    PaymentMethodComponent,
+    MyPasswordComponent
   ],
   imports: [
     CommonModule,
