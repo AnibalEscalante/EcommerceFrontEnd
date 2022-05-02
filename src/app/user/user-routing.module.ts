@@ -5,6 +5,7 @@ import { CategoryScreenComponent } from './views/category-screen/category-screen
 import { HomeScreenComponent } from './views/home-screen/home-screen.component';
 import { ProductInfoScreenComponent } from './views/product-info-screen/product-info-screen.component';
 import { MyAddressComponent } from './views/profile-screens/my-address/my-address.component';
+import { MyPasswordComponent } from './views/profile-screens/my-password/my-password.component';
 import { MyPaymentMethodComponent } from './views/profile-screens/my-payment-method/my-payment-method.component';
 import { MyPersonalInfoComponent } from './views/profile-screens/my-personal-info/my-personal-info.component';
 import { MyShoppingComponent } from './views/profile-screens/my-shopping/my-shopping.component';
@@ -34,6 +35,10 @@ const routes: Routes = [
   {
     path: 'profile/info',
     component: MyPersonalInfoComponent
+  },
+  {
+    path: 'profile/pass',
+    component: MyPasswordComponent
   },
   {
     path: 'profile/myshopping',

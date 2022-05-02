@@ -1,14 +1,31 @@
-<div class="card m-2">
+<!-- Metodo de pago no existe -->
+<div *ngIf="paymentMethodExist" class="card-body">
+    <i class="far fa-credit-card"></i>
+    <h3>No tienes ningún metodo de pago guardado </h3>
+    <div class="button-add">
+        <button type="button" class="btn btn-add" data-bs-toggle="modal" data-bs-target="#addPaymentMethod">Agregar metodo de pago</button>
+    </div>
+</div>
+<!-- Metodo de pago existe -->
+<div *ngIf="!paymentMethodExist" class="d-flex flex-column justify-content-between card-body">
     <div>
-      <div class="row">
-        <div class="col">
-          <h4 class="myPayment">Master card, 4120 **** **** ****</h4> 
-        </div>
-        <div class="col button-edit">
-          <i class="far fa-trash-alt mx-3" data-bs-toggle="modal" data-bs-target="#deleteAddress"></i>
-          <i type="button" class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#editPaymentMethod"></i>
+      <div class="card m-2">
+        <div>
+          <div class="row">
+            <div class="col">
+              <h4 class="myPayment">Master card, 4120 **** **** ****</h4> 
+            </div>
+            <div class="col button-edit">
+              <i class="far fa-trash-alt mx-3" data-bs-toggle="modal" data-bs-target="#deleteAddress"></i>
+              <i type="button" class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#editPaymentMethod"></i>
+            </div>
+          </div>
+          
         </div>
       </div>
-      
     </div>
-  </div>
+    
+    <div class="button-add-other">
+        <button type="button" class="btn btn-add" data-bs-toggle="modal" data-bs-target="#addPaymentMethod">Agregar otro metodo de pago</button>
+    </div>
+</div>
