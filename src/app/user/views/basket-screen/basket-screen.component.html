@@ -225,18 +225,50 @@
       </div>
       <div class="modal-body">
 
-        <select (change)="selectRegion()" [(ngModel)]="selectedRegion" class="form-select mb-3" aria-label="Floating label select region">
-          <option [value]="region.number" *ngFor="let region of regionsAndCommunes; index as i">
-            {{region.name}}
-          </option>
-        </select>
-          
-        <select class="form-select" id="CommunSelect" aria-label="Floating label select comunne">
-          <option selected>Seleccione una comuna</option>
-          <option *ngFor="let commune of communes">
-            {{commune}}
-          </option>
-        </select>
+        <form [formGroup]="addressForm" (ngSubmit)="onSubmit()">
+
+          <div class="form-floating mb-3">
+						<select type="select" (change)="selectRegion()" class="form-select" formControlName="region" aria-label="Floating label select region" [value]="regionsAndCommunes.name" #region>
+              <option *ngIf="addressForm.value.region === ''" selected disabled>Selecione una región</option>
+							<option *ngFor="let region of regionsAndCommunes">
+								{{region.name}}
+							</option>
+						</select>
+						<label for="floatingSelect">Región *</label>
+					</div>
+
+          <div class="form-floating mb-3">
+						<select type="select" class="form-select" formControlName="commune" aria-label="Floating label select commune" [value]="commune" #commune>
+              <option *ngIf="addressForm.value.region === ''" selected disabled>Primero seleccione una región</option>
+              <option *ngIf="addressForm.value.region  !== '' && addressForm.value.commune === ''" selected disabled>Selecione una comuna</option>
+							<option *ngFor="let commune of communes">
+								{{commune}}
+							</option>
+						</select>
+						<label for="floatingSelect">Comuna *</label>
+					</div>
+	
+					<mat-form-field appearance="outline">
+            <mat-label>Codigo postal</mat-label>
+            <input type="tel" formControlName="postcode" matInput [maxLength]="7" #postcode placeholder="Ex. 9410511" required>
+            <mat-hint align="end">{{postcode?.value?.length}} / 7</mat-hint>
+					</mat-form-field>
+	
+					<mat-form-field appearance="outline">
+						<mat-label>Calle</mat-label>
+						<input type="text" formControlName="street" matInput #street placeholder="Av. Colo-Colo" required>
+					</mat-form-field>
+	
+					<mat-form-field appearance="outline">
+						<mat-label>Número</mat-label>
+						<input type="tel" formControlName="number" matInput #number placeholder="1919" required>
+					</mat-form-field>
+	
+					<mat-form-field appearance="outline">
+						<mat-label>Departamento</mat-label>
+						<input type="text" formControlName="apartment" matInput #apartment placeholder="Bloque A N°20">
+					</mat-form-field>
+				</form>
 
       </div>
       <div class="modal-footer">
