@@ -7,7 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PaymentMethodComponent implements OnInit {
 
-  constructor() { }
+  public paymentMethodExist: boolean;
+  constructor() { 
+    this.paymentMethodExist = false;
+  }
 
   ngOnInit(): void {
   }

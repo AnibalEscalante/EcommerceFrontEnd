@@ -10,25 +10,8 @@
                     <h1 class="p-3 m-0">Metodos de pago</h1>
                 </div>
                 <div class="card personal-info my-4">
-                    <!-- Metodo de pago no existe -->
-                    <div *ngIf="paymentMethodExist" class="card-body">
-                        <i class="far fa-credit-card"></i>
-                        <h3>No tienes ningún metodo de pago guardado </h3>
-                        <div class="button-add">
-                            <button type="button" class="btn btn-add" data-bs-toggle="modal" data-bs-target="#addPaymentMethod">Agregar metodo de pago</button>
-                        </div>
-                    </div>
-                    <!-- Metodo de pago existe -->
-                    <div *ngIf="!paymentMethodExist" class="d-flex flex-column justify-content-between card-body">
-                        <div>
-                            <app-payment-method></app-payment-method>
-                            <app-payment-method></app-payment-method>
-                        </div>
-                        
-                        <div class="button-add-other">
-                            <button type="button" class="btn btn-add" data-bs-toggle="modal" data-bs-target="#addPaymentMethod">Agregar otro metodo de pago</button>
-                        </div>
-                    </div>
+                    <app-payment-method></app-payment-method>
+                   
                 </div>
             </div>
         </div>
