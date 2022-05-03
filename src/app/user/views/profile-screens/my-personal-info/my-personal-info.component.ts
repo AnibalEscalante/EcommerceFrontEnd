@@ -8,7 +8,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class MyPersonalInfoComponent implements OnInit {
 
-  value = 'Clear me';
+ /*  value = 'Clear me'; */
 
   public updateForm: FormGroup;
   public hideP: boolean;
