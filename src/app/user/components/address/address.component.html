@@ -11,7 +11,7 @@
  
 </div>
 
-<div *ngIf="!addressExist" class="card-body">
+<div *ngIf="!addressExist" class="d-flex flex-column justify-content-between card-body">
   <div class="card">
     <div>
       <div class="row">
@@ -20,7 +20,7 @@
         </div>
     
         <div *ngIf="!addressExist" class="col button-edit">
-          <i class="far fa-trash-alt mx-3" data-bs-toggle="modal" data-bs-target="#deleteAddress"></i>
+          <i type="button" class="far fa-trash-alt mx-3" data-bs-toggle="modal" data-bs-target="#deleteAddress"></i>
           <i type="button" class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#editAddress"></i>
         </div>
       </div>
@@ -44,7 +44,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title m-0" id="exampleModalLabel">Modal title</h5>
+        <h5 class="modal-title m-0" id="exampleModalLabel">Editar dirección</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
@@ -154,7 +154,7 @@
 ------------------------------------------------------------------------------------------------------------------------ 
 ------------------------------------------------------------------------------------------------------------------------ 
 -->
-<div class="modal fade " id="addAddress" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade " id="deleteAddress" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -162,13 +162,13 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <h4>Esta</h4>
+        <h4>¿Estas seguro de eliminar ésta direccion?</h4>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <div class="button-save-pw">
           <div class="button-save">
-            <button type="button" class="btn btn-save">Guardar</button>
+            <button type="button" class="btn btn-save">Eliminar</button>
           </div>
       </div>
       </div>
