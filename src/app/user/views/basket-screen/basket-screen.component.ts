@@ -17,6 +17,8 @@ export class BasketScreenComponent implements OnInit {
   public regionsAndCommunes: any;
   public communes: string[];
   public addressForm: FormGroup;
+  public tryOnSubmit: boolean;
+  public allOkay: boolean;
 
   constructor(
     private formBuilder: FormBuilder
@@ -26,14 +28,16 @@ export class BasketScreenComponent implements OnInit {
     this.activeStore = false,
     this.activeDelivery = false,
     this.communes = [],
-    this.regionsAndCommunes = regionsAndCommunes;
+    this.regionsAndCommunes = regionsAndCommunes,
+    this.tryOnSubmit = false,
+    this.allOkay = false,
     this.addressForm = this.formBuilder.group({
       region: ['', [Validators.required]],
       commune: ['', [Validators.required]],
       postcode: ['', [Validators.required, Validators.pattern('[0-9]{7}')]],
-      street: ['', [Validators.required], Validators.pattern('[a-zA-Z]{5,100}')],
-      number: ['', [Validators.required], Validators.pattern('[0-9]{1,7}')],
-      apartment: ['', [Validators.pattern('[a-zA-Z]{5,100}')]]
+      street: ['', [Validators.required, Validators.pattern('[a-zA-Z\\s]{5,100}')]],
+      number: ['', [Validators.required, Validators.pattern('[0-9]{1,7}')]],
+      apartment: ['', [Validators.pattern('[a-zA-Z\\s]{5,100}')]]
     });
   }
 
@@ -55,12 +59,20 @@ export class BasketScreenComponent implements OnInit {
     }
   }
 
-  public aaa(){
-    console.log(this.addressForm.value.commune);
-  }
-
   onSubmit(){
-
+    this.tryOnSubmit = true;
+    console.log(this.allOkay);
+    if (
+      !this.region?.invalid &&
+      !this.comunne?.invalid &&
+      !this.postcode?.invalid &&
+      !this.street?.invalid &&
+      !this.number?.invalid &&
+      !this.apartment?.invalid
+    ){
+      this.allOkay = true;
+      console.log(this.allOkay);
+    }
   }
 
   public changeActiveDelivery(){

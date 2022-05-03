@@ -1,210 +1,210 @@
 <app-navbar></app-navbar>
 <div class="container-fluid">
-    <div class="row justify-content-center">
-        <div class="col-10 justify-content-center mt-2">
-            <div class="position-relative m-4">
-                <div class="progress">
-                  <div [ngStyle]="{'width': widthBar}" class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-                </div>
-                <button (click)="changePos('step1')" type="button" class="btn steep-phase start-0">1</button>
-                <button [disabled]="pos !== 'step2' && pos !== 'step3'" (click)="changePos('step2')" type="button" class="btn steep-phase start-50">2</button>
-                <button [disabled]="pos !== 'step3'" (click)="changePos('step3')" type="button" class="btn steep-phase start-100">3</button>
-            </div>
-        </div> 
-    </div>
+	<div class="row justify-content-center">
+		<div class="col-10 justify-content-center mt-2">
+			<div class="position-relative m-4">
+				<div class="progress">
+				  <div [ngStyle]="{'width': widthBar}" class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+				</div>
+				<button (click)="changePos('step1')" type="button" class="btn steep-phase start-0">1</button>
+				<button [disabled]="pos !== 'step2' && pos !== 'step3'" (click)="changePos('step2')" type="button" class="btn steep-phase start-50">2</button>
+				<button [disabled]="pos !== 'step3'" (click)="changePos('step3')" type="button" class="btn steep-phase start-100">3</button>
+			</div>
+		</div> 
+	</div>
 
-    <!-- start step 1 -->
+	<!-- start step 1 -->
 
-    <div *ngIf="pos === 'step1'" class="step-1">
-        <div class="row justify-content-evenly mt-2">
-            <div class="col-11 col-lg-7">
-                <div class="card">
-                    <h5 class="title-list">Carro: 2 productos</h5>
-                </div>
-                <div class="content-list"> <!-- a for here -->
-                    <app-product-item></app-product-item>
-                </div>
-            </div>
-    
-            <div class="col-4 col-lg-3 d-none d-lg-block">
-                <div class="card resume">
-                    <h5 class="title-resume">Resumen de Compra</h5>
-                    <div class="d-flex justify-content-between p-2">
-                        <p class="total-price">Total:</p>
-                        <p class="total-price">$ 45.000</p>
-                    </div>
-                    <button (click)="changePos('step2')" type="button" class="btn btn-continue">Continuar compra</button>
-                </div>
-            </div>
-    
-            <!-- responsive start -->
-    
-            <div class="col-11 d-lg-none summary-purchase">
-                <div class="card resume shadow">
-                    <h5 class="title-resume">Resumen de Compra</h5>
-                    <div class="d-flex justify-content-between p-2">
-                        <p class="total-price">Total:</p>
-                        <p class="total-price">$ 45.000</p>
-                    </div>
-                    <button (click)="changePos('step2')" type="button" class="btn btn-continue">Continuar compra</button>
-                </div>
-            </div>
-    
-            <!-- responsive end -->
-        </div>
-    </div>
+	<div *ngIf="pos === 'step1'" class="step-1">
+		<div class="row justify-content-evenly mt-2">
+			<div class="col-11 col-lg-7">
+				<div class="card">
+					<h5 class="title-list">Carro: 2 productos</h5>
+				</div>
+				<div class="content-list"> <!-- a for here -->
+					<app-product-item></app-product-item>
+				</div>
+			</div>
+	
+			<div class="col-4 col-lg-3 d-none d-lg-block">
+				<div class="card resume">
+					<h5 class="title-resume">Resumen de Compra</h5>
+					<div class="d-flex justify-content-between p-2">
+						<p class="total-price">Total:</p>
+						<p class="total-price">$ 45.000</p>
+					</div>
+					<button (click)="changePos('step2')" type="button" class="btn btn-continue">Continuar compra</button>
+				</div>
+			</div>
+	
+			<!-- responsive start -->
+	
+			<div class="col-11 d-lg-none summary-purchase">
+				<div class="card resume shadow">
+					<h5 class="title-resume">Resumen de Compra</h5>
+					<div class="d-flex justify-content-between p-2">
+						<p class="total-price">Total:</p>
+						<p class="total-price">$ 45.000</p>
+					</div>
+					<button (click)="changePos('step2')" type="button" class="btn btn-continue">Continuar compra</button>
+				</div>
+			</div>
+	
+			<!-- responsive end -->
+		</div>
+	</div>
 
-    <!-- end step 1 -->
+	<!-- end step 1 -->
 
-    <!-- start step 2 -->
+	<!-- start step 2 -->
 
-    <div *ngIf="pos === 'step2'" class="step-2">
-        <div class="row justify-content-evenly mt-2">
-            <div class="col-11 col-lg-7 mb-3">
+	<div *ngIf="pos === 'step2'" class="step-2">
+		<div class="row justify-content-evenly mt-2">
+			<div class="col-11 col-lg-7 mb-3">
 
-                <div class="card direction-card">
-                    <div class="d-flex align-items-baseline">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <p class="direction">Dirección: Calle Colo-Colo, 523, Cerro O'Higgins</p>
-                    </div>
-                    <div>
-                        <p type="button" class="mb-0" data-bs-toggle="modal" data-bs-target="#changeDirectionModal">
-                            cambiar
-                            <i class="fas fa-edit"></i>
-                        </p>
-                    </div>
-                </div>
+				<div class="card direction-card">
+					<div class="d-flex align-items-baseline">
+						<i class="fas fa-map-marker-alt"></i>
+						<p class="direction">Dirección: Calle Colo-Colo, 523, Cerro O'Higgins</p>
+					</div>
+					<div>
+						<p type="button" class="mb-0" data-bs-toggle="modal" data-bs-target="#changeDirectionModal">
+							cambiar
+							<i class="fas fa-edit"></i>
+						</p>
+					</div>
+				</div>
 
-                <!-- responsive start -->
+				<!-- responsive start -->
 
-                <div class="card direction-card-r">
-                    <div class="d-flex align-items-center">
-                        <i class="fas fa-map-marker-alt"></i>
-                        <div>
-                            <p class="direction">Dirección:</p>
-                            <p class="direction">Calle Colo-Colo, 523, Cerro O'Higgins</p>
-                        </div>
-                    </div>
-                    <i type="button" class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#changeDirectionModal"></i>
-                </div>
+				<div class="card direction-card-r">
+					<div class="d-flex align-items-center">
+						<i class="fas fa-map-marker-alt"></i>
+						<div>
+							<p class="direction">Dirección:</p>
+							<p class="direction">Calle Colo-Colo, 523, Cerro O'Higgins</p>
+						</div>
+					</div>
+					<i type="button" class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#changeDirectionModal"></i>
+				</div>
 
-                <!-- responsive end -->
+				<!-- responsive end -->
 
-                <div class="card p-3">
-                    <h5 class="bill">Envío de factura y comprobante</h5>
-                    <div class="col d-flex justify-content-between mb-3">
-                        <p class="email">Correo: correoElectronico@gmail.com</p>
+				<div class="card p-3">
+					<h5 class="bill">Envío de factura y comprobante</h5>
+					<div class="col d-flex justify-content-between mb-3">
+						<p class="email">Correo: correoElectronico@gmail.com</p>
 
-                        <div class="btn-edit">
-                            <p type="button" class="mb-0">
-                                cambiar
-                                <i class="fas fa-edit"></i>
-                            </p>
-                        </div>
+						<div class="btn-edit">
+							<p type="button" class="mb-0">
+								cambiar
+								<i class="fas fa-edit"></i>
+							</p>
+						</div>
 
-                        <!-- responsive start -->
+						<!-- responsive start -->
 
-                        <div class="btn-edit-r">
-                            <p type="button" class="mb-0">
-                                <i class="fas fa-edit"></i>
-                            </p>
-                        </div>
+						<div class="btn-edit-r">
+							<p type="button" class="mb-0">
+								<i class="fas fa-edit"></i>
+							</p>
+						</div>
 
-                        <!-- responsive end -->
+						<!-- responsive end -->
 
-                    </div>
-                    <div class="col mb-3">
-                        <h5 class="type-delivery-title">Tipo de entrega:</h5>
-                    </div>
+					</div>
+					<div class="col mb-3">
+						<h5 class="type-delivery-title">Tipo de entrega:</h5>
+					</div>
 
-                    <div class="delivery-options">
-                        <div (click)="changeActiveStore()" [ngClass]="{'type-delivery': !activeStore, 'type-delivery-active': activeStore}" class="col mb-3">
-                            <div class="d-flex align-items-center">
-                                <i [ngClass]="{'fa-delivery-option': !activeStore, 'fa-delivery-option-active': activeStore}" class="fas fa-store"></i>
-                                <div class="me-2">
-                                    <p class="date-store">Retiro desde 30 Septiembre</p>
-                                    <p class="direction-store">Amazon Viña del Mar</p>
-                                </div>
-                                <div class="d-flex align-self-end">
-                                    <p type="button" class="mb-0">
-                                        cambiar
-                                        <i class="fas fa-edit"></i>
-                                    </p>
-                                </div>
-                            </div>
-                            <p class="price-free">Gratis</p>
-                        </div>
-                        <div (click)="changeActiveDelivery()" [ngClass]="{'type-delivery': !activeDelivery, 'type-delivery-active': activeDelivery}" class="col">
-                            <div class="d-flex align-items-center">
-                                <i [ngClass]="{'fa-delivery-option': !activeDelivery, 'fa-delivery-option-active': activeDelivery}" class="fas fa-truck"></i>
-                                <div class="me-2">
-                                    <p class="date-delivery">Llega entre el 20 y 24 de Mayo</p>
-                                </div>
-                                <p type="button" class="mb-0">
-                                    cambiar
-                                    <i class="fas fa-edit"></i>
-                                </p>
-                            </div>
-                            <p class="price-delivery">$1.590</p>
-                        </div>
-                    </div>
+					<div class="delivery-options">
+						<div (click)="changeActiveStore()" [ngClass]="{'type-delivery': !activeStore, 'type-delivery-active': activeStore}" class="col mb-3">
+							<div class="d-flex align-items-center">
+								<i [ngClass]="{'fa-delivery-option': !activeStore, 'fa-delivery-option-active': activeStore}" class="fas fa-store"></i>
+								<div class="me-2">
+									<p class="date-store">Retiro desde 30 Septiembre</p>
+									<p class="direction-store">Amazon Viña del Mar</p>
+								</div>
+								<div class="d-flex align-self-end">
+									<p type="button" class="mb-0">
+										cambiar
+										<i class="fas fa-edit"></i>
+									</p>
+								</div>
+							</div>
+							<p class="price-free">Gratis</p>
+						</div>
+						<div (click)="changeActiveDelivery()" [ngClass]="{'type-delivery': !activeDelivery, 'type-delivery-active': activeDelivery}" class="col">
+							<div class="d-flex align-items-center">
+								<i [ngClass]="{'fa-delivery-option': !activeDelivery, 'fa-delivery-option-active': activeDelivery}" class="fas fa-truck"></i>
+								<div class="me-2">
+									<p class="date-delivery">Llega entre el 20 y 24 de Mayo</p>
+								</div>
+								<p type="button" class="mb-0">
+									cambiar
+									<i class="fas fa-edit"></i>
+								</p>
+							</div>
+							<p class="price-delivery">$1.590</p>
+						</div>
+					</div>
 
-                    <!-- responsive start -->
+					<!-- responsive start -->
 
-                    <div class="delivery-options-r mt-4">
-                        <div (click)="changeActiveStore()" [ngClass]="{'type-delivery-r': !activeStore, 'type-delivery-active-r': activeStore}" class="mb-3 ">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <i [ngClass]="{'fa-delivery-option': !activeStore, 'fa-delivery-option-active': activeStore}" class="fas fa-store"></i>
-                                <p type="button" class="mb-0"><i class="fas fa-edit"></i></p>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <div class="me-2">
-                                    <p class="date-store">Retiro desde 30 Septiembre</p>
-                                    <p class="direction-store">Amazon Viña del Mar</p>
-                                </div>
-                                <p class="price-free">Gratis</p>
-                            </div>
-                        </div>
-                        <div (click)="changeActiveDelivery()" [ngClass]="{'type-delivery-r': !activeDelivery, 'type-delivery-active-r': activeDelivery}">
-                            <div class="d-flex justify-content-between align-items-center mb-2">
-                                <i [ngClass]="{'fa-delivery-option': !activeDelivery, 'fa-delivery-option-active': activeDelivery}" class="fas fa-truck"></i>
-                                <p type="button" class="mb-0"><i class="fas fa-edit"></i></p>
-                            </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <p class="date-delivery me-2">Llega entre el 20 y 24 de Mayo</p>
-                                <p class="price-delivery">$1.590</p>
-                            </div>
-                        </div>
-                    </div>
+					<div class="delivery-options-r mt-4">
+						<div (click)="changeActiveStore()" [ngClass]="{'type-delivery-r': !activeStore, 'type-delivery-active-r': activeStore}" class="mb-3 ">
+							<div class="d-flex justify-content-between align-items-center mb-2">
+								<i [ngClass]="{'fa-delivery-option': !activeStore, 'fa-delivery-option-active': activeStore}" class="fas fa-store"></i>
+								<p type="button" class="mb-0"><i class="fas fa-edit"></i></p>
+							</div>
+							<div class="d-flex justify-content-between align-items-center">
+								<div class="me-2">
+									<p class="date-store">Retiro desde 30 Septiembre</p>
+									<p class="direction-store">Amazon Viña del Mar</p>
+								</div>
+								<p class="price-free">Gratis</p>
+							</div>
+						</div>
+						<div (click)="changeActiveDelivery()" [ngClass]="{'type-delivery-r': !activeDelivery, 'type-delivery-active-r': activeDelivery}">
+							<div class="d-flex justify-content-between align-items-center mb-2">
+								<i [ngClass]="{'fa-delivery-option': !activeDelivery, 'fa-delivery-option-active': activeDelivery}" class="fas fa-truck"></i>
+								<p type="button" class="mb-0"><i class="fas fa-edit"></i></p>
+							</div>
+							<div class="d-flex justify-content-between align-items-center">
+								<p class="date-delivery me-2">Llega entre el 20 y 24 de Mayo</p>
+								<p class="price-delivery">$1.590</p>
+							</div>
+						</div>
+					</div>
 
-                    <!-- responsive end -->
+					<!-- responsive end -->
 
-                </div>
-            </div>
-            <div class="col-11 col-lg-4">
-                <div class="card resume-buy">
-                    <h5 class="title-resume">Resumen de Compra</h5>
-                    <div class="d-flex justify-content-between p-2"> <!-- if there are more charges, show here -->
-                        <p class="total-price">Total:</p>
-                        <p class="total-price">$ 45.000</p>
-                    </div>
-                    <div class="center-btn">
-                        <button [disabled]="activeDelivery == false && activeStore == false" (click)="changePos('step3')" type="button" class="btn btn-buy">Ir a pagar</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+				</div>
+			</div>
+			<div class="col-11 col-lg-4">
+				<div class="card resume-buy">
+					<h5 class="title-resume">Resumen de Compra</h5>
+					<div class="d-flex justify-content-between p-2"> <!-- if there are more charges, show here -->
+						<p class="total-price">Total:</p>
+						<p class="total-price">$ 45.000</p>
+					</div>
+					<div class="center-btn">
+						<button [disabled]="activeDelivery == false && activeStore == false" (click)="changePos('step3')" type="button" class="btn btn-buy">Ir a pagar</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-    <!-- end step 2 -->
+	<!-- end step 2 -->
 
-    <!-- start step 3 -->
+	<!-- start step 3 -->
 
-    <div *ngIf="pos === 'step3'" class="step-3">
-        <h1 class="m-4 text-center">step3</h1>
-    </div>
+	<div *ngIf="pos === 'step3'" class="step-3">
+		<h1 class="m-4 text-center">step3</h1>
+	</div>
 
-    <!-- end step 3 -->
+	<!-- end step 3 -->
 
 
 </div>
@@ -218,63 +218,66 @@
 
 <div class="modal fade" id="changeDirectionModal" tabindex="-1" aria-labelledby="changeDirectionModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="changeDirectionLabel">Cambiar dirección</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="changeDirectionLabel">Cambiar dirección</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
 
-        <form [formGroup]="addressForm" (ngSubmit)="onSubmit()">
+				<form [formGroup]="addressForm" (ngSubmit)="onSubmit()">
 
-          <div class="form-floating mb-3">
-						<select type="select" (change)="selectRegion()" class="form-select" formControlName="region" aria-label="Floating label select region" [value]="regionsAndCommunes.name" #region>
-              <option *ngIf="addressForm.value.region === ''" selected disabled>Selecione una región</option>
+					<div class="form-floating mb-3">
+						<select type="select" (change)="selectRegion()" [ngClass]="{'is-invalid': addressForm.value.region === '' && tryOnSubmit}" class="form-select" formControlName="region" aria-label="Floating label select region" [value]="regionsAndCommunes.name" #region required>
+							<option *ngIf="addressForm.value.region === ''" selected disabled>Selecione una región</option>
 							<option *ngFor="let region of regionsAndCommunes">
 								{{region.name}}
 							</option>
 						</select>
 						<label for="floatingSelect">Región *</label>
+						<div class="invalid-feedback">Seleccione una región</div>
 					</div>
 
-          <div class="form-floating mb-3">
-						<select type="select" class="form-select" formControlName="commune" aria-label="Floating label select commune" [value]="commune" #commune>
-              <option *ngIf="addressForm.value.region === ''" selected disabled>Primero seleccione una región</option>
-              <option *ngIf="addressForm.value.region  !== '' && addressForm.value.commune === ''" selected disabled>Selecione una comuna</option>
+					<div class="form-floating mb-3">
+						<select type="select" [ngClass]="{'is-invalid': addressForm.value.commune === '' && tryOnSubmit}" class="form-select" formControlName="commune" aria-label="Floating label select commune" [value]="commune" #commune required>
+							<option *ngIf="addressForm.value.region === ''" selected disabled>Primero seleccione una región</option>
+							<option *ngIf="addressForm.value.region  !== ''" selected disabled>Selecione una comuna</option>
 							<option *ngFor="let commune of communes">
 								{{commune}}
 							</option>
 						</select>
 						<label for="floatingSelect">Comuna *</label>
+						<div class="invalid-feedback">Seleccione una comuna</div>
 					</div>
-	
+		
 					<mat-form-field appearance="outline">
-            <mat-label>Codigo postal</mat-label>
-            <input type="tel" formControlName="postcode" matInput [maxLength]="7" #postcode placeholder="Ex. 9410511" required>
-            <mat-hint align="end">{{postcode?.value?.length}} / 7</mat-hint>
+						<mat-label>Codigo postal</mat-label>
+						<input type="tel" formControlName="postcode" matInput [maxLength]="7" #postcode placeholder="Ex. 9410511" required>
+						<mat-hint align="end">{{postcode?.value?.length}} / 7</mat-hint>
 					</mat-form-field>
-	
+		
 					<mat-form-field appearance="outline">
 						<mat-label>Calle</mat-label>
-						<input type="text" formControlName="street" matInput #street placeholder="Av. Colo-Colo" required>
+						<input formControlName="street" matInput #street placeholder="Av. Colo-Colo" required>
 					</mat-form-field>
-	
+
 					<mat-form-field appearance="outline">
 						<mat-label>Número</mat-label>
-						<input type="tel" formControlName="number" matInput #number placeholder="1919" required>
+						<input formControlName="number" matInput #number placeholder="1919" required>
 					</mat-form-field>
-	
+
 					<mat-form-field appearance="outline">
 						<mat-label>Departamento</mat-label>
-						<input type="text" formControlName="apartment" matInput #apartment placeholder="Bloque A N°20">
+						<input formControlName="apartment" matInput #apartment placeholder="Bloque A N°20">
 					</mat-form-field>
+					
 				</form>
 
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancelar</button>
-        <button type="button" class="btn btn-save">Guardar</button>
-      </div>
-    </div>
+	  	</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancelar</button>
+				<button type="button" class="btn btn-save" (click)="onSubmit()">Guardar</button>
+			</div>
+		</div>
   </div>
 </div>
