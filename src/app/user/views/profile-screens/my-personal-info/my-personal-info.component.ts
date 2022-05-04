@@ -20,12 +20,12 @@ export class MyPersonalInfoComponent implements OnInit {
     this.hideP = true;
     this.hideCP = true;
     this.updateForm = this.formBuilder.group({
-      name: ['', [Validators.required, Validators.pattern('[a-zA-Z]{2,32}')]],
-      lastNameP: ['', [Validators.required, Validators.pattern('[a-zA-Z]{2,32}')]],
-      lastNameM: ['', [Validators.required, Validators.pattern('[a-zA-Z]{2,32}')]],
-      run: ['', [Validators.required, Validators.pattern('[a-zA-Z]{2,32}')]],
-      phone: ['', [Validators.required, Validators.pattern('[0-9]{9}')]],
-      email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$")]],
+      name: ['', [Validators.pattern('[a-zA-Z]{2,32}')]],
+      lastNameP: ['', [Validators.pattern('[a-zA-Z]{2,32}')]],
+      lastNameM: ['', [Validators.pattern('[a-zA-Z]{2,32}')]],
+      run: ['', [Validators.pattern('[k,K,l0-9]{9}')]],
+      phone: ['', [Validators.pattern('[0-9]{9}')]],
+      email: ['', [Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$")]],
     });
   }
 
@@ -38,6 +38,26 @@ export class MyPersonalInfoComponent implements OnInit {
   get run() { return this.updateForm?.get('run'); }
   get phone() { return this.updateForm?.get('phone'); }
   get email() { return this.updateForm?.get('email'); }
+  
+  public getRunErrorMessage() {
+    if (this.run?.hasError('required')) {
+      return 'Ingrese un run';
+    }
+    return this.run?.invalid ? 'El dato ingresado no es un correo electónico valido' : '';
+  }
+  public getEmailErrorMessage() {
+    if (this.email?.hasError('required')) {
+      return 'Ingrese un correo electrónico';
+    }
+    return this.email?.invalid ? 'El dato ingresado no es un correo electónico valido' : '';
+  }
+
+  public getPhoneErrorMessage() {
+    if (this.phone?.hasError('required')) {
+      return 'Ingrese un numero de telefono';
+    }
+    return this.phone?.invalid ? 'El dato ingresado no es un correo electónico valido' : '';
+  }
 
   public getNameErrorMessage() {
     if (this.name?.hasError('required')) {
@@ -60,12 +80,6 @@ export class MyPersonalInfoComponent implements OnInit {
     return this.lastNameM?.invalid ? 'El dato ingresado no es valido' : '';
   }
 
-  public getEmailErrorMessage() {
-    if (this.email?.hasError('required')) {
-      return 'Se requiere el email';
-    }
-    return this.email?.invalid ? 'El dato ingresado no es valido' : '';
-  }
   onSubmit(){
 
   }
