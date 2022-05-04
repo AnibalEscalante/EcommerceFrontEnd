@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { regionsAndCommunes } from 'src/app/core/models/regions'
 
 @Component({
   selector: 'app-basket-screen',
@@ -14,11 +13,7 @@ export class BasketScreenComponent implements OnInit {
   public activeStore: boolean;
   public activeDelivery: boolean;
 
-  public regionsAndCommunes: any;
-  public communes: string[];
-  public addressForm: FormGroup;
-  public tryOnSubmit: boolean;
-  public allOkay: boolean;
+  public emailForm: FormGroup;
 
   constructor(
     private formBuilder: FormBuilder
@@ -27,52 +22,28 @@ export class BasketScreenComponent implements OnInit {
     this.widthBar = '0%',
     this.activeStore = false,
     this.activeDelivery = false,
-    this.communes = [],
-    this.regionsAndCommunes = regionsAndCommunes,
-    this.tryOnSubmit = false,
-    this.allOkay = false,
-    this.addressForm = this.formBuilder.group({
-      region: ['', [Validators.required]],
-      commune: ['', [Validators.required]],
-      postcode: ['', [Validators.required, Validators.pattern('[0-9]{7}')]],
-      street: ['', [Validators.required, Validators.pattern('[a-zA-Z\\s]{5,100}')]],
-      number: ['', [Validators.required, Validators.pattern('[0-9]{1,7}')]],
-      apartment: ['', [Validators.pattern('[a-zA-Z\\s]{5,100}')]]
-    });
+    this.emailForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$")]]
+    })
   }
 
   ngOnInit(): void {
   }
 
-  get region() { return this.addressForm?.get('region'); }
-  get comunne() { return this.addressForm?.get('comunne'); }
-  get postcode() { return this.addressForm?.get('postcode'); }
-  get street() { return this.addressForm?.get('street'); }
-  get number() { return this.addressForm?.get('number'); }
-  get apartment() { return this.addressForm?.get('apartment'); }
+  get email() { return this.emailForm?.get('email'); }
 
-  public selectRegion(){
-    for (let region of this.regionsAndCommunes){
-      if (this.addressForm.value.region === region.name){
-        this.communes = region.communes;
-      }
-    }
+  
+
+  public onSubmitChangeEmail(){
+    console.log('all fine :)');
+    
   }
 
-  onSubmit(){
-    this.tryOnSubmit = true;
-    console.log(this.allOkay);
-    if (
-      !this.region?.invalid &&
-      !this.comunne?.invalid &&
-      !this.postcode?.invalid &&
-      !this.street?.invalid &&
-      !this.number?.invalid &&
-      !this.apartment?.invalid
-    ){
-      this.allOkay = true;
-      console.log(this.allOkay);
+  public getEmailErrorMessage() {
+    if (this.email?.hasError('required')) {
+      return 'Se requiere el email';
     }
+    return this.email?.invalid ? 'El dato ingresado no es valido' : '';
   }
 
   public changeActiveDelivery(){
