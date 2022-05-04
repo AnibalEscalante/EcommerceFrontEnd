@@ -86,7 +86,7 @@
 								<p class="direction">Calle Colo-Colo, 523, Cerro O'Higgins</p>
 							</div>
 						</div>
-						<i type="button" class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#changeDirectionModal"></i>
+						<i type="button" class="fas fa-edit" data-bs-toggle="collapse" data-bs-target="#editAddressCollapse"></i>
 					</div>
 	
 					<!-- responsive end -->
@@ -221,72 +221,6 @@
 <!-------------------------------------------------- MODALS HERE -------------------------------------------------->
 <!----------------------------------------------------------------------------------------------------------------->
 <!----------------------------------------------------------------------------------------------------------------->
-
-<div class="modal fade" id="changeDirectionModal" tabindex="-1" aria-labelledby="changeDirectionModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h5 class="modal-title" id="changeDirectionLabel">Agregar dirección</h5>
-				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-			</div>
-			<form [formGroup]="addressForm" (ngSubmit)="onSubmitAddAddress()">
-
-				<div class="modal-body">
-
-					<div class="form-floating mb-3">
-						<select type="select" (change)="selectRegion()" [ngClass]="{'is-invalid': addressForm.value.region === '' && tryOnSubmit}" class="form-select" formControlName="region" aria-label="Floating label select region" [value]="regionsAndCommunes.name" #region required>
-							<option *ngIf="addressForm.value.region === ''" selected disabled>Selecione una región</option>
-							<option *ngFor="let region of regionsAndCommunes">
-								{{region.name}}
-							</option>
-						</select>
-						<label for="floatingSelect">Región *</label>
-						<div class="invalid-feedback">Seleccione una región</div>
-					</div>
-
-					<div class="form-floating mb-3">
-						<select type="select" [ngClass]="{'is-invalid': addressForm.value.commune === '' && tryOnSubmit}" class="form-select" formControlName="commune" aria-label="Floating label select commune" [value]="commune" #commune required>
-							<option *ngIf="addressForm.value.region === ''" selected disabled>Primero seleccione una región</option>
-							<option *ngIf="addressForm.value.region  !== ''" selected disabled>Selecione una comuna</option>
-							<option *ngFor="let commune of communes">
-								{{commune}}
-							</option>
-						</select>
-						<label for="floatingSelect">Comuna *</label>
-						<div class="invalid-feedback">Seleccione una comuna</div>
-					</div>
-		
-					<mat-form-field appearance="outline">
-						<mat-label>Codigo postal</mat-label>
-						<input type="tel" formControlName="postcode" matInput [maxLength]="7" #postcode placeholder="Ex. 9410511" required>
-						<mat-hint align="end">{{postcode?.value?.length}} / 7</mat-hint>
-					</mat-form-field>
-		
-					<mat-form-field appearance="outline">
-						<mat-label>Calle</mat-label>
-						<input formControlName="street" matInput #street placeholder="Av. Colo-Colo" required>
-					</mat-form-field>
-
-					<mat-form-field appearance="outline">
-						<mat-label>Número</mat-label>
-						<input formControlName="number" matInput #number placeholder="1919" required>
-					</mat-form-field>
-
-					<mat-form-field appearance="outline">
-						<mat-label>Departamento</mat-label>
-						<input formControlName="apartment" matInput #apartment placeholder="Bloque A N°20">
-					</mat-form-field>
-
-	  		</div>
-
-				<div class="modal-footer">
-					<button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancelar</button>
-					<button type="submit" class="btn btn-save">Guardar</button>
-				</div>
-			</form>
-		</div>
-  </div>
-</div>
 
 
 <div  class="modal fade" id="changeEmailModal" tabindex="-1" aria-labelledby="changeEmailModalLabel" aria-hidden="true">
