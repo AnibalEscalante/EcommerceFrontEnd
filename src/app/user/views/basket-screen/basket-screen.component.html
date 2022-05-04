@@ -62,33 +62,40 @@
 		<div class="row justify-content-evenly mt-2">
 			<div class="col-11 col-lg-7 mb-3">
 
-				<div class="card direction-card">
-					<div class="d-flex align-items-baseline">
-						<i class="fas fa-map-marker-alt"></i>
-						<p class="direction">Dirección: Calle Colo-Colo, 523, Cerro O'Higgins</p>
-					</div>
-					<div>
-						<p type="button" class="mb-0" data-bs-toggle="modal" data-bs-target="#changeDirectionModal">
-							cambiar
-							<i class="fas fa-edit"></i>
-						</p>
-					</div>
-				</div>
-
-				<!-- responsive start -->
-
-				<div class="card direction-card-r">
-					<div class="d-flex align-items-center">
-						<i class="fas fa-map-marker-alt"></i>
+				<div class="card mb-3">
+					<div class="direction-card">
+						<div class="d-flex align-items-baseline">
+							<i class="fas fa-map-marker-alt"></i>
+							<p class="direction">Dirección: Calle Colo-Colo, 523, Cerro O'Higgins</p>
+						</div>
 						<div>
-							<p class="direction">Dirección:</p>
-							<p class="direction">Calle Colo-Colo, 523, Cerro O'Higgins</p>
+							<p type="button" class="mb-0" data-bs-toggle="collapse" data-bs-target="#editAddressCollapse">
+								cambiar
+								<i class="fas fa-edit"></i>
+							</p>
 						</div>
 					</div>
-					<i type="button" class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#changeDirectionModal"></i>
-				</div>
+	
+					<!-- responsive start -->
+	
+					<div class="direction-card-r">
+						<div class="d-flex align-items-center">
+							<i class="fas fa-map-marker-alt"></i>
+							<div>
+								<p class="direction">Dirección:</p>
+								<p class="direction">Calle Colo-Colo, 523, Cerro O'Higgins</p>
+							</div>
+						</div>
+						<i type="button" class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#changeDirectionModal"></i>
+					</div>
+	
+					<!-- responsive end -->
 
-				<!-- responsive end -->
+					<div class="collapse" id="editAddressCollapse">
+						<app-address></app-address>
+					</div>
+
+				</div>
 
 				<div class="card p-3">
 					<h5 class="bill">Envío de factura y comprobante</h5>
@@ -96,7 +103,7 @@
 						<p class="email">Correo: correoElectronico@gmail.com</p>
 
 						<div class="btn-edit">
-							<p type="button" class="mb-0">
+							<p type="button" class="mb-0" data-bs-toggle="modal" data-bs-target="#changeEmailModal">
 								cambiar
 								<i class="fas fa-edit"></i>
 							</p>
@@ -106,7 +113,7 @@
 
 						<div class="btn-edit-r">
 							<p type="button" class="mb-0">
-								<i class="fas fa-edit"></i>
+								<i class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#changeEmailModal"></i>
 							</p>
 						</div>
 
@@ -209,7 +216,6 @@
 
 </div>
 
-
 <!----------------------------------------------------------------------------------------------------------------->
 <!----------------------------------------------------------------------------------------------------------------->
 <!-------------------------------------------------- MODALS HERE -------------------------------------------------->
@@ -220,12 +226,12 @@
   <div class="modal-dialog modal-dialog-centered">
 		<div class="modal-content">
 			<div class="modal-header">
-				<h5 class="modal-title" id="changeDirectionLabel">Cambiar dirección</h5>
+				<h5 class="modal-title" id="changeDirectionLabel">Agregar dirección</h5>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
-			<div class="modal-body">
+			<form [formGroup]="addressForm" (ngSubmit)="onSubmitAddAddress()">
 
-				<form [formGroup]="addressForm" (ngSubmit)="onSubmit()">
+				<div class="modal-body">
 
 					<div class="form-floating mb-3">
 						<select type="select" (change)="selectRegion()" [ngClass]="{'is-invalid': addressForm.value.region === '' && tryOnSubmit}" class="form-select" formControlName="region" aria-label="Floating label select region" [value]="regionsAndCommunes.name" #region required>
@@ -270,14 +276,43 @@
 						<mat-label>Departamento</mat-label>
 						<input formControlName="apartment" matInput #apartment placeholder="Bloque A N°20">
 					</mat-form-field>
-					
-				</form>
 
-	  	</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancelar</button>
-				<button type="button" class="btn btn-save" (click)="onSubmit()">Guardar</button>
-			</div>
+	  		</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancelar</button>
+					<button type="submit" class="btn btn-save">Guardar</button>
+				</div>
+			</form>
 		</div>
   </div>
+</div>
+
+
+<div  class="modal fade" id="changeEmailModal" tabindex="-1" aria-labelledby="changeEmailModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="changeDirectionLabel">Cambiar Correo Electrónico</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<form [formGroup]="emailForm" (ngSubmit)="onSubmitChangeEmail()">
+				<div class="modal-body">
+
+					<mat-form-field appearance="outline">
+						<mat-label>Correo Electrónico</mat-label>
+						<input type="email" formControlName="email" matInput #email placeholder="ejemplo123@dom.com" required>
+						<mat-error *ngIf="email">{{getEmailErrorMessage()}}</mat-error>
+					</mat-form-field>
+
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancelar</button>
+					<button type="submit" class="btn btn-save">Guardar</button>
+				</div>
+
+			</form>
+		</div>
+	</div>
 </div>

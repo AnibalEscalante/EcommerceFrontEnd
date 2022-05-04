@@ -14,6 +14,8 @@ export class BasketScreenComponent implements OnInit {
   public activeStore: boolean;
   public activeDelivery: boolean;
 
+  public emailForm: FormGroup;
+
   public regionsAndCommunes: any;
   public communes: string[];
   public addressForm: FormGroup;
@@ -38,7 +40,10 @@ export class BasketScreenComponent implements OnInit {
       street: ['', [Validators.required, Validators.pattern('[a-zA-Z\\s]{5,100}')]],
       number: ['', [Validators.required, Validators.pattern('[0-9]{1,7}')]],
       apartment: ['', [Validators.pattern('[a-zA-Z\\s]{5,100}')]]
-    });
+    }),
+    this.emailForm = this.formBuilder.group({
+      email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$")]]
+    })
   }
 
   ngOnInit(): void {
@@ -51,6 +56,8 @@ export class BasketScreenComponent implements OnInit {
   get number() { return this.addressForm?.get('number'); }
   get apartment() { return this.addressForm?.get('apartment'); }
 
+  get email() { return this.emailForm?.get('email'); }
+
   public selectRegion(){
     for (let region of this.regionsAndCommunes){
       if (this.addressForm.value.region === region.name){
@@ -59,7 +66,7 @@ export class BasketScreenComponent implements OnInit {
     }
   }
 
-  onSubmit(){
+  public onSubmitAddAddress(){
     this.tryOnSubmit = true;
     console.log(this.allOkay);
     if (
@@ -73,6 +80,18 @@ export class BasketScreenComponent implements OnInit {
       this.allOkay = true;
       console.log(this.allOkay);
     }
+  }
+
+  public onSubmitChangeEmail(){
+    console.log('all fine :)');
+    
+  }
+
+  public getEmailErrorMessage() {
+    if (this.email?.hasError('required')) {
+      return 'Se requiere el email';
+    }
+    return this.email?.invalid ? 'El dato ingresado no es valido' : '';
   }
 
   public changeActiveDelivery(){
