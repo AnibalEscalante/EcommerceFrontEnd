@@ -15,6 +15,9 @@ export class BasketScreenComponent implements OnInit {
 
   public emailForm: FormGroup;
 
+  public otherPickUpForm: FormGroup;
+  public otherPickUpSend: boolean;
+
   constructor(
     private formBuilder: FormBuilder
   ) {
@@ -22,8 +25,14 @@ export class BasketScreenComponent implements OnInit {
     this.widthBar = '0%',
     this.activeStore = false,
     this.activeDelivery = false,
+    this.otherPickUpSend = false,
     this.emailForm = this.formBuilder.group({
-      email: ['', [Validators.required, Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$")]]
+      email: ['', [Validators.required, Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$')]]
+    }),
+    this.otherPickUpForm = this.formBuilder.group({
+      name: ['', [Validators.required, Validators.pattern('[a-zA-Z]{2,32}')]],
+      lastName: ['', [Validators.required, Validators.pattern('[a-zA-Z]{2,32}')]],
+      rut: ['', [Validators.required, Validators.pattern('[0-9k,K-]{9,10}')]]
     })
   }
 
@@ -32,11 +41,8 @@ export class BasketScreenComponent implements OnInit {
 
   get email() { return this.emailForm?.get('email'); }
 
-  
-
   public onSubmitChangeEmail(){
-    console.log('all fine :)');
-    
+    console.log('email all fine :)');
   }
 
   public getEmailErrorMessage() {
@@ -44,6 +50,36 @@ export class BasketScreenComponent implements OnInit {
       return 'Se requiere el email';
     }
     return this.email?.invalid ? 'El dato ingresado no es valido' : '';
+  }
+
+  get name () { return this.otherPickUpForm?.get('name'); }
+  get lastName () { return this.otherPickUpForm?.get('lastName'); }
+  get rut () { return this.otherPickUpForm?.get('rut'); }
+
+  public onSubmitPickUpOtherPerson(){
+    console.log('other person all fine :)');
+    this.otherPickUpSend = true;
+  }
+
+  public getNameErrorMessage() {
+    if (this.name?.hasError('required')) {
+      return 'Se requiere el nombre';
+    }
+    return this.name?.invalid ? 'El dato ingresado no es valido' : '';
+  }
+
+  public getLastNameErrorMessage() {
+    if (this.lastName?.hasError('required')) {
+      return 'Se requiere el apellido';
+    }
+    return this.lastName?.invalid ? 'El dato ingresado no es valido' : '';
+  }
+
+  public getRutErrorMessage() {
+    if (this.rut?.hasError('required')) {
+      return 'Se requiere el RUT';
+    }
+    return this.rut?.invalid ? 'El dato ingresado no es valido' : '';
   }
 
   public changeActiveDelivery(){

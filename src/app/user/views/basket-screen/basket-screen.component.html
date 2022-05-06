@@ -124,54 +124,88 @@
 						<h5 class="type-delivery-title">Tipo de entrega:</h5>
 					</div>
 
-					<div class="delivery-options">
-						<div (click)="changeActiveStore()" [ngClass]="{'type-delivery': !activeStore, 'type-delivery-active': activeStore}" class="col mb-3">
-							<div class="d-flex align-items-center">
-								<i [ngClass]="{'fa-delivery-option': !activeStore, 'fa-delivery-option-active': activeStore}" class="fas fa-store"></i>
-								<div class="me-2">
-									<p class="date-store">Retiro desde 30 Septiembre</p>
-									<p class="direction-store">Amazon Viña del Mar</p>
+					<div>
+						<div class="delivery-options">
+							<div (click)="changeActiveStore()" [ngClass]="{'type-delivery': !activeStore, 'type-delivery-active': activeStore}" class="col mb-3">
+								<div class="d-flex align-items-center">
+									<i [ngClass]="{'fa-delivery-option': !activeStore, 'fa-delivery-option-active': activeStore}" class="fas fa-store"></i>
+									<div class="me-2">
+										<p class="date-store">Retiro desde 30 Septiembre</p>
+										<p class="direction-store">Amazon Viña del Mar</p>
+									</div>
 								</div>
-								<div class="d-flex align-self-end">
-									<p type="button" class="mb-0">
-										cambiar
-										<i class="fas fa-edit"></i>
-									</p>
-								</div>
-							</div>
-							<p class="price-free">Gratis</p>
-						</div>
-						<div (click)="changeActiveDelivery()" [ngClass]="{'type-delivery': !activeDelivery, 'type-delivery-active': activeDelivery}" class="col">
-							<div class="d-flex align-items-center">
-								<i [ngClass]="{'fa-delivery-option': !activeDelivery, 'fa-delivery-option-active': activeDelivery}" class="fas fa-truck"></i>
-								<div class="me-2">
-									<p class="date-delivery">Llega entre el 20 y 24 de Mayo</p>
-								</div>
-								<p type="button" class="mb-0">
+								<p class="price-free">Gratis</p>
+								<p type="button" class="mb-0" data-bs-toggle="collapse" data-bs-target="#editPickUpOtionCollapse">
 									cambiar
 									<i class="fas fa-edit"></i>
 								</p>
 							</div>
+						</div>
+	
+						<!-- responsive start -->
+	
+						<div class="delivery-options-r mt-2">
+							<div (click)="changeActiveStore()" [ngClass]="{'type-delivery-r': !activeStore, 'type-delivery-active-r': activeStore}" class="mb-3 ">
+								<div class="d-flex justify-content-between align-items-center mb-2">
+									<i [ngClass]="{'fa-delivery-option': !activeStore, 'fa-delivery-option-active': activeStore}" class="fas fa-store"></i>
+									<p type="button" class="mb-0" data-bs-toggle="collapse" data-bs-target="#editPickUpOtionCollapse"><i class="fas fa-edit"></i></p>
+								</div>
+								<div class="d-flex justify-content-between align-items-center">
+									<div class="me-2">
+										<p class="date-store">Retiro desde 30 Septiembre</p>
+										<p class="direction-store">Amazon Viña del Mar</p>
+									</div>
+									<p class="price-free">Gratis</p>
+								</div>
+							</div>
+							<div class="collapse collapse-pick-up-option" id="editPickUpOtionCollapse">
+								<p class="mb-1 fs-6">Lugar donde se va a retirar el pedido:</p>
+								<div class="d-flex align-items-center">
+									<p class="direction-store me-2">Amazon Viña del Mar</p>
+									<i class="fas fa-edit"></i>
+								</div>
+								<p class="my-2 fs-6">¿Quien va a retirar el pedido?</p>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="flexRadioMe" id="flexRadioMe" checked>
+									<label class="form-check-label" for="flexRadioMe">
+										<p class="mb-0 fs-6">Yo lo voy a retirar</p>
+									</label>
+								</div>
+								<div class="form-check">
+									<input class="form-check-input" type="radio" name="flexRadioMe" id="flexRadioOther" data-bs-toggle="modal" data-bs-target="#pickUpOtherPersonModal">
+									<label class="form-check-label" for="flexRadioOther" data-bs-toggle="modal" data-bs-target="#pickUpOtherPersonModal">
+										<p class="mb-0 fs-6">Otra Persona lo va a retirar</p>
+									</label>
+								</div>
+									<div class="d-flex align-items-center" *ngIf="otherPickUpSend">
+										<p class="other-person-data">
+											{{otherPickUpForm.value.name}} {{otherPickUpForm.value.lastName}}
+										</p>
+										<i class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#pickUpOtherPersonModal"></i>
+									</div>
+							</div>
+						</div>
+	
+						<!-- responsive end -->
+					</div>
+
+					<div class="delivery-options">
+						<div (click)="changeActiveDelivery()" [ngClass]="{'type-delivery': !activeDelivery, 'type-delivery-active': activeDelivery}" class="col">
+							<div class="d-flex align-items-center">
+								<i [ngClass]="{'fa-delivery-option': !activeDelivery, 'fa-delivery-option-active': activeDelivery}" class="fas fa-truck"></i>
+								<p class="date-delivery me-2">Llega entre el 20 y 24 de Mayo</p>
+							</div>
 							<p class="price-delivery">$1.590</p>
+							<p type="button" class="mb-0">
+								cambiar
+								<i class="fas fa-edit"></i>
+							</p>
 						</div>
 					</div>
 
 					<!-- responsive start -->
 
-					<div class="delivery-options-r mt-4">
-						<div (click)="changeActiveStore()" [ngClass]="{'type-delivery-r': !activeStore, 'type-delivery-active-r': activeStore}" class="mb-3 ">
-							<div class="d-flex justify-content-between align-items-center mb-2">
-								<i [ngClass]="{'fa-delivery-option': !activeStore, 'fa-delivery-option-active': activeStore}" class="fas fa-store"></i>
-								<p type="button" class="mb-0"><i class="fas fa-edit"></i></p>
-							</div>
-							<div class="d-flex justify-content-between align-items-center">
-								<div class="me-2">
-									<p class="date-store">Retiro desde 30 Septiembre</p>
-									<p class="direction-store">Amazon Viña del Mar</p>
-								</div>
-								<p class="price-free">Gratis</p>
-							</div>
-						</div>
+					<div class="delivery-options-r">
 						<div (click)="changeActiveDelivery()" [ngClass]="{'type-delivery-r': !activeDelivery, 'type-delivery-active-r': activeDelivery}">
 							<div class="d-flex justify-content-between align-items-center mb-2">
 								<i [ngClass]="{'fa-delivery-option': !activeDelivery, 'fa-delivery-option-active': activeDelivery}" class="fas fa-truck"></i>
@@ -237,6 +271,46 @@
 						<mat-label>Correo Electrónico</mat-label>
 						<input type="email" formControlName="email" matInput #email placeholder="ejemplo123@dom.com" required>
 						<mat-error *ngIf="email">{{getEmailErrorMessage()}}</mat-error>
+					</mat-form-field>
+
+				</div>
+
+				<div class="modal-footer">
+					<button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancelar</button>
+					<button type="submit" class="btn btn-save">Guardar</button>
+				</div>
+
+			</form>
+		</div>
+	</div>
+</div>
+
+<div  class="modal fade" id="pickUpOtherPersonModal" tabindex="-1" aria-labelledby="pickUpOtherPersonModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="changeDirectionLabel">Datos de quien lo va a retirar</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<form [formGroup]="otherPickUpForm" (ngSubmit)="onSubmitPickUpOtherPerson()">
+				<div class="modal-body">
+
+					<mat-form-field appearance="outline">
+						<mat-label>Nombre</mat-label>
+						<input type="text" formControlName="name" matInput #name required>
+						<mat-error *ngIf="name">{{getNameErrorMessage()}}</mat-error>
+					</mat-form-field>
+
+					<mat-form-field appearance="outline">
+						<mat-label>Apellido</mat-label>
+						<input type="text" formControlName="lastName" matInput #lastName required>
+						<mat-error *ngIf="lastName">{{getLastNameErrorMessage()}}</mat-error>
+					</mat-form-field>
+
+					<mat-form-field appearance="outline">
+						<mat-label>RUT</mat-label>
+						<input type="text" formControlName="rut" matInput #rut placeholder="12345678-9" maxlength="10" required>
+						<mat-error *ngIf="rut">{{getRutErrorMessage()}}</mat-error>
 					</mat-form-field>
 
 				</div>
