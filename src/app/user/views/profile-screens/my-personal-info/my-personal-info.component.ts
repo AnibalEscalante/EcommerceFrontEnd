@@ -23,7 +23,7 @@ export class MyPersonalInfoComponent implements OnInit {
       name: ['', [Validators.pattern('[a-zA-Z]{2,32}')]],
       lastNameP: ['', [Validators.pattern('[a-zA-Z]{2,32}')]],
       lastNameM: ['', [Validators.pattern('[a-zA-Z]{2,32}')]],
-      run: ['', [Validators.pattern('[k,K,l0-9]{9}')]],
+      run: ['', [Validators.pattern('[k,K0-9]{9-10}')]],
       phone: ['', [Validators.pattern('[0-9]{9}')]],
       email: ['', [Validators.pattern("^[a-z0-9._%+-]+@[a-z0-9.-]+.[a-z]{2,4}$")]],
     });

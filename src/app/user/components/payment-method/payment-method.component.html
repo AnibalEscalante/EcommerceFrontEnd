@@ -16,7 +16,7 @@
               <h4 class="myPayment">Master card, 4120 **** **** ****</h4> 
             </div>
             <div class="col button-edit">
-              <i type="button" class="far fa-trash-alt mx-3" data-bs-toggle="modal" data-bs-target="#deleteAddress"></i>
+              <i type="button" class="far fa-trash-alt mx-3" data-bs-toggle="modal" data-bs-target="#deletePaymentMethod"></i>
               <i type="button" class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#editPaymentMethod"></i>
             </div>
           </div>
@@ -111,3 +111,30 @@
       </div>
     </div>
   </div>
+
+  <!-- -------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------ 
+------------------------------------------------------------------------------------------------------------------------ 
+--------------------------------------------------- Delete metodo de pago ----------------------------------------------
+------------------------------------------------------------------------------------------------------------------------ 
+------------------------------------------------------------------------------------------------------------------------ 
+------------------------------------------------------------------------------------------------------------------------ 
+-->
+
+<div class="modal fade " id="deletePaymentMethod" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title m-0" id="exampleModalLabel">Eliminar metodo de pago</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <h4>¿Estas seguro de eliminar este metodo de pago?</h4>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancelar</button>
+        <button type="submit" class="btn btn-save">Eliminar</button>
+      </div>
+    </div>
+  </div>
+</div>
