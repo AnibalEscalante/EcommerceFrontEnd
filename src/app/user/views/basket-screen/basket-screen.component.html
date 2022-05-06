@@ -162,7 +162,7 @@
 								<p class="mb-1 fs-6">Lugar donde se va a retirar el pedido:</p>
 								<div class="d-flex align-items-center">
 									<p class="direction-store me-2">Amazon Viña del Mar</p>
-									<i class="fas fa-edit"></i>
+									<i type="button" class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#changeUbicationStoreModal"></i>
 								</div>
 								<p class="my-2 fs-6">¿Quien va a retirar el pedido?</p>
 								<div class="form-check">
@@ -321,6 +321,24 @@
 				</div>
 
 			</form>
+		</div>
+	</div>
+</div>
+
+<div  class="modal fade" id="changeUbicationStoreModal" tabindex="-1" aria-labelledby="changeUbicationStoreModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="changeDirectionLabel">Cambiar ubicación del local de retiro</h5>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body d-flex align-items-center justify-content-center">
+				<i class="fas fa-map-marked-alt"></i>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancelar</button>
+				<button type="submit" class="btn btn-save">Guardar</button>
+			</div>
 		</div>
 	</div>
 </div>
