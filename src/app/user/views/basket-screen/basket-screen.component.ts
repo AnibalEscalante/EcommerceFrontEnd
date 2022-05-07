@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Loader } from '@googlemaps/js-api-loader'
 
 @Component({
   selector: 'app-basket-screen',
@@ -37,6 +38,16 @@ export class BasketScreenComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    let loader =  new Loader({
+      apiKey: 'AIzaSyDycBQl7SKPKcXOiMtfyiF1roxckgo5bPg'
+    })
+
+    loader.load().then(() => {
+      new google.maps.Map(document.getElementById("map")!,{
+        center: { lat: -33.0477338717155, lng: -71.61294094247721},
+        zoom: 20
+      })
+    })
   }
 
   get email() { return this.emailForm?.get('email'); }
