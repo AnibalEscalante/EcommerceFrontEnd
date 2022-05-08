@@ -11,6 +11,7 @@ import { MaterialModule } from './material/material.module';
 import { MenuComponent } from './components/off-canvas/menu/menu.component';
 import { OcFiltersComponent } from './components/off-canvas/oc-filters/oc-filters.component';
 import { FiltersComponent } from './components/filters/filters.component';
+import { PickUpPointComponent } from './components/pick-up-point/pick-up-point.component';
 
 
 @NgModule({
@@ -21,14 +22,16 @@ import { FiltersComponent } from './components/filters/filters.component';
     ProductInfoComponent,
     OcFiltersComponent,
     MenuComponent,
-    FiltersComponent
+    FiltersComponent,
+    PickUpPointComponent
   ],
   exports: [
     FooterComponent,
     ProductComponent,
     CategoryComponent,
     OcFiltersComponent,
-    ProductInfoComponent
+    ProductInfoComponent,
+    PickUpPointComponent
   ],
   imports: [
     CommonModule,

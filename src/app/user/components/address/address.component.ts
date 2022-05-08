@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { regionsAndCommunes } from 'src/app/core/models/regions'
+import { regionsAndCommunes } from 'src/app/shared/constants/regions'
 
 @Component({
   selector: 'app-address',
