@@ -332,16 +332,40 @@
 				<h5 class="modal-title" id="changeDirectionLabel">Cambiar ubicación del local de retiro</h5>
 				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 			</div>
-			<div class="modal-body d-flex align-items-center justify-content-center">
-				<!-- <i class="fas fa-map-marked-alt"></i> -->
-				<div class="full" id="map">
+			<form [formGroup]="pickUpPointForm" (ngSubmit)="onSubmitChgPickUpPoint()">
+				<div class="modal-body">
+					<div class="form-floating mb-3">
+						<select type="select" (change)="selectRegion()" [ngClass]="{'is-invalid': pickUpPointForm.value.region === '' && tryOnSubmit}" class="form-select" formControlName="region" aria-label="Floating label select region" [value]="regionsAndCommunes.name" #region required>
+							<option *ngIf="pickUpPointForm.value.region === ''" selected disabled>Selecione una región</option>
+							<option *ngFor="let region of regionsAndCommunes">
+								{{region.name}}
+							</option>
+						</select>
+						<label for="floatingSelect">Región *</label>
+						<div class="invalid-feedback">Seleccione una región</div>
+					</div>
+
+					<div class="form-floating mb-3">
+						<select type="select" [ngClass]="{'is-invalid': pickUpPointForm.value.commune === '' && tryOnSubmit}" class="form-select" formControlName="commune" aria-label="Floating label select commune" [value]="commune" #commune required>
+							<option *ngIf="pickUpPointForm.value.region === ''" selected disabled>Primero seleccione una región</option>
+							<option *ngIf="pickUpPointForm.value.region  !== ''" selected disabled>Selecione una comuna</option>
+							<option *ngFor="let commune of communes">
+								{{commune}}
+							</option>
+						</select>
+						<label for="floatingSelect">Comuna *</label>
+						<div class="invalid-feedback">Seleccione una comuna</div>
+					</div>
 					
+
+					<!-- for pick up points -->
+					<app-pick-up-point></app-pick-up-point>
 				</div>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancelar</button>
-				<button type="submit" class="btn btn-save">Guardar</button>
-			</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancelar</button>
+					<button type="submit" class="btn btn-save">Guardar</button>
+				</div>
+			</form>
 		</div>
 	</div>
 </div>

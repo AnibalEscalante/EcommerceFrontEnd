@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Loader } from '@googlemaps/js-api-loader'
+import { regionsAndCommunes } from 'src/app/shared/constants/regions'
 
 @Component({
   selector: 'app-basket-screen',
@@ -13,6 +13,11 @@ export class BasketScreenComponent implements OnInit {
   public widthBar: string;
   public activeStore: boolean;
   public activeDelivery: boolean;
+  
+  public regionsAndCommunes: any;
+  public communes: string[];
+  public pickUpPointForm: FormGroup;
+  public tryOnSubmit: boolean;
 
   public emailForm: FormGroup;
 
@@ -22,6 +27,9 @@ export class BasketScreenComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder
   ) {
+    this.communes = [];
+    this.regionsAndCommunes = regionsAndCommunes,
+    this.tryOnSubmit = false,
     this.pos = 'step2',
     this.widthBar = '0%',
     this.activeStore = false,
@@ -34,21 +42,19 @@ export class BasketScreenComponent implements OnInit {
       name: ['', [Validators.required, Validators.pattern('[a-zA-Z]{2,32}')]],
       lastName: ['', [Validators.required, Validators.pattern('[a-zA-Z]{2,32}')]],
       rut: ['', [Validators.required, Validators.pattern('[0-9k,K-]{9,10}')]]
+    }),
+    this.pickUpPointForm = this.formBuilder.group({
+      region: ['', [Validators.required]],
+      commune: ['', [Validators.required]],
+      street: ['', [Validators.required, Validators.pattern('[a-zA-Z\\s]{5,100}')]],
+      number: ['', [Validators.required, Validators.pattern('[0-9]{1,7}')]]
     })
   }
 
   ngOnInit(): void {
-    let loader =  new Loader({
-      apiKey: 'AIzaSyDycBQl7SKPKcXOiMtfyiF1roxckgo5bPg'
-    })
-
-    loader.load().then(() => {
-      new google.maps.Map(document.getElementById("map")!,{
-        center: { lat: -33.0477338717155, lng: -71.61294094247721},
-        zoom: 20
-      })
-    })
   }
+
+  /////////////////////////////// Change email form ///////////////////////////////
 
   get email() { return this.emailForm?.get('email'); }
 
@@ -62,6 +68,10 @@ export class BasketScreenComponent implements OnInit {
     }
     return this.email?.invalid ? 'El dato ingresado no es valido' : '';
   }
+
+  /////////////////////////////////////////////////////////////////////////////////
+
+  /////////////////////////// Pick up other person form ///////////////////////////
 
   get name () { return this.otherPickUpForm?.get('name'); }
   get lastName () { return this.otherPickUpForm?.get('lastName'); }
@@ -92,6 +102,24 @@ export class BasketScreenComponent implements OnInit {
     }
     return this.rut?.invalid ? 'El dato ingresado no es valido' : '';
   }
+
+  /////////////////////////////////////////////////////////////////////////////////
+
+  ////////////////////////////// Pick up point form //////////////////////////////
+
+  public selectRegion(){
+    for (let region of this.regionsAndCommunes){
+      if (this.pickUpPointForm.value.region === region.name){
+        this.communes = region.communes;
+      }
+    }
+  }
+
+  public onSubmitChgPickUpPoint(){
+    this.tryOnSubmit = true;
+  }
+
+  ////////////////////////////////////////////////////////////////////////////////
 
   public changeActiveDelivery(){
     if (this.activeDelivery == false && this.activeStore == false)
