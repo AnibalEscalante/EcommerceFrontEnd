@@ -118,7 +118,7 @@ export const regionsAndCommunes = [
     ]
   },
   {
-    "name": "Metropolitana de Santiago",
+    "name": "Metropolitana de Santiago", //<---- here
     "number": "MET",
     "communes": [
       "Alhué",

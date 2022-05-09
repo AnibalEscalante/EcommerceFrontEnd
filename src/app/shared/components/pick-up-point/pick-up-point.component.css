@@ -1,12 +1,11 @@
-.form-check{
+.form-check {
   border-style: solid;
   border-color: #c4c4c4;
   border-radius: 5px;
   border-width: 1px;
   padding: 1rem;
 }
-
-.form-check-input{
+.form-check-input {
   margin-left: 0px;
   margin-right: 0.5rem;
 }
