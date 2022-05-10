@@ -174,4 +174,200 @@ export const pickUpPoints = [
     "street": "Papudo",
     "number": "485"
   },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Metropolitana de Santiago",
+    "nameCommune": "Las Condes",
+    "street": "Av. las Condes",
+    "number": "7295"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Metropolitana de Santiago",
+    "nameCommune": "Santiago",
+    "street": "Abdón Cifuentes",
+    "number": "6"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Metropolitana de Santiago",
+    "nameCommune": "La Florida",
+    "street": "Av. Américo Vespucio",
+    "number": "7380-7452"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Metropolitana de Santiago",
+    "nameCommune": "Maipú",
+    "street": "Belarmino Osorio",
+    "number": "13"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Metropolitana de Santiago",
+    "nameCommune": "Los Cerrillos",
+    "street": "Av. Américo Vespucio",
+    "number": "2251"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Metropolitana de Santiago",
+    "nameCommune": "Lo Barnechea",
+    "street": "Av. La Dehesa",
+    "number": "2121"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Metropolitana de Santiago",
+    "nameCommune": "Renca",
+    "street": "Domingo Sta. María",
+    "number": "4084"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Metropolitana de Santiago",
+    "nameCommune": "Puente Alto",
+    "street": "Av. Concha y Toro",
+    "number": "1149"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Metropolitana de Santiago",
+    "nameCommune": "Penalolen",
+    "street": "Av. Consistorial",
+    "number": "2701"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Metropolitana de Santiago",
+    "nameCommune": "San Bernardo",
+    "street": "Arturo Prat",
+    "number": "435"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "O'Higgins",
+    "nameCommune": "Rancagua",
+    "street": "Membrillar",
+    "number": "10"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "O'Higgins",
+    "nameCommune": "Santa Cruz",
+    "street": "Orlandi",
+    "number": "26"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "O'Higgins",
+    "nameCommune": "Litueche",
+    "street": "Avda. Hermanos Carrera",
+    "number": "561"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Maule",
+    "nameCommune": "Molina",
+    "street": "Luis Cruz Martínez",
+    "number": "1563"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Maule",
+    "nameCommune": "Curicó",
+    "street": "Av. Manso de Velasco",
+    "number": "272"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Maule",
+    "nameCommune": "Talca",
+    "street": "Calle 6 Pte.",
+    "number": "498"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Maule",
+    "nameCommune": "Linares",
+    "street": "Kurt Moller",
+    "number": "199"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Maule",
+    "nameCommune": "Constitución",
+    "street": "Prieto",
+    "number": "963"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Maule",
+    "nameCommune": "Cauquenes",
+    "street": "Victoria",
+    "number": "467"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Ñuble",
+    "nameCommune": "Chillán",
+    "street": "Longitudinal Sur",
+    "number": "0113"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Ñuble",
+    "nameCommune": "Bulnes",
+    "street": "O'Higgins",
+    "number": "437"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Bío Bío",
+    "nameCommune": "Quirihue",
+    "street": "José Joaquín Pérez",
+    "number": "550"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Bío Bío",
+    "nameCommune": "Santa Bárbara",
+    "street": "Baquedano",
+    "number": "999"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Bío Bío",
+    "nameCommune": "Yumbel",
+    "street": "Gral. Cruz",
+    "number": "980"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Araucanía",
+    "nameCommune": "Lonquimay",
+    "street": "Ignacio, Carrera Pinto",
+    "number": "202"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Araucanía",
+    "nameCommune": "Victoria",
+    "street": "Av. Arturo Prat",
+    "number": "1007"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Araucanía",
+    "nameCommune": "Traiguen",
+    "street": "Santa Cruz",
+    "number": "659"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Araucanía",
+    "nameCommune": "Temuco",
+    "street": "Antonio Varas",
+    "number": "609"
+  },
 ]
