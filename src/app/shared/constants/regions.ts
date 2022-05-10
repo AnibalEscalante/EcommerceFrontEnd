@@ -118,7 +118,7 @@ export const regionsAndCommunes = [
     ]
   },
   {
-    "name": "Metropolitana de Santiago", //<---- here
+    "name": "Metropolitana de Santiago",
     "number": "MET",
     "communes": [
       "Alhué",
@@ -355,7 +355,7 @@ export const regionsAndCommunes = [
     ]
   },
   {
-    "name": "Los Ríos",
+    "name": "Los Ríos", // <-- here
     "number": "XIV",
     "communes": [
       "Corral",
