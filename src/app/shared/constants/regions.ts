@@ -355,7 +355,7 @@ export const regionsAndCommunes = [
     ]
   },
   {
-    "name": "Los Ríos", // <-- here
+    "name": "Los Ríos",
     "number": "XIV",
     "communes": [
       "Corral",
@@ -409,10 +409,10 @@ export const regionsAndCommunes = [
     ]
   },
   {
-    "name": "Aisén del Gral. Carlos Ibáñez del Campo",
+    "name": "Aysén",
     "number": "XI",
     "communes": [
-      "Aisén",
+      "Aysén",
       "Chile Chico",
       "Cisnes",
       "Cochrane",
