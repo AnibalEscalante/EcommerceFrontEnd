@@ -170,6 +170,13 @@ export const pickUpPoints = [
   {
     "nameStore": "Starken",
     "nameRegion": "Valparaíso",
+    "nameCommune": "Isla de Pascua",
+    "street": "Pont",
+    "number": ""
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Valparaíso",
     "nameCommune": "La Ligua",
     "street": "Papudo",
     "number": "485"
@@ -369,5 +376,131 @@ export const pickUpPoints = [
     "nameCommune": "Temuco",
     "street": "Antonio Varas",
     "number": "609"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Los Ríos",
+    "nameCommune": "Lanco",
+    "street": "Libertad",
+    "number": "134"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Los Ríos",
+    "nameCommune": "Valdivia",
+    "street": "Av. Ramón Picarte",
+    "number": "1093-1195"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Los Ríos",
+    "nameCommune": "Los Lagos",
+    "street": "Quinchilca 303",
+    "number": "303"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Los Ríos",
+    "nameCommune": "Río Bueno",
+    "street": "Esmeralda",
+    "number": "1481"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Los Ríos",
+    "nameCommune": "Lago Ranco",
+    "street": "Temuco",
+    "number": "100"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Los Ríos",
+    "nameCommune": "Panguipulli",
+    "street": "José Miguel Carrera",
+    "number": "784"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Los Ríos",
+    "nameCommune": "Osorno",
+    "street": "Valparaíso",
+    "number": "592"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Los Lagos",
+    "nameCommune": "Osorno",
+    "street": "Valparaíso",
+    "number": "592"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Los Lagos",
+    "nameCommune": "Puerto Montt",
+    "street": "Alcalde",
+    "number": "538"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Los Lagos",
+    "nameCommune": "Purranque",
+    "street": "Aníbal Pinto",
+    "number": "131"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Los Lagos",
+    "nameCommune": "Fresia",
+    "street": "San Carlos 280",
+    "number": "280"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Los Lagos",
+    "nameCommune": "Ancud",
+    "street": "Chacabuco",
+    "number": "791"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Los Lagos",
+    "nameCommune": "Castro",
+    "street": "Diego Portales",
+    "number": "555"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Los Lagos",
+    "nameCommune": "Quellón",
+    "street": "22 de Mayo",
+    "number": "278"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Aysén",
+    "nameCommune": "Aysén",
+    "street": "Michimalonco",
+    "number": "502"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Aysén",
+    "nameCommune": "Coyhaique",
+    "street": "Magallanes",
+    "number": "327"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Magallanes y de la Antártica Chilena",
+    "nameCommune": "Punta Arenas",
+    "street": "El Ovejero",
+    "number": "298"
+  },
+  {
+    "nameStore": "Starken",
+    "nameRegion": "Magallanes y de la Antártica Chilena",
+    "nameCommune": "Natales",
+    "street": "Manuel Bulnes",
+    "number": "1030"
   },
 ]
