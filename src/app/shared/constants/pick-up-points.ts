@@ -1,4 +1,4 @@
-export const pickUpPoints = [
+export const allPickUpPoints = [
   {
     "nameStore": "Starken",
     "nameRegion": "Arica y Parinacota",
