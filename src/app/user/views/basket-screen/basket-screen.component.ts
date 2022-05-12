@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { regionsAndCommunes } from 'src/app/shared/constants/regions'
+import { allPickUpPoints } from 'src/app/shared/constants/pick-up-points';
 
 @Component({
   selector: 'app-basket-screen',
@@ -24,11 +25,14 @@ export class BasketScreenComponent implements OnInit {
   public otherPickUpForm: FormGroup;
   public otherPickUpSend: boolean;
 
+  public pickUpPoints: any[];
+
   constructor(
     private formBuilder: FormBuilder
   ) {
     this.communes = [];
     this.regionsAndCommunes = regionsAndCommunes,
+    this.pickUpPoints = [],
     this.tryOnSubmit = false,
     this.pos = 'step2',
     this.widthBar = '0%',
@@ -52,6 +56,7 @@ export class BasketScreenComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
   }
 
   /////////////////////////////// Change email form ///////////////////////////////
@@ -112,6 +117,19 @@ export class BasketScreenComponent implements OnInit {
       if (this.pickUpPointForm.value.region === region.name){
         this.communes = region.communes;
       }
+    }
+    this.pickUpPoints = [];
+  }
+
+  public selectUbication(){
+    this.pickUpPoints = [];
+    for (let pickUpPoint of allPickUpPoints){
+      if (this.pickUpPointForm.value.commune === pickUpPoint.nameCommune){
+        this.pickUpPoints.push(pickUpPoint);
+      }
+    }
+    if (this.pickUpPoints === []) {
+      this.pickUpPoints.push('No pickUpPoints');
     }
   }
 

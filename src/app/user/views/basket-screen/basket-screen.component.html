@@ -346,9 +346,9 @@
 					</div>
 
 					<div class="form-floating mb-3">
-						<select type="select" [ngClass]="{'is-invalid': pickUpPointForm.value.commune === '' && tryOnSubmit}" class="form-select" formControlName="commune" aria-label="Floating label select commune" [value]="commune" #commune required>
+						<select type="select" (change)="selectUbication()" [ngClass]="{'is-invalid': pickUpPointForm.value.commune === '' && tryOnSubmit}" class="form-select" formControlName="commune" aria-label="Floating label select commune" [value]="commune" #commune required>
 							<option *ngIf="pickUpPointForm.value.region === ''" selected disabled>Primero seleccione una región</option>
-							<option *ngIf="pickUpPointForm.value.region  !== ''" selected disabled>Selecione una comuna</option>
+							<option *ngIf="pickUpPointForm.value.region  !== ''" selected>Selecione una comuna</option>
 							<option *ngFor="let commune of communes">
 								{{commune}}
 							</option>
@@ -357,9 +357,9 @@
 						<div class="invalid-feedback">Seleccione una comuna</div>
 					</div>
 					
-
-					<!-- for pick up points -->
-					<app-pick-up-point></app-pick-up-point>
+					<div *ngFor="let data of pickUpPoints">
+						<app-pick-up-point [dataPickUpPonit]="data"></app-pick-up-point>
+					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancelar</button>
