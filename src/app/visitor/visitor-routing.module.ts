@@ -24,7 +24,8 @@ const routes: Routes = [
     component: RegisterScreenComponent
   },
   {
-    path: 'category',
+    path: 'category/:id',
+    data: { routeName: "audifonos" },
     component: CategoryScreenComponent
   },
 ];

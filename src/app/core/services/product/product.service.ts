@@ -10,7 +10,7 @@ import { Product } from '../../models/product.model';
 export class ProductService {
 
   
-  constructor(
+ /*  constructor(
     private http: HttpClient
   ) { }
 
@@ -37,5 +37,5 @@ export class ProductService {
 
   deleteProduct(id: string): Observable<Product> {
     return this.http.delete<Product>(environment.baseUrl + '/Product/'+ id);
-  } 
+  }  */
 }

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ProductService } from 'src/app/core/services/product/product.service';
 
 
 @Component({
@@ -7,10 +8,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-info-screen.component.less']
 })
 export class ProductInfoScreenComponent implements OnInit {
-
-  constructor() {}
+  public id: string | null;
+  constructor(
+    public productService: ProductService
+  ) {
+    this.id = null;
+  }
   
   ngOnInit(): void {
+    
   }
+
+
 
 }

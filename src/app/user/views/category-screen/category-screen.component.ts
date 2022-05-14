@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Category } from 'src/app/core/models/category.model';
+import { CategoryService } from 'src/app/core/services/category/category.service';
 
 
 @Component({
@@ -8,11 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CategoryScreenComponent implements OnInit {
   
-
-  constructor() { 
+  public category?: Category[] = [];
+  constructor(
+    public categoryService: CategoryService
+  ) { 
+    this.fetchCategory()
   }
 
   ngOnInit(): void {
   }
+
+  async fetchCategory() {
+    try {
+      this.category = await this.categoryService.getAllCategory().toPromise()
+    } catch (error) {
+      console.log('Algo ha salido mal');
+    }
+  }
+
 
 }
