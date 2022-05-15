@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { regionsAndCommunes } from 'src/app/shared/constants/regions'
 import { allPickUpPoints } from 'src/app/shared/constants/pick-up-points';
+import { PickUpPoint } from 'src/app/core/models/pickUpPoint.model';
 
 @Component({
   selector: 'app-basket-screen',
@@ -25,7 +26,8 @@ export class BasketScreenComponent implements OnInit {
   public otherPickUpForm: FormGroup;
   public otherPickUpSend: boolean;
 
-  public pickUpPoints: any[];
+  public pickUpPoints: PickUpPoint[];
+  public selectPoint: PickUpPoint | null;
 
   constructor(
     private formBuilder: FormBuilder
@@ -33,6 +35,7 @@ export class BasketScreenComponent implements OnInit {
     this.communes = [];
     this.regionsAndCommunes = regionsAndCommunes,
     this.pickUpPoints = [],
+    this.selectPoint = null,
     this.tryOnSubmit = false,
     this.pos = 'step2',
     this.widthBar = '0%',
@@ -124,17 +127,28 @@ export class BasketScreenComponent implements OnInit {
   public selectUbication(){
     this.pickUpPoints = [];
     for (let pickUpPoint of allPickUpPoints){
-      if (this.pickUpPointForm.value.commune === pickUpPoint.nameCommune){
+      if (this.pickUpPointForm.value.commune === pickUpPoint.commune){
         this.pickUpPoints.push(pickUpPoint);
       }
     }
     if (this.pickUpPoints === []) {
-      this.pickUpPoints.push('No pickUpPoints');
+      this.pickUpPoints.push({
+        id: '-1',
+        nameStore: 'NO PICK UP POINTS',
+        region: '',
+        commune: '',
+        street: '',
+        number:''
+      });
     }
   }
 
   public onSubmitChgPickUpPoint(){
     this.tryOnSubmit = true;
+  }
+
+  public receivePickUpPoint(event: any){
+    this.selectPoint = event;    
   }
 
   ////////////////////////////////////////////////////////////////////////////////
