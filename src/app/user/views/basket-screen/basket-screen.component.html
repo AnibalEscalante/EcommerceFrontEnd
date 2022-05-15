@@ -131,7 +131,8 @@
 									<i [ngClass]="{'fa-delivery-option': !activeStore, 'fa-delivery-option-active': activeStore}" class="fas fa-store"></i>
 									<div class="me-2">
 										<p class="date-store">Retiro desde 30 Septiembre</p>
-										<p class="direction-store">Amazon Viña del Mar</p>
+										<p class="direction-store" *ngIf="selectPoint != null">{{selectPoint.nameStore}} {{selectPoint.commune}} {{selectPoint.street}}</p>
+										<p class="direction-store" *ngIf="selectPoint == null">No hay tienda seleccionada</p>
 									</div>
 								</div>
 								<p class="price-free">Gratis</p>
@@ -153,7 +154,8 @@
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="me-2">
 										<p class="date-store">Retiro desde 30 Septiembre</p>
-										<p class="direction-store">Amazon Viña del Mar</p>
+										<p class="direction-store" *ngIf="selectPoint != null">{{selectPoint.nameStore}} {{selectPoint.commune}} {{selectPoint.street}}</p>
+										<p class="direction-store" *ngIf="selectPoint == null">No hay tienda seleccionada</p>
 									</div>
 									<p class="price-free">Gratis</p>
 								</div>
@@ -161,8 +163,9 @@
 							<div class="collapse collapse-pick-up-option" id="editPickUpOtionCollapse">
 								<p class="mb-1 fs-6">Lugar donde se va a retirar el pedido:</p>
 								<div class="d-flex align-items-center">
-									<p class="direction-store me-2">Amazon Viña del Mar</p>
-									<i type="button" class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#changeUbicationStoreModal"></i>
+									<p class="direction-store" *ngIf="selectPoint != null">{{selectPoint.nameStore}} {{selectPoint.commune}} {{selectPoint.street}}</p>
+										<p class="direction-store" *ngIf="selectPoint == null">No hay tienda seleccionada </p>
+									<i type="button" class="fas fa-edit ms-1" data-bs-toggle="modal" data-bs-target="#changeUbicationStoreModal"></i>
 								</div>
 								<p class="my-2 fs-6">¿Quien va a retirar el pedido?</p>
 								<div class="form-check">
@@ -358,7 +361,7 @@
 					</div>
 					
 					<div *ngFor="let data of pickUpPoints">
-						<app-pick-up-point [dataPickUpPonit]="data"></app-pick-up-point>
+						<app-pick-up-point [dataPickUpPonit]="data" (dataSelectPoint)="receivePickUpPoint($event)"></app-pick-up-point>
 					</div>
 				</div>
 				<div class="modal-footer">
