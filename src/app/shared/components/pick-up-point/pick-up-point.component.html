@@ -1,9 +1,9 @@
 <div>
   <div class="form-check">
-      <input class="form-check-input" type="radio" id="`radioButton${{dataPickUpPonit.id}}`" name="radioButton" (click)="selected()">
-      <label class="form-check-label" for="`radioButton${{dataPickUpPonit.id}}`">
-        <p>{{dataPickUpPonit.nameStore}}</p>
-        <p>{{dataPickUpPonit.street}} {{dataPickUpPonit.number}}, {{dataPickUpPonit.commune}}, {{dataPickUpPonit.region}}.</p>
+      <input class="form-check-input" type="radio" id="`radioButton${{data.id}}`" name="radioButton" (click)="selected()">
+      <label class="form-check-label" for="`radioButton${{data.id}}`">
+        <p>{{data.nameStore}}</p>
+        <p>{{data.street}} {{data.number}}, {{data.commune}}, {{data.region}}.</p>
       </label>
   </div>
 </div>

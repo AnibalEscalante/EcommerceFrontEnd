@@ -164,7 +164,7 @@
 								<p class="mb-1 fs-6">Lugar donde se va a retirar el pedido:</p>
 								<div class="d-flex align-items-center">
 									<p class="direction-store" *ngIf="selectPoint != null">{{selectPoint.nameStore}} {{selectPoint.commune}} {{selectPoint.street}}</p>
-										<p class="direction-store" *ngIf="selectPoint == null">No hay tienda seleccionada </p>
+									<p class="direction-store" *ngIf="selectPoint == null">No hay tienda seleccionada </p>
 									<i type="button" class="fas fa-edit ms-1" data-bs-toggle="modal" data-bs-target="#changeUbicationStoreModal"></i>
 								</div>
 								<p class="my-2 fs-6">¿Quien va a retirar el pedido?</p>
@@ -361,12 +361,12 @@
 					</div>
 					
 					<div *ngFor="let data of pickUpPoints">
-						<app-pick-up-point [dataPickUpPonit]="data" (dataSelectPoint)="receivePickUpPoint($event)"></app-pick-up-point>
+						<app-pick-up-point [data]="data" (dataSelectPoint)="receivePickUpPoint($event)"></app-pick-up-point>
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancelar</button>
-					<button type="submit" class="btn btn-save">Guardar</button>
+					<button type="submit" class="btn btn-save" (click)="savePickUpPointModal()">Guardar</button>
 				</div>
 			</form>
 		</div>
