@@ -8,7 +8,7 @@ import { PickUpPoint } from 'src/app/core/models/pickUpPoint.model';
 })
 export class PickUpPointComponent implements OnInit {
 
-  @Input() dataPickUpPonit!: PickUpPoint;
+  @Input() data!: PickUpPoint;
 
   @Output() dataSelectPoint = new EventEmitter<PickUpPoint>();
 
@@ -21,12 +21,12 @@ export class PickUpPointComponent implements OnInit {
   
   public selected() {
     this.dataSelectPoint.emit({
-      id: this.dataPickUpPonit.id,
-      nameStore: this.dataPickUpPonit.nameStore,
-      region: this.dataPickUpPonit.region,
-      commune: this.dataPickUpPonit.commune,
-      street: this.dataPickUpPonit.street,
-      number: this.dataPickUpPonit.number
+      id: this.data.id,
+      nameStore: this.data.nameStore,
+      region: this.data.region,
+      commune: this.data.commune,
+      street: this.data.street,
+      number: this.data.number
     })
   }
 

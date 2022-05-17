@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { regionsAndCommunes } from 'src/app/shared/constants/regions'
 import { allPickUpPoints } from 'src/app/shared/constants/pick-up-points';
@@ -28,6 +28,7 @@ export class BasketScreenComponent implements OnInit {
 
   public pickUpPoints: PickUpPoint[];
   public selectPoint: PickUpPoint | null;
+  public receivePoint: PickUpPoint | null;
 
   constructor(
     private formBuilder: FormBuilder
@@ -36,6 +37,7 @@ export class BasketScreenComponent implements OnInit {
     this.regionsAndCommunes = regionsAndCommunes,
     this.pickUpPoints = [],
     this.selectPoint = null,
+    this.receivePoint = null,
     this.tryOnSubmit = false,
     this.pos = 'step2',
     this.widthBar = '0%',
@@ -148,7 +150,11 @@ export class BasketScreenComponent implements OnInit {
   }
 
   public receivePickUpPoint(event: any){
-    this.selectPoint = event;    
+    this.receivePoint = event;
+  }
+
+  public savePickUpPointModal(){
+    this.selectPoint = this.receivePoint;
   }
 
   ////////////////////////////////////////////////////////////////////////////////
