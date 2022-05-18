@@ -22,9 +22,23 @@ export class CategoryService {
     return response;
   }  
 
+  getCategoriesName(): Observable<Category[]> {
+    let category: Category[] = [];
+    const response = this.http.get<Category[]>(environment.baseUrl + '/category/all/name').pipe(map((data: any) => data.message));
+    response.subscribe(
+      res => (category = res)
+    );
+    return response;
+  }  
+
+
 
   getCategory(id: string): Observable<Category> {
-    return this.http.get<Category>(environment.baseUrl + '/Category/'+ id);
+    return this.http.get<Category>(environment.baseUrl + '/category/'+ id);
+  }
+
+  getCategoryName(id: string): Observable<Category>{
+    return this.http.get<Category>( environment.baseUrl + '/category/name/' + id)
   }
 
 

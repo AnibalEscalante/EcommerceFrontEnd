@@ -21,7 +21,7 @@ const routes: Routes = [
     component: HomeScreenComponent
   },
   {
-    path: 'category',
+    path: 'category/name/:id',
     component: CategoryScreenComponent
   },
   {

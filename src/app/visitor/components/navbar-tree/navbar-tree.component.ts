@@ -1,8 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { FlatTreeControl } from '@angular/cdk/tree';
+import { Component, Input, OnInit } from '@angular/core';
+import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
 import { Category } from 'src/app/core/models/category.model';
-import { CategoryService } from 'src/app/core/services/category/category.service';
-import { CategoryComponent } from 'src/app/shared/components/category/category.component';
 
 
 interface FoodNode {
@@ -72,49 +71,54 @@ const TREE_DATA: FoodNode[] = [
   },
 ];
 
+interface ExampleFlatNode {
+  expandable: boolean;
+  name: string;
+  level: number;
+}
 @Component({
-  selector: 'app-navbar',
-  templateUrl: './navbar.component.html',
-  styleUrls: ['./navbar.component.less']
+  selector: 'app-navbar-tree',
+  templateUrl: './navbar-tree.component.html',
+  styleUrls: ['./navbar-tree.component.less']
 })
+export class NavbarTreeComponent implements OnInit {
+  
+  @Input() public category!: Category | null;
 
-export class NavbarComponent implements OnInit {
+  private _transformer = (node: FoodNode, level: number) => {
+    return {
+      expandable: !!node.children && node.children.length > 0,
+      name: node.name,
+      level: level,
+    };
+  };
+
+  public treeControl = new FlatTreeControl<ExampleFlatNode>(
+    node => node.level,
+    node => node.expandable,
+  );
+
+  public treeFlattener = new MatTreeFlattener(
+    this._transformer,
+    node => node.level,
+    node => node.expandable,
+    node => node.children,
+  );
+
+  public dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
+
+  hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
 
 
-  public categories: Category[] = [];
-  public id: string;
-  public name: string;
   constructor(
-    public activatedRoute: ActivatedRoute,
-    public categoryService: CategoryService,
+
   ) {
-    this.fetchCategoriesName()
-    this.id = ''
-    this.name = ''
-    
+    this.dataSource.data = TREE_DATA;
   }
   
+
+
   ngOnInit(): void {
   }
-  
 
-  async fetchCategoriesName() {
-    try {
-      const response: any = await this.categoryService.getCategoriesName().toPromise();
-      this.categories = response;
-      console.log(this.categories)
-      for(let category of this.categories){
-        for(let categoryChildreens of TREE_DATA){
-          if(category.name = categoryChildreens.name){
-            
-          }
-        }
-      }
-    }
-    catch (error) {
-      console.log('Algo ha salido mal');
-    }
-  }
-
- 
 }
