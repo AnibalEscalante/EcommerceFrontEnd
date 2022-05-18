@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/core/models/category.model';
 import { CategoryService } from 'src/app/core/services/category/category.service';
 
@@ -11,19 +12,28 @@ import { CategoryService } from 'src/app/core/services/category/category.service
 export class CategoryScreenComponent implements OnInit {
   
   public category?: Category[] = [];
+  public id: string;
   constructor(
-    public categoryService: CategoryService
+    public categoryService: CategoryService,
+    public activatedRoute: ActivatedRoute
+    
+ 
   ) { 
     this.fetchCategory()
+   this.id = this.activatedRoute.snapshot.params['id'];
   }
 
   ngOnInit(): void {
   }
 
+
   async fetchCategory() {
     try {
-      this.category = await this.categoryService.getAllCategory().toPromise()
-    } catch (error) {
+      console.log(this.id)
+      const response: any = await this.categoryService.getCategoryName(this.id!).toPromise();
+      this.category = response.message;
+    }
+    catch (error) {
       console.log('Algo ha salido mal');
     }
   }

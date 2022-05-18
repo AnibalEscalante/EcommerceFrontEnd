@@ -10,8 +10,8 @@ import { MaterialModule } from '../shared/material/material.module';
 import { CategoryScreenComponent } from './views/category-screen/category-screen.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SharedModule } from '../shared/shared.module';
-import { CategoryComponent } from '../shared/components/category/category.component';
 import { ProductInfoScreenComponent } from './views/product-info-screen/product-info-screen.component';
+import { NavbarTreeComponent } from './components/navbar-tree/navbar-tree.component';
 
 
 @NgModule({
@@ -21,7 +21,8 @@ import { ProductInfoScreenComponent } from './views/product-info-screen/product-
     RegisterScreenComponent,
     CategoryScreenComponent,
     NavbarComponent,
-    ProductInfoScreenComponent
+    ProductInfoScreenComponent,
+    NavbarTreeComponent
   ],
   imports: [
     CommonModule,
