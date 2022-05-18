@@ -1,4 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { PickUpPoint } from 'src/app/core/models/pickUpPoint.model';
 
 @Component({
   selector: 'app-pick-up-point',
@@ -7,13 +8,26 @@ import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 })
 export class PickUpPointComponent implements OnInit {
 
-  @Input() dataPickUpPonit: any;
+  @Input() data!: PickUpPoint;
+
+  @Output() dataSelectPoint = new EventEmitter<PickUpPoint>();
 
   constructor() {
   }
 
   ngOnInit(): void {
     
+  }
+  
+  public selected() {
+    this.dataSelectPoint.emit({
+      id: this.data.id,
+      nameStore: this.data.nameStore,
+      region: this.data.region,
+      commune: this.data.commune,
+      street: this.data.street,
+      number: this.data.number
+    })
   }
 
 }

@@ -131,11 +131,12 @@
 									<i [ngClass]="{'fa-delivery-option': !activeStore, 'fa-delivery-option-active': activeStore}" class="fas fa-store"></i>
 									<div class="me-2">
 										<p class="date-store">Retiro desde 30 Septiembre</p>
-										<p class="direction-store">Amazon Viña del Mar</p>
+										<p class="direction-store" *ngIf="selectPoint != null">{{selectPoint.nameStore}} {{selectPoint.commune}} {{selectPoint.street}}</p>
+										<p class="direction-store" *ngIf="selectPoint == null">No hay tienda seleccionada</p>
 									</div>
 								</div>
 								<p class="price-free">Gratis</p>
-								<p type="button" class="mb-0" data-bs-toggle="collapse" data-bs-target="#editPickUpOtionCollapse">
+								<p type="button" class="mb-0" data-bs-toggle="collapse" data-bs-target="#editPickUpOptionCollapse">
 									cambiar
 									<i class="fas fa-edit"></i>
 								</p>
@@ -148,21 +149,23 @@
 							<div (click)="changeActiveStore()" [ngClass]="{'type-delivery-r': !activeStore, 'type-delivery-active-r': activeStore}" class="mb-3 ">
 								<div class="d-flex justify-content-between align-items-center mb-2">
 									<i [ngClass]="{'fa-delivery-option': !activeStore, 'fa-delivery-option-active': activeStore}" class="fas fa-store"></i>
-									<p type="button" class="mb-0" data-bs-toggle="collapse" data-bs-target="#editPickUpOtionCollapse"><i class="fas fa-edit"></i></p>
+									<p type="button" class="mb-0" data-bs-toggle="collapse" data-bs-target="#editPickUpOptionCollapse"><i class="fas fa-edit"></i></p>
 								</div>
 								<div class="d-flex justify-content-between align-items-center">
 									<div class="me-2">
 										<p class="date-store">Retiro desde 30 Septiembre</p>
-										<p class="direction-store">Amazon Viña del Mar</p>
+										<p class="direction-store" *ngIf="selectPoint != null">{{selectPoint.nameStore}} {{selectPoint.commune}} {{selectPoint.street}}</p>
+										<p class="direction-store" *ngIf="selectPoint == null">No hay tienda seleccionada</p>
 									</div>
 									<p class="price-free">Gratis</p>
 								</div>
 							</div>
-							<div class="collapse collapse-pick-up-option" id="editPickUpOtionCollapse">
+							<div *ngIf="activeStore" class="collapse collapse-pick-up-option" id="editPickUpOptionCollapse">
 								<p class="mb-1 fs-6">Lugar donde se va a retirar el pedido:</p>
 								<div class="d-flex align-items-center">
-									<p class="direction-store me-2">Amazon Viña del Mar</p>
-									<i type="button" class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#changeUbicationStoreModal"></i>
+									<p class="direction-store" *ngIf="selectPoint != null">{{selectPoint.nameStore}} {{selectPoint.commune}} {{selectPoint.street}}</p>
+									<p class="direction-store" *ngIf="selectPoint == null">No hay tienda seleccionada </p>
+									<i type="button" class="fas fa-edit ms-1" data-bs-toggle="modal" data-bs-target="#changeUbicationStoreModal"></i>
 								</div>
 								<p class="my-2 fs-6">¿Quien va a retirar el pedido?</p>
 								<div class="form-check">
@@ -177,12 +180,12 @@
 										<p class="mb-0 fs-6">Otra Persona lo va a retirar</p>
 									</label>
 								</div>
-									<div class="d-flex align-items-center" *ngIf="otherPickUpSend">
-										<p class="other-person-data">
-											{{otherPickUpForm.value.name}} {{otherPickUpForm.value.lastName}}
-										</p>
-										<i class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#pickUpOtherPersonModal"></i>
-									</div>
+								<div class="d-flex align-items-center" *ngIf="otherPickUpSend">
+									<p class="other-person-data">
+										{{otherPickUpForm.value.name}} {{otherPickUpForm.value.lastName}}
+									</p>
+									<i class="fas fa-edit" data-bs-toggle="modal" data-bs-target="#pickUpOtherPersonModal"></i>
+								</div>
 							</div>
 						</div>
 	
@@ -196,7 +199,7 @@
 								<p class="date-delivery me-2">Llega entre el 20 y 24 de Mayo</p>
 							</div>
 							<p class="price-delivery">$1.590</p>
-							<p type="button" class="mb-0">
+							<p type="button" class="mb-0" data-bs-toggle="collapse" data-bs-target="#editStoreOptionCollapse">
 								cambiar
 								<i class="fas fa-edit"></i>
 							</p>
@@ -209,12 +212,17 @@
 						<div (click)="changeActiveDelivery()" [ngClass]="{'type-delivery-r': !activeDelivery, 'type-delivery-active-r': activeDelivery}">
 							<div class="d-flex justify-content-between align-items-center mb-2">
 								<i [ngClass]="{'fa-delivery-option': !activeDelivery, 'fa-delivery-option-active': activeDelivery}" class="fas fa-truck"></i>
-								<p type="button" class="mb-0"><i class="fas fa-edit"></i></p>
+								<p type="button" class="mb-0" data-bs-toggle="collapse" data-bs-target="#editStoreOptionCollapse"><i class="fas fa-edit"></i></p>
 							</div>
 							<div class="d-flex justify-content-between align-items-center">
 								<p class="date-delivery me-2">Llega entre el 20 y 24 de Mayo</p>
 								<p class="price-delivery">$1.590</p>
 							</div>
+						</div>
+						<div *ngIf="activeDelivery" class="collapse collapse-store-option" id="editStoreOptionCollapse">
+							<p class="mb-1 fs-6">Fecha para recibir el pedido:</p>
+							<input type="date" min="2022-05-20" max="2022-06-21">
+							
 						</div>
 					</div>
 
@@ -358,12 +366,12 @@
 					</div>
 					
 					<div *ngFor="let data of pickUpPoints">
-						<app-pick-up-point [dataPickUpPonit]="data"></app-pick-up-point>
+						<app-pick-up-point [data]="data" (dataSelectPoint)="receivePickUpPoint($event)"></app-pick-up-point>
 					</div>
 				</div>
 				<div class="modal-footer">
 					<button type="button" class="btn btn-cancel" data-bs-dismiss="modal">Cancelar</button>
-					<button type="submit" class="btn btn-save">Guardar</button>
+					<button type="submit" class="btn btn-save" (click)="savePickUpPointModal()">Guardar</button>
 				</div>
 			</form>
 		</div>
