@@ -290,3 +290,11 @@ input[type=number]::-webkit-outer-spin-button {
   color: #6C757D;
   margin-right: 0.5rem;
 }
+.collapse-store-option {
+  border-color: #9100F5;
+  border-width: 2px;
+  border-style: solid;
+  border-radius: 5px;
+  padding: 1rem;
+  margin-top: 1rem;
+}
