@@ -39,7 +39,7 @@ export class BasketScreenComponent implements OnInit {
     this.selectPoint = null,
     this.receivePoint = null,
     this.tryOnSubmit = false,
-    this.pos = 'step2',
+    this.pos = 'step3',
     this.widthBar = '0%',
     this.activeStore = false,
     this.activeDelivery = false,

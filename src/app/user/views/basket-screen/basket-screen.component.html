@@ -220,7 +220,7 @@
 							</div>
 						</div>
 						<div *ngIf="activeDelivery" class="collapse collapse-store-option" id="editStoreOptionCollapse">
-							<p class="mb-1 fs-6">Fecha para recibir el pedido:</p>
+							<p class="mb-1 me-1 fs-6">Fecha para recibir el pedido:</p>
 							<input type="date" min="2022-05-20" max="2022-06-21">
 							
 						</div>
@@ -250,7 +250,28 @@
 	<!-- start step 3 -->
 
 	<div *ngIf="pos === 'step3'" class="step-3">
-		<h1 class="m-4 text-center">step3</h1>
+		<div class="row d-flex justify-content-evenly">
+			<div class="col-7">
+				<div class="card p-3">
+					<h3 class="fs-3">Seleccione una tarjeta:</h3>
+
+					<div class="card card-payment">
+						<div class="form-check">
+							<input class="form-check-input me-2" type="radio" id="radioButton" name="radioButton">
+							<label class="form-check-label" for="radioButton">
+								<p class="fs-6 mb-0">Master Card, 4120 **** **** ****</p>
+							</label>
+						</div>
+					</div>
+
+				</div>
+			</div>
+			<div class="col-3">
+				<div class="card p-3">
+					<h3 class="fs-6">Información de la compra</h3>
+				</div>
+			</div>
+		</div>
 	</div>
 
 	<!-- end step 3 -->
