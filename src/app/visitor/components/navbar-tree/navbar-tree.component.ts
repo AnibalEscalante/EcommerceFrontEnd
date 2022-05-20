@@ -2,6 +2,7 @@ import { FlatTreeControl } from '@angular/cdk/tree';
 import { Component, Input, OnInit } from '@angular/core';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
 import { Category } from 'src/app/core/models/category.model';
+import { CategoryService } from 'src/app/core/services/category/category.service';
 
 
 interface FoodNode {
@@ -109,11 +110,28 @@ export class NavbarTreeComponent implements OnInit {
 
   hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
 
-
+  public categories: Category[] = [];
+  public id: string;
+  public name: string;
   constructor(
-
+    public categoryService: CategoryService,
   ) {
     this.dataSource.data = TREE_DATA;
+    this.id = ''
+    this.name = ''
+    this.fetchCategoriesName();
+  }
+
+  async fetchCategoriesName() {
+    try {
+      const response: any = await this.categoryService.getCategoriesName().toPromise();
+      this.categories = response;
+      console.log(this.categories)
+
+    }
+    catch (error) {
+      console.log('Algo ha salido mal');
+    }
   }
   
 
