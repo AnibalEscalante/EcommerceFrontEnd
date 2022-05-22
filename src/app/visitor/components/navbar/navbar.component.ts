@@ -5,72 +5,6 @@ import { ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/core/models/category.model';
 import { CategoryService } from 'src/app/core/services/category/category.service';
 
-/* interface FoodNode {
-  name: string;
-  children?: FoodNode[];
-} */
-
-/* const TREE_DATA: FoodNode[] = [
-  {
-    name: 'Audio',
-    children: [
-      {name: 'audifonos'}, 
-      {name: 'Audifonos inálambricos'}, 
-      {name: 'Audifonos profesional y DJ'},
-      {name: 'Equipos de música y karaoke'},
-      {name: 'Hi-Fi'},
-      {name: 'Instrumentos musicales'},
-      {name: 'Parlantes'},
-      {name: 'Soundbar y home theater'},
-      {name: 'Tocadiscos y Vinilos'},
-      {name: 'Parlantes bluetooth'}
-    ],
-  },
-  {
-    name: 'TV',
-    children: [
-      {name: 'Accesorios'},
-      {name: 'Proyectores'}, 
-      {name: 'Smart tv'}, 
-      {name: 'Soportes'}, 
-      {name: 'Streaming'},
-     
-    ],
-  },
-  {
-    name: 'Computación',
-    children: [
-      {name: 'Accesorios'},
-      {name: 'Almacenamiento'}, 
-      {name: 'Desktops'}, 
-      {name: 'Kindles & eReaders'}, 
-      {name: 'Monitores'},
-      {name: 'Notebooks'},
-      {name: 'Tablets'},
-      {name: 'Webcams'},
-    ],
-  },
-  {
-    name: 'Videojuegos',
-    children: [
-      {name: 'Accesorios'},
-      {name: 'Consolas'}, 
-      {name: 'Juegos'}, 
-      {name: 'Suscripciones y tarjetas'}
-     
-    ],
-  },
-  {
-    name: 'Computación gamer',
-    children: [
-      {name: 'Accesorios'},
-      {name: 'Consolas'}, 
-      {name: 'Juegos'}, 
-      {name: 'Suscripciones y tarjetas'}
-     
-    ],
-  },
-]; */
 
 interface ExampleFlatNode {
   expandable: boolean;
@@ -89,7 +23,7 @@ export class NavbarComponent implements OnInit {
   
   private _transformer = (category: Category, level: number) => {
     return {
-      expandable: !!category.categories && category.categories.length > 0,
+      expandable: !!category.subCategories && category.subCategories.length > 0,
       name: category.name,
       level: level,
     };
@@ -104,7 +38,7 @@ export class NavbarComponent implements OnInit {
     this._transformer,
     category => category.level,
     category => category.expandable,
-    category => category.categories,
+    category => category.subCategories,
   );
 
   public dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);

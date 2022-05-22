@@ -5,73 +5,6 @@ import { Category } from 'src/app/core/models/category.model';
 import { CategoryService } from 'src/app/core/services/category/category.service';
 
 
-interface FoodNode {
-  name: string;
-  children?: FoodNode[];
-}
-
-const TREE_DATA: FoodNode[] = [
-  {
-    name: 'Audio',
-    children: [
-      {name: 'audifonos'}, 
-      {name: 'Audifonos inálambricos'}, 
-      {name: 'Audifonos profesional y DJ'},
-      {name: 'Equipos de música y karaoke'},
-      {name: 'Hi-Fi'},
-      {name: 'Instrumentos musicales'},
-      {name: 'Parlantes'},
-      {name: 'Soundbar y home theater'},
-      {name: 'Tocadiscos y Vinilos'},
-      {name: 'Parlantes bluetooth'}
-    ],
-  },
-  {
-    name: 'TV',
-    children: [
-      {name: 'Accesorios'},
-      {name: 'Proyectores'}, 
-      {name: 'Smart tv'}, 
-      {name: 'Soportes'}, 
-      {name: 'Streaming'},
-     
-    ],
-  },
-  {
-    name: 'Computación',
-    children: [
-      {name: 'Accesorios'},
-      {name: 'Almacenamiento'}, 
-      {name: 'Desktops'}, 
-      {name: 'Kindles & eReaders'}, 
-      {name: 'Monitores'},
-      {name: 'Notebooks'},
-      {name: 'Tablets'},
-      {name: 'Webcams'},
-    ],
-  },
-  {
-    name: 'Videojuegos',
-    children: [
-      {name: 'Accesorios'},
-      {name: 'Consolas'}, 
-      {name: 'Juegos'}, 
-      {name: 'Suscripciones y tarjetas'}
-     
-    ],
-  },
-  {
-    name: 'Computación gamer',
-    children: [
-      {name: 'Accesorios'},
-      {name: 'Consolas'}, 
-      {name: 'Juegos'}, 
-      {name: 'Suscripciones y tarjetas'}
-     
-    ],
-  },
-];
-
 interface ExampleFlatNode {
   expandable: boolean;
   name: string;
@@ -84,59 +17,63 @@ interface ExampleFlatNode {
 })
 export class NavbarTreeComponent implements OnInit {
   
-  @Input() public category!: Category | null;
+  @Input() public categories!: Category | null;
 
-  private _transformer = (node: FoodNode, level: number) => {
+  private _transformer = (category: Category, level: number) => {
     return {
-      expandable: !!node.children && node.children.length > 0,
-      name: node.name,
+      expandable: !!category.subCategories && category.subCategories.length > 0,
+      name: category.name,
       level: level,
     };
   };
 
   public treeControl = new FlatTreeControl<ExampleFlatNode>(
-    node => node.level,
-    node => node.expandable,
+    category => category.level,
+    category => category.expandable,
   );
 
   public treeFlattener = new MatTreeFlattener(
     this._transformer,
-    node => node.level,
-    node => node.expandable,
-    node => node.children,
+    category => category.level,
+    category => category.expandable,
+    category => category.subCategories,
   );
 
   public dataSource = new MatTreeFlatDataSource(this.treeControl, this.treeFlattener);
 
-  hasChild = (_: number, node: ExampleFlatNode) => node.expandable;
+  hasChild = (_: number, category: ExampleFlatNode) => category.expandable;
 
-  public categories: Category[] = [];
+
+  public category: Category[] = [];
   public id: string;
   public name: string;
   constructor(
     public categoryService: CategoryService,
   ) {
-    this.dataSource.data = TREE_DATA;
     this.id = ''
     this.name = ''
-    this.fetchCategoriesName();
+    
+    /* 
+    
+    this.fetchCategoriesName(); */
   }
 
-  async fetchCategoriesName() {
+  /* async fetchCategoriesName() {
     try {
       const response: any = await this.categoryService.getCategoriesName().toPromise();
       this.categories = response;
-      console.log(this.categories)
+      console.log(this.category)
 
     }
     catch (error) {
       console.log('Algo ha salido mal');
     }
-  }
+  } */
   
 
 
   ngOnInit(): void {
+    this.dataSource.data = this.category;
   }
 
 }

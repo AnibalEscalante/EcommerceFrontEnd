@@ -1,10 +1,9 @@
-import { Product } from "./product.model";
+import { SubCategory } from "./subCategory.model";
 
 export interface Category{
     _id: string | number;
     name: string;
-    products?: Product[];
-    categories?: Category[];
+    subCategories?: SubCategory[];
     updatedAt?: Date;
     createdAt?: Date;
 }
