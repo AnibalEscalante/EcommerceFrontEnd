@@ -1,7 +1,7 @@
 import { SubCategory } from "./subCategory.model";
 
 export interface Category{
-    _id: string | number;
+    _id: string;
     name: string;
     subCategories?: SubCategory[];
     updatedAt?: Date;

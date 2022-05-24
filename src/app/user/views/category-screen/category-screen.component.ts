@@ -11,7 +11,7 @@ import { CategoryService } from 'src/app/core/services/category/category.service
 })
 export class CategoryScreenComponent implements OnInit {
   
-  public category?: Category[] = [];
+  public category: Category[] = [];
   public id: string;
   constructor(
     public categoryService: CategoryService,
@@ -19,15 +19,24 @@ export class CategoryScreenComponent implements OnInit {
     
  
   ) { 
-    this.fetchCategory()
+    this.fetchGetAllCategory()
    this.id = this.activatedRoute.snapshot.params['id'];
   }
 
   ngOnInit(): void {
   }
 
-
-  async fetchCategory() {
+  async fetchGetAllCategory() {
+    try {
+      const response: any = await this.categoryService.getAllCategory().toPromise();
+      this.category = response;
+      /* console.log(this.category) */
+    }
+    catch (error) {
+      console.log('Algo ha salido mal');
+    }
+  }
+ /*  async fetchCategory() {
     try {
       console.log(this.id)
       const response: any = await this.categoryService.getCategoryName(this.id!).toPromise();
@@ -36,7 +45,7 @@ export class CategoryScreenComponent implements OnInit {
     catch (error) {
       console.log('Algo ha salido mal');
     }
-  }
+  } */
 
 
 }
