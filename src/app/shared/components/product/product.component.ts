@@ -1,13 +1,15 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Product } from 'src/app/core/models/product.model';
+import { SubCategory } from 'src/app/core/models/subCategory.model';
 
-interface Product{
+/* interface Product{
   id:string;
   brand: string;
   description: string;
   price: string;
   image: string;
-}
-const PRODUCT_DATA: Product[] = [
+} */
+/* const PRODUCT_DATA: Product[] = [
   {
     id:'1',
     brand: 'Sony',
@@ -44,7 +46,7 @@ const PRODUCT_DATA: Product[] = [
     image: 'a5'
   },
 ];
-
+ */
 @Component({
   selector: 'app-product',
   templateUrl: './product.component.html',
@@ -52,6 +54,7 @@ const PRODUCT_DATA: Product[] = [
 })
 export class ProductComponent implements OnInit {
 
+  @Input() subCategories!: SubCategory[];
   @Input() product!: Product;
   constructor() { }
 

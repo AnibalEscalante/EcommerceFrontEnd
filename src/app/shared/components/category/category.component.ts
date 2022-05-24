@@ -1,6 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Category } from 'src/app/core/models/category.model';
+import { Product } from 'src/app/core/models/product.model';
+import { SubCategory } from 'src/app/core/models/subCategory.model';
+import { CategoryService } from 'src/app/core/services/category/category.service';
+import { SubCategoryService } from 'src/app/core/services/subCategory/sub-category.service';
 
-interface Product{
+/* interface Product{
   id:string;
   brand: string;
   description: string;
@@ -43,7 +49,7 @@ const PRODUCT_DATA: Product[] = [
     price: '$150.000',
     image: 'a5'
   },
-];
+]; */
 
 @Component({
   selector: 'app-category',
@@ -52,14 +58,35 @@ const PRODUCT_DATA: Product[] = [
 })
 export class CategoryComponent implements OnInit {
 
+  @Input() category!: Category;
+  public subCategories: SubCategory[] = [];
+  public idCategory: string;
+  constructor(
+    public activatedRoute: ActivatedRoute,
+    public getCategoryService: SubCategoryService,
+  ) { 
+    this.subCategories = [];
+    this.idCategory = "";
   
-  public products: Product[];
-  constructor() { 
-    this.products = PRODUCT_DATA;
   }
 
   ngOnInit(): void {
-    this.refresh();
+    /* this.refresh(); */
+    /* console.log(this.category._id) */
+    this.fetchSubCategory()
+  }
+  
+  async fetchSubCategory() {
+    try {
+      const response: any = await this.getCategoryService.getSubCategory(this.category._id).toPromise();
+      this.subCategories = response;
+     /*  console.log(this.category.name) */
+      /* console.log(this.subCategories) */
+
+    }
+    catch (error) {
+      console.log('Algo ha salido mal');
+    }
   }
 
   refresh(): void { 

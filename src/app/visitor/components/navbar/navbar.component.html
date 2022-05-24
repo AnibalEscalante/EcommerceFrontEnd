@@ -59,11 +59,33 @@
         <span type="button" class="material-icons button-close" data-bs-dismiss="offcanvas" aria-label="Close">close</span>
     </div>
     <div class="offcanvas-body p-1">
+        <div class="accordion" id="accordionCategory">
+           <div *ngFor="let category of categories; let idCollapse = index">
+                <div class="accordion-item">
+                    <h2 class="accordion-header d-flex align-items-center" [id]="'heading' + idCollapse">
+                        <button  class="accordion-button collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapse'+ idCollapse" aria-expanded="false" aria-controls="collapseOne">
+                        </button>
+                        {{category.name}}
+                    </h2>
+            
+                    <div *ngFor="let subCategory of category.subCategories">
+                        <div [id]="'collapse' + idCollapse" class="accordion-collapse collapse" aria-labelledby="headingSubCategory" data-bs-parent="#accordionSubCategory">
+                            <div class="accordion-body">
+                                <ul class="list-group list-group-flush">
 
-            <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
+                                    <li class="list-group-item">{{subCategory.name}}</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div> 
+        </div>
+            <!-- <mat-tree [dataSource]="dataSource" [treeControl]="treeControl">
                 <mat-tree-node class="ps-3" *matTreeNodeDef="let category" matTreeNodePadding>
                     <button class="product-name" mat-icon-button disabled></button>
-                        <div type="button" [routerLink]="['/user/category/name',category.id]" class="sub-category-name">{{category.name}}
+                        <div type="button" [routerLink]="['/user/category/name',category._id]" class="sub-category-name">{{category.name}}
                         </div>
               
                 </mat-tree-node>
@@ -76,7 +98,7 @@
                   </button>
                   <div class="category-name">{{category.name}}</div>
                 </mat-tree-node>
-              </mat-tree>
+              </mat-tree> -->
     </div>
 </div>
 
