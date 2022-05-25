@@ -32,18 +32,17 @@
       <div class="row align-items-start">
           <div class="col-12 col-lg-3">
               <div class="card my-4 filters-card">
-                <h3 class="product-title">Audifonos</h3>
+                <h3 *ngIf="subCategory" class="product-title">{{subCategory.name}}</h3>
                   <div class="card-body filters-card">
                     <app-filters></app-filters>
                   </div>
               </div>
           </div>
           <div class="col-12 col-lg-9">
-              <div class="row">
-                  <!-- <div *ngFor="let subCategories of subCategories" class="col-6 col-lg-4 my-4">
-                      <app-product [subCategories]="subCategories"></app-product>
-                  </div> -->
-              </div>
+              <!-- <div class="row">
+                  <div *ngFor="let product of subCategory.products" class="col-6 col-lg-4 my-4"></div>
+                      <app-product [product]="products"></app-product>
+              </div> -->
           </div>
           <div class="row">
             <div class="col col-lg-3">
