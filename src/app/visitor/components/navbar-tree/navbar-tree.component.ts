@@ -2,6 +2,7 @@ import { FlatTreeControl } from '@angular/cdk/tree';
 import { Component, Input, OnInit } from '@angular/core';
 import { MatTreeFlatDataSource, MatTreeFlattener } from '@angular/material/tree';
 import { Category } from 'src/app/core/models/category.model';
+import { SubCategory } from 'src/app/core/models/subCategory.model';
 import { CategoryService } from 'src/app/core/services/category/category.service';
 
 
@@ -17,7 +18,7 @@ interface ExampleFlatNode {
 })
 export class NavbarTreeComponent implements OnInit {
   
-  @Input() public categories!: Category | null;
+  @Input() public subCategory!: SubCategory;
 
   public category!: Category;
   public id: string;
@@ -32,6 +33,7 @@ export class NavbarTreeComponent implements OnInit {
 
 
   ngOnInit(): void {
+    console.log(this.subCategory)
   }
 
 }

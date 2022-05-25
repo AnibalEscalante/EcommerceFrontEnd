@@ -54,7 +54,6 @@ import { SubCategory } from 'src/app/core/models/subCategory.model';
 })
 export class ProductComponent implements OnInit {
 
-  @Input() subCategories!: SubCategory[];
   @Input() product!: Product;
   constructor() { }
 

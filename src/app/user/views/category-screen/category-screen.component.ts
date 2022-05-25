@@ -19,33 +19,12 @@ export class CategoryScreenComponent implements OnInit {
     
  
   ) { 
-    this.fetchGetAllCategory()
    this.id = this.activatedRoute.snapshot.params['id'];
   }
 
   ngOnInit(): void {
   }
 
-  async fetchGetAllCategory() {
-    try {
-      const response: any = await this.categoryService.getAllCategory().toPromise();
-      this.category = response;
-      /* console.log(this.category) */
-    }
-    catch (error) {
-      console.log('Algo ha salido mal');
-    }
-  }
- /*  async fetchCategory() {
-    try {
-      console.log(this.id)
-      const response: any = await this.categoryService.getCategoryName(this.id!).toPromise();
-      this.category = response.message;
-    }
-    catch (error) {
-      console.log('Algo ha salido mal');
-    }
-  } */
 
 
 }

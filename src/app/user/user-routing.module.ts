@@ -22,7 +22,8 @@ const routes: Routes = [
   },
   {
     path: 'category/name/:id',
-    component: CategoryScreenComponent
+    component: CategoryScreenComponent,
+    
   },
   {
     path: 'product/:id',
