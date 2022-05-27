@@ -1,7 +1,7 @@
 import { Feature } from "./features.model";
 
 export interface Product{
-    id: string;
+    _id: string;
     code?:string;
     brand: string;
     description: string;
