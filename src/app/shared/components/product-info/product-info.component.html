@@ -73,24 +73,15 @@
                 <div class="row all-products">
                     <div class="col-12 col-lg-5">
                         <div class="card card-specification-content">
-                            <div class="card-body body-specification">
-                                <div class="specification-pair">
-                                    <p class="m-0 ps-3">Marca</p>
+                            <div *ngIf="product" class="card-body body-specification">
+                                <div *ngFor="let features of product.features" class="specification-pair">
+                                    <p *ngIf="features" class="m-0 ps-3">{{features.name}}: {{features.attribute}}</p>
                                 </div>
                                 <div class="specification-odd ">
                                     <p class="m-0 ps-3">Tipo</p>
                                 </div>
                                 <div class="specification-pair">
                                     <p class="m-0 ps-3">Peso</p>
-                                </div>
-                                <div class="specification-odd ">
-                                    <p class="m-0 ps-3">Auricular</p>
-                                </div>
-                                <div class="specification-pair">
-                                    <p class="m-0 ps-3">Compatibilidad</p>
-                                </div>
-                                <div class="specification-odd ">
-                                    <p class="m-0 ps-3">Conexión Bluetooth</p>
                                 </div>
                             </div>
                         </div>

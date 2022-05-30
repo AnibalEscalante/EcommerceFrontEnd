@@ -35,7 +35,6 @@ export class CategoryComponent implements OnInit {
       const response: any = await this.getCategoryService.getSubCategory(this.idSubCategory).toPromise();
       this.subCategory = response.message;
       this.products = this.subCategory.products
-      console.log(this.products);
       
 
     }
