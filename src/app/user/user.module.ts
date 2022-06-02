@@ -18,6 +18,7 @@ import { AddressComponent } from './components/address/address.component';
 import { MyPaymentMethodComponent } from './views/profile-screens/my-payment-method/my-payment-method.component';
 import { PaymentMethodComponent } from './components/payment-method/payment-method.component';
 import { MyPasswordComponent } from './views/profile-screens/my-password/my-password.component';
+import { NavbarTreeComponent } from './components/navbar-tree/navbar-tree.component';
 
 
 @NgModule({
@@ -35,7 +36,8 @@ import { MyPasswordComponent } from './views/profile-screens/my-password/my-pass
     AddressComponent,
     MyPaymentMethodComponent,
     PaymentMethodComponent,
-    MyPasswordComponent
+    MyPasswordComponent,
+    NavbarTreeComponent
   ],
   imports: [
     CommonModule,
