@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { PageEvent } from '@angular/material/paginator';
 import { ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/core/models/category.model';
 import { Product } from 'src/app/core/models/product.model';
@@ -18,6 +19,8 @@ export class CategoryComponent implements OnInit {
   public subCategory!: SubCategory;
   public idSubCategory: string;
   public products!: Product[];
+  public page_size: number = 2
+  public page_number: number = 1
   constructor(
     public activatedRoute: ActivatedRoute,
     public getCategoryService: SubCategoryService,
@@ -43,6 +46,10 @@ export class CategoryComponent implements OnInit {
     }
   }
 
+  handlePage(e: PageEvent){
+    this.page_size = e.pageSize
+    this.page_number = e.pageIndex + 1
+  }
   refresh(): void { 
       const firstTime = localStorage.getItem('first')
     if(!firstTime){

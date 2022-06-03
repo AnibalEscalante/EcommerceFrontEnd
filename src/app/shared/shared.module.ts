@@ -12,6 +12,7 @@ import { MenuComponent } from './components/off-canvas/menu/menu.component';
 import { OcFiltersComponent } from './components/off-canvas/oc-filters/oc-filters.component';
 import { FiltersComponent } from './components/filters/filters.component';
 import { PickUpPointComponent } from './components/pick-up-point/pick-up-point.component';
+import { PaginatePipe } from './components/pipes/paginate.pipe';
 
 
 @NgModule({
@@ -23,7 +24,8 @@ import { PickUpPointComponent } from './components/pick-up-point/pick-up-point.c
     OcFiltersComponent,
     MenuComponent,
     FiltersComponent,
-    PickUpPointComponent
+    PickUpPointComponent,
+    PaginatePipe
   ],
   exports: [
     FooterComponent,
