@@ -11,6 +11,7 @@ import { CategoryService } from 'src/app/core/services/category/category.service
 })
 export class CategoryScreenComponent implements OnInit {
   
+  public searchText: any;
   public category: Category[] = [];
   public id: string;
   constructor(
@@ -20,6 +21,10 @@ export class CategoryScreenComponent implements OnInit {
  
   ) { 
    this.id = this.activatedRoute.snapshot.params['id'];
+  }
+  
+  public getText(event: any) {
+    this.searchText = event;
   }
 
   ngOnInit(): void {

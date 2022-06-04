@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
-<app-category></app-category>
+<app-navbar (searchText)="getText($event)"></app-navbar>
+<app-category [searchText]="searchText"></app-category>
 <app-footer></app-footer>
 <app-oc-filters></app-oc-filters>
