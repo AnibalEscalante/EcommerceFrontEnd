@@ -15,7 +15,9 @@ import { SubCategoryService } from 'src/app/core/services/subCategory/sub-catego
 })
 export class CategoryComponent implements OnInit {
 
+  @Input() searchText: any;
   @Input() category!: Category;
+
   public subCategory!: SubCategory;
   public idSubCategory: string;
   public products!: Product[];
@@ -50,6 +52,7 @@ export class CategoryComponent implements OnInit {
     this.page_size = e.pageSize
     this.page_number = e.pageIndex + 1
   }
+  //////// ver despues subject rxjs pagination ////////////
   refresh(): void { 
       const firstTime = localStorage.getItem('first')
     if(!firstTime){

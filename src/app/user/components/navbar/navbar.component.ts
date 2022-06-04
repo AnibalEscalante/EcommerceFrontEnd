@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/core/models/category.model';
 import { SubCategory } from 'src/app/core/models/subCategory.model';
@@ -14,8 +14,10 @@ import { CategoryService } from 'src/app/core/services/category/category.service
 })
 
 export class NavbarComponent{
- 
   
+  @Output() searchText = new EventEmitter<any>();
+
+  public searchTextInput: any;
   public categories: Category[] = [];
   public subCategories: SubCategory[] = [];
   public id: string;
@@ -30,6 +32,10 @@ export class NavbarComponent{
   
   ngOnInit(): void {
     this.fetchCategoriesName();
+  }
+
+  public sendTextInput() {
+    this.searchText.emit(this.searchText);
   }
 
   async fetchCategoriesName() {

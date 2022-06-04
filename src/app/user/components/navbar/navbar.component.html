@@ -3,14 +3,14 @@
 
     <div class="container-fluid d-none d-lg-flex">
         <div class="d-flex align-items-center">
-            <div class="ekomerce c-mouse-selected me-2">Ekomerce</div>
+            <div class="ekomerce c-mouse-selected me-2" [routerLink]="['/visitor/home']">Ekomerce</div>
             <button class="btn btn-menu bc-mouse-selected bc-mouse-focus btn-no-shadow" type="button" data-bs-toggle="offcanvas" data-bs-target="#categoryCanvas" aria-controls="categoryCanvas">
                 <span><i class="fas fa-bars"></i></span>
             </button>
         </div>
         <form class="form-search-d">
             <div class="input-group">
-                <input class="form-control btn-no-shadow" type="search" placeholder="Buscar producto" aria-label="Search" aria-describedby="searchButton">
+                <input class="form-control btn-no-shadow" type="text" name="search" [(ngModel)]="searchText" placeholder="Buscar producto" aria-label="Search" aria-describedby="searchButton">
                 <button class="btn btn-search bc-mouse-selected btn-no-shadow" type="button" id="searchButton"> 
                     <span><i class="fas fa-search"></i></span>
                 </button>
