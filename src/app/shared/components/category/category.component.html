@@ -18,8 +18,7 @@
               </select>
             </div>
             <div class="col-9">
-              <mat-paginator 
-                [length]="products.length"
+              <mat-paginator
                 [pageSize]="page_size"
                 [pageSizeOptions]="[2, 3, 5, 10]"
                 (page)="handlePage($event)"
@@ -41,8 +40,10 @@
           </div>
           <div class="col-12 col-lg-9">
               <div class="row">
-                  <div *ngFor="let product of products | filter:searchText | paginate:page_size:page_number" class="col-6 col-lg-4 my-4">
-                    <app-product [product]="product"></app-product>
+                  <div *ngFor="let product of products | paginate:page_size:page_number" class="col-6 col-lg-4 my-4">
+                  <!--   <div *ngIf="searchText === '' || product.name.toLowerCase().include(searchText)"> -->
+                      <app-product [product]="product"></app-product>
+            <!--         </div> -->
                   </div>
               </div>
           </div>
@@ -54,7 +55,7 @@
         <div class="col-12 col-lg-9">
           <div class="card my-4">
             <mat-paginator 
-              [length]="products.length"
+              [length]="productLength"
               [pageSize]="page_size"
               [pageSizeOptions]="[2, 3, 5, 10]"
               (page)="handlePage($event)"
@@ -94,7 +95,7 @@
       <div class="row align-items-start">
           <div class="col-12 col-lg-9">
               <div class="row">
-                <div *ngFor="let product of products | paginate:page_size:page_number" class="col-6 col-lg-4 my-4">
+                <div *ngFor="let product of products | filter:searchText | paginate:page_size:page_number" class="col-6 col-lg-4 my-4">
                   <app-product [product]="product"></app-product>
                 </div>
               </div>
@@ -107,7 +108,7 @@
         <div class="col-12 col-lg-9">
           <div class="card my-4">
             <mat-paginator 
-              [length]="products.length"
+              [length]="productLength"
               [pageSize]="page_size"
               [pageSizeOptions]="[2, 3, 5, 10]"
               (page)="handlePage($event)"

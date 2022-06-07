@@ -11,20 +11,19 @@ import { CategoryService } from 'src/app/core/services/category/category.service
 })
 export class CategoryScreenComponent implements OnInit {
   
-  public searchText: any;
   public category: Category[] = [];
   public id: string;
   constructor(
     public categoryService: CategoryService,
     public activatedRoute: ActivatedRoute
-    
- 
   ) { 
    this.id = this.activatedRoute.snapshot.params['id'];
   }
-  
-  public getText(event: any) {
-    this.searchText = event;
+
+  public searchText: string = '';
+  getText(searchValue: any) {
+    this.searchText = searchValue;
+    console.log(this.searchText)
   }
 
   ngOnInit(): void {
@@ -36,6 +35,7 @@ export class CategoryScreenComponent implements OnInit {
        localStorage.removeItem('key') 
      }
   }
+  
   
 
 

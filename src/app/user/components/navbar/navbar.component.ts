@@ -15,9 +15,9 @@ import { CategoryService } from 'src/app/core/services/category/category.service
 
 export class NavbarComponent{
   
-  @Output() searchText = new EventEmitter<any>();
+  @Output() searchText: EventEmitter<string> = new EventEmitter<string>();
 
-  public searchTextInput: any;
+  public searchTextInput: string = '';
   public categories: Category[] = [];
   public subCategories: SubCategory[] = [];
   public id: string;
@@ -35,7 +35,7 @@ export class NavbarComponent{
   }
 
   public sendTextInput() {
-    this.searchText.emit(this.searchText);
+    this.searchText.emit(this.searchTextInput);
   }
 
   async fetchCategoriesName() {
