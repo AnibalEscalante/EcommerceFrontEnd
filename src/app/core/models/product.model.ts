@@ -1,14 +1,14 @@
 import { Feature } from "./features.model";
 
 export interface Product{
-    _id: string;
-    code?:string;
+    id: string;
+    code:string;
     brand: string;
     description: string;
     price: string;
     image: string;
-    discount?: string;
-    features?: Feature[];
+    discount: number;
+    features: Feature[] | null;
     updatedAt?: Date;
     createdAt?: Date;
 }
