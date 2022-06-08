@@ -1,9 +1,9 @@
 import { SubCategory } from "./subCategory.model";
 
 export interface Category{
-    _id: string;
+    id: string;
     name: string;
-    subCategories?: SubCategory[];
+    subCategories: SubCategory[] | null;
     updatedAt?: Date;
     createdAt?: Date;
 }
