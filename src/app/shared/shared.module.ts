@@ -13,7 +13,6 @@ import { OcFiltersComponent } from './components/off-canvas/oc-filters/oc-filter
 import { FiltersComponent } from './components/filters/filters.component';
 import { PickUpPointComponent } from './components/pick-up-point/pick-up-point.component';
 import { PaginatePipe } from './components/pipes/paginate.pipe';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -42,8 +41,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     VisitorRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    MaterialModule,
-    Ng2SearchPipeModule
+    MaterialModule
   ]
 })
 export class SharedModule { }

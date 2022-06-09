@@ -19,6 +19,7 @@ import { MyPaymentMethodComponent } from './views/profile-screens/my-payment-met
 import { PaymentMethodComponent } from './components/payment-method/payment-method.component';
 import { MyPasswordComponent } from './views/profile-screens/my-password/my-password.component';
 import { NavbarTreeComponent } from './components/navbar-tree/navbar-tree.component';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 
 @NgModule({
@@ -45,7 +46,8 @@ import { NavbarTreeComponent } from './components/navbar-tree/navbar-tree.compon
     MaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    Ng2SearchPipeModule
   ]
 })
 export class UserModule { }

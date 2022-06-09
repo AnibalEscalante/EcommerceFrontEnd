@@ -34,7 +34,6 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchSubCategory()
-    console.log(this.searchText)
   }
   
   async fetchSubCategory() {

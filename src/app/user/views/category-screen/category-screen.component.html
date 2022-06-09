@@ -1,4 +1,9 @@
 <app-navbar (sendTextInput)="getText($event)"></app-navbar>
-<app-category [searchText]="searchText"></app-category>
+<div *ngFor="let product of products | filter:searchText" class="col-6 col-lg-4 my-4">
+    <div *ngIf="searchText === '' || product.name.toLowerCase().include(searchText)">
+        <app-product [product]="product"></app-product>
+      </div>
+ </div>
+<!-- <app-category [searchText]="searchText"></app-category> -->
 <app-footer></app-footer>
 <app-oc-filters></app-oc-filters>

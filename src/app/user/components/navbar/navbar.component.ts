@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/core/models/category.model';
 import { SubCategory } from 'src/app/core/models/subCategory.model';
@@ -15,7 +15,8 @@ import { CategoryService } from 'src/app/core/services/category/category.service
 
 export class NavbarComponent{
   
-  @Output() searchText: EventEmitter<string> = new EventEmitter<string>();
+  @Output() 
+  searchText: EventEmitter<string> = new EventEmitter<string>();
 
   public searchTextInput: string = '';
   public categories: Category[] = [];
