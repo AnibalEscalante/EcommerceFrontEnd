@@ -19,7 +19,7 @@ import { MyPaymentMethodComponent } from './views/profile-screens/my-payment-met
 import { PaymentMethodComponent } from './components/payment-method/payment-method.component';
 import { MyPasswordComponent } from './views/profile-screens/my-password/my-password.component';
 import { NavbarTreeComponent } from './components/navbar-tree/navbar-tree.component';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { DistributionItemComponent } from './components/distribution-item/distribution-item.component';
 
 
 @NgModule({
@@ -38,7 +38,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     MyPaymentMethodComponent,
     PaymentMethodComponent,
     MyPasswordComponent,
-    NavbarTreeComponent
+    NavbarTreeComponent,
+    DistributionItemComponent
   ],
   imports: [
     CommonModule,
@@ -46,8 +47,7 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     MaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    SharedModule,
-    Ng2SearchPipeModule
+    SharedModule
   ]
 })
 export class UserModule { }
