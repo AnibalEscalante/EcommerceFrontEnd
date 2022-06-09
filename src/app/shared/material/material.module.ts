@@ -91,6 +91,7 @@ const materialModules = [
   OverlayModule,
   PortalModule,
   ScrollingModule,
+  
 ]
 
 @NgModule({

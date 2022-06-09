@@ -23,12 +23,13 @@ export class CategoryComponent implements OnInit {
   public products!: Product[];
   public page_size: number = 2
   public page_number: number = 1
+  public productLength: number;
   constructor(
     public activatedRoute: ActivatedRoute,
     public getCategoryService: SubCategoryService,
   ) { 
     this.idSubCategory = this.activatedRoute.snapshot.params['id'];
-  
+    this.productLength = 0;
   }
 
   ngOnInit(): void {
@@ -51,6 +52,15 @@ export class CategoryComponent implements OnInit {
   handlePage(e: PageEvent){
     this.page_size = e.pageSize
     this.page_number = e.pageIndex + 1
+  }
+  search(){
+    if(this.searchText == ""){
+      this.ngOnInit();
+    }else{
+      this.products = this.products.filter(res =>{
+        return res.brand.toLocaleLowerCase().match(this.searchText.toLocaleLowerCase())
+      })
+    }
   }
   //////// ver despues subject rxjs pagination ////////////
   refresh(): void { 

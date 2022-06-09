@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/core/models/category.model';
+import { Product } from 'src/app/core/models/product.model';
+import { SubCategory } from 'src/app/core/models/subCategory.model';
 import { CategoryService } from 'src/app/core/services/category/category.service';
+import { SubCategoryService } from 'src/app/core/services/subCategory/sub-category.service';
 
 
 @Component({
@@ -11,23 +14,28 @@ import { CategoryService } from 'src/app/core/services/category/category.service
 })
 export class CategoryScreenComponent implements OnInit {
   
-  public searchText: any;
   public category: Category[] = [];
   public id: string;
+  public subCategory!: SubCategory;
+  public idSubCategory: string;
+  public products!: Product[];
   constructor(
     public categoryService: CategoryService,
-    public activatedRoute: ActivatedRoute
-    
- 
+    public activatedRoute: ActivatedRoute,
+    public getCategoryService: SubCategoryService
   ) { 
    this.id = this.activatedRoute.snapshot.params['id'];
+   this.idSubCategory = this.activatedRoute.snapshot.params['id'];
   }
-  
-  public getText(event: any) {
-    this.searchText = event;
+
+  public searchText: string = '';
+  getText(searchValue: any) {
+    this.searchText = searchValue;
+    console.log(this.searchText)
   }
 
   ngOnInit(): void {
+    this.fetchSubCategory()
     const firstTime = localStorage.getItem('key')
      if(!firstTime){
       localStorage.setItem('key','loaded')
@@ -35,6 +43,17 @@ export class CategoryScreenComponent implements OnInit {
      }else {
        localStorage.removeItem('key') 
      }
+  }
+  
+  async fetchSubCategory() {
+    try {
+      const response: any = await this.getCategoryService.getSubCategory(this.idSubCategory).toPromise();
+      this.subCategory = response.message;
+      this.products = this.subCategory.products
+    }
+    catch (error) {
+      console.log('Algo ha salido mal');
+    }
   }
   
 
