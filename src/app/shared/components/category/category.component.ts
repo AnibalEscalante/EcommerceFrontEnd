@@ -39,9 +39,9 @@ export class CategoryComponent implements OnInit {
     try {
       const response: any = await this.getCategoryService.getSubCategory(this.idSubCategory).toPromise();
       this.subCategory = response.message;
-      this.products = this.subCategory.products
-      
-
+      if (this.subCategory.products) {
+        this.products = this.subCategory.products
+      }
     }
     catch (error) {
       console.log('Algo ha salido mal');
