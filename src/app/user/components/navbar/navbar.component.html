@@ -10,7 +10,9 @@
         </div>
         <form class="form-search-d">
             <div class="input-group">
-                <input class="form-control btn-no-shadow" type="text" name="search" [(ngModel)]="searchTextInput" (input)="sendTextInput()" placeholder="Buscar producto" aria-label="Search" aria-describedby="searchButton">
+                <div *ngFor="let category of categories; let idCollapse = index">
+                    <input class="form-control btn-no-shadow" type="text" name="search" [(ngModel)]="enteredSearchValue" (input)="onSearchTextChanged()"  placeholder="Buscar producto" aria-label="Search" aria-describedby="searchButton">
+                </div>
                 <button class="btn btn-search bc-mouse-selected btn-no-shadow" type="button" id="searchButton"> 
                     <span><i class="fas fa-search"></i></span>
                 </button>

@@ -14,6 +14,8 @@ import { FiltersComponent } from './components/filters/filters.component';
 import { PickUpPointComponent } from './components/pick-up-point/pick-up-point.component';
 import { PaginatePipe } from './components/pipes/paginate.pipe';
 
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 @NgModule({
   declarations: [
     ProductComponent,
@@ -41,7 +43,8 @@ import { PaginatePipe } from './components/pipes/paginate.pipe';
     VisitorRoutingModule,
     ReactiveFormsModule,
     FormsModule,
-    MaterialModule
+    MaterialModule,
+    Ng2SearchPipeModule
   ]
 })
 export class SharedModule { }

@@ -18,7 +18,7 @@ export class CategoryScreenComponent implements OnInit {
   public id: string;
   public subCategory!: SubCategory;
   public idSubCategory: string;
-  public products!: Product[];
+  public products!: Product[] | null;
   constructor(
     public categoryService: CategoryService,
     public activatedRoute: ActivatedRoute,
@@ -29,13 +29,12 @@ export class CategoryScreenComponent implements OnInit {
   }
 
   public searchText: string = '';
-  getText(searchValue: any) {
+  onSearchTextEntered(searchValue: string) {
     this.searchText = searchValue;
     console.log(this.searchText)
   }
 
   ngOnInit(): void {
-    this.fetchSubCategory()
     const firstTime = localStorage.getItem('key')
      if(!firstTime){
       localStorage.setItem('key','loaded')
@@ -44,18 +43,6 @@ export class CategoryScreenComponent implements OnInit {
        localStorage.removeItem('key') 
      }
   }
-  
-  async fetchSubCategory() {
-    try {
-      const response: any = await this.getCategoryService.getSubCategory(this.idSubCategory).toPromise();
-      this.subCategory = response.message;
-      this.products = this.subCategory.products
-    }
-    catch (error) {
-      console.log('Algo ha salido mal');
-    }
-  }
-  
 
 
 

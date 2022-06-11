@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AllCategoryScreenComponent } from './views/all-category-screen/all-category-screen.component';
 import { BasketScreenComponent } from './views/basket-screen/basket-screen.component';
 import { CategoryScreenComponent } from './views/category-screen/category-screen.component';
 import { HomeScreenComponent } from './views/home-screen/home-screen.component';
@@ -23,6 +24,11 @@ const routes: Routes = [
   {
     path: 'category/name/:id',
     component: CategoryScreenComponent,
+    
+  },
+  {
+    path: 'category/name',
+    component: AllCategoryScreenComponent,
     
   },
   {
