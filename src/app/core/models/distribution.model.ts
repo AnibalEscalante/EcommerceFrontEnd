@@ -1,4 +1,4 @@
-import { Address } from "cluster";
+import { Address } from "./address.model";
 import { Product } from "./product.model";
 
 export interface Distribution{

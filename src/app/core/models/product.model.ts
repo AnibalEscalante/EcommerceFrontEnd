@@ -2,10 +2,10 @@ import { Feature } from "./features.model";
 
 export interface Product{
     id: string;
-    code:string;
+    code: string;
     brand: string;
     description: string;
-    price: string;
+    price: number;
     image: string;
     discount: number;
     features: Feature[] | null;
