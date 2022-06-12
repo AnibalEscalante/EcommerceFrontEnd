@@ -20,7 +20,8 @@ import { PaymentMethodComponent } from './components/payment-method/payment-meth
 import { MyPasswordComponent } from './views/profile-screens/my-password/my-password.component';
 import { NavbarTreeComponent } from './components/navbar-tree/navbar-tree.component';
 import { DistributionItemComponent } from './components/distribution-item/distribution-item.component';
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+import { AllCategoryScreenComponent } from './views/all-category-screen/all-category-screen.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { DistributionItemComponent } from './components/distribution-item/distri
     PaymentMethodComponent,
     MyPasswordComponent,
     NavbarTreeComponent,
-    DistributionItemComponent
+    DistributionItemComponent,
+    AllCategoryScreenComponent
   ],
   imports: [
     CommonModule,
@@ -47,7 +49,9 @@ import { DistributionItemComponent } from './components/distribution-item/distri
     MaterialModule,
     ReactiveFormsModule,
     FormsModule,
-    SharedModule
+    SharedModule,
+    Ng2SearchPipeModule
+    
   ]
 })
 export class UserModule { }
