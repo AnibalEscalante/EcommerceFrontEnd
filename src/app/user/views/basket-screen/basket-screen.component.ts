@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { regionsAndCommunes } from 'src/app/shared/constants/regions'
-import { allPickUpPoints } from 'src/app/shared/constants/pick-up-points';
-import { PickUpPoint } from 'src/app/core/models/pickUpPoint.model';
+import { Distribution } from 'src/app/core/models/distribution.model';
 
 @Component({
   selector: 'app-basket-screen',
@@ -17,6 +15,43 @@ export class BasketScreenComponent implements OnInit {
   public activeDelivery: boolean;
   
   public emailForm: FormGroup;
+
+  public distributions: Distribution[] = [
+    {
+      id: '01',
+      type: '',
+      cost: 0,
+      amount: 1,
+      product: {
+        id: '01',
+        code: 'Ek010101',
+        brand: 'Sony',
+        description: 'Audifonos Inalambricos Bluetooth a1 Azules',
+        price: 21990,
+        image: '/assets/img/desct-home/a1.jpg',
+        discount: 0,
+        features: null
+      },
+      address: null
+    },
+    {
+      id: '01',
+      type: '',
+      cost: 0,
+      amount: 2,
+      product: {
+        id: '01',
+        code: 'Ek010101',
+        brand: 'SoundCore',
+        description: 'Audifonos Inalambricos Bluetooth a2 rojo',
+        price: 34990,
+        image: '/assets/img/desct-home/a2.jpg',
+        discount: 0,
+        features: null
+      },
+      address: null
+    }
+  ]
 
   constructor(
     private formBuilder: FormBuilder

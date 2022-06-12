@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { regionsAndCommunes } from 'src/app/shared/constants/regions'
 import { PickUpPoint } from 'src/app/core/models/pickUpPoint.model';
 import { allPickUpPoints } from 'src/app/shared/constants/pick-up-points';
+import { Distribution } from 'src/app/core/models/distribution.model';
 
 @Component({
   selector: 'app-distribution-item',
@@ -11,6 +12,9 @@ import { allPickUpPoints } from 'src/app/shared/constants/pick-up-points';
 })
 export class DistributionItemComponent implements OnInit {
   
+  @Input() distribution!: Distribution;
+  @Input() i!: number;
+
   public activeStore: boolean;
   public activeDelivery: boolean;
 
@@ -52,6 +56,7 @@ export class DistributionItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    
   }
 
   /////////////////////////// Pick up other person form ///////////////////////////

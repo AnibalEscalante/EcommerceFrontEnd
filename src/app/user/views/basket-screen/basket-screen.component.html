@@ -120,14 +120,12 @@
 						<!-- responsive end -->
 
 					</div>
-					<div class="col mb-3">
+					<div class="col">
 						<h5 class="type-delivery-title">Tipo de entrega:</h5>
 					</div>
-
-					<app-distribution-item></app-distribution-item>
-
-					
-
+					<div *ngFor="let distribution of distributions; let i = index" [attr.data-index]="i">
+						<app-distribution-item [distribution]="distribution" [i]="i"></app-distribution-item>
+					</div>
 				</div>
 			</div>
 			<div class="col-11 col-lg-4">
