@@ -6,8 +6,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./all-category-screen.component.less']
 })
 export class AllCategoryScreenComponent implements OnInit {
+  
+  public isSubCategory: string;
+  constructor() {
 
-  constructor() { }
+    this.isSubCategory = 'allCat'
+   }
 
   ngOnInit(): void {
   }

@@ -19,6 +19,7 @@ export class CategoryScreenComponent implements OnInit {
   public subCategory!: SubCategory;
   public idSubCategory: string;
   public products!: Product[] | null;
+  public isSubCategory: string;
   constructor(
     public categoryService: CategoryService,
     public activatedRoute: ActivatedRoute,
@@ -26,6 +27,7 @@ export class CategoryScreenComponent implements OnInit {
   ) { 
    this.id = this.activatedRoute.snapshot.params['id'];
    this.idSubCategory = this.activatedRoute.snapshot.params['id'];
+   this.isSubCategory = 'subCat'
   }
 
   public searchText: string = '';

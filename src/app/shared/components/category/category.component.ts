@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/core/models/category.model';
 import { Product } from 'src/app/core/models/product.model';
 import { SubCategory } from 'src/app/core/models/subCategory.model';
+import { CategoryService } from 'src/app/core/services/category/category.service';
 import { SubCategoryService } from 'src/app/core/services/subCategory/sub-category.service';
 
 
@@ -17,8 +18,10 @@ export class CategoryComponent implements OnInit {
 
   @Input() searchText: any;
   @Input() category!: Category;
+  @Input() isSubCategory: any;
 
   public subCategory!: SubCategory;
+  public categories!: Category;
   public idSubCategory: string;
   public products!: Product[];
   public page_size: number = 2
@@ -26,19 +29,21 @@ export class CategoryComponent implements OnInit {
   public productLength: number;
   constructor(
     public activatedRoute: ActivatedRoute,
-    public getCategoryService: SubCategoryService,
+    public getSubCategoryService: SubCategoryService,
+    public getCategoryService: CategoryService
   ) { 
     this.idSubCategory = this.activatedRoute.snapshot.params['id'];
     this.productLength = 0;
   }
 
   ngOnInit(): void {
-    this.fetchSubCategory()
+    this.fetchIsSubCategory()
+
   }
   
   async fetchSubCategory() {
     try {
-      const response: any = await this.getCategoryService.getSubCategory(this.idSubCategory).toPromise();
+      const response: any = await this.getSubCategoryService.getSubCategory(this.idSubCategory).toPromise();
       this.subCategory = response.message;
       if (this.subCategory.products) {
         this.products = this.subCategory.products
@@ -48,7 +53,31 @@ export class CategoryComponent implements OnInit {
       console.log('Algo ha salido mal');
     }
   }
-
+  async fetchCategories(){
+    try {
+      const response: any = await this.getCategoryService.getAllCategory().toPromise();
+      console.log(response);
+      this.categories = response;
+      console.log(this.categories);
+      for(let category in this.categories){
+        console.log(category[1]);
+        
+      }
+      if (this.subCategory.products) {
+        this.products = this.subCategory.products
+      }
+    }
+    catch (error) {
+      console.log('Algo ha salido mal');
+    }
+  }
+  fetchIsSubCategory(){
+    if(this.isSubCategory === 'subCat'){
+      this.fetchSubCategory()
+    }else{
+      this.fetchCategories()
+    }
+  }
   handlePage(e: PageEvent){
     this.page_size = e.pageSize
     this.page_number = e.pageIndex + 1
