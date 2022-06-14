@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar (searchTextChanged)="onSearchTextEntered($event)"></app-navbar>
 <app-category [isSubCategory]="isSubCategory" ></app-category>
 <app-footer></app-footer>
 <app-oc-filters></app-oc-filters>

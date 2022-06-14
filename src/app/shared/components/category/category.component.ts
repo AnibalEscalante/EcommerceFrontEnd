@@ -21,7 +21,8 @@ export class CategoryComponent implements OnInit {
   @Input() isSubCategory: any;
 
   public subCategory!: SubCategory;
-  public categories!: Category;
+  public categories!: Category [];
+
   public idSubCategory: string;
   public products!: Product[];
   public page_size: number = 2
@@ -56,11 +57,15 @@ export class CategoryComponent implements OnInit {
   async fetchCategories(){
     try {
       const response: any = await this.getCategoryService.getAllCategory().toPromise();
-      console.log(response);
       this.categories = response;
-      console.log(this.categories);
-      for(let category in this.categories){
-        console.log(category[1]);
+      
+      for(let category of this.categories){
+        if (category.subCategories) {
+          for(let subCategory of category.subCategories){
+            console.log(subCategory.products);
+            
+          }
+        }
         
       }
       if (this.subCategory.products) {
