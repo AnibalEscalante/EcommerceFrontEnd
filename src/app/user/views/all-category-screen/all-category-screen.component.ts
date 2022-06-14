@@ -6,8 +6,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./all-category-screen.component.less']
 })
 export class AllCategoryScreenComponent implements OnInit {
+  
+  public isSubCategory: string;
+  constructor() {
 
-  constructor() { }
+    this.isSubCategory = 'allCat'
+   }
+   public searchText: string = '';
+   onSearchTextEntered(searchValue: string) {
+    this.searchText = searchValue;
+    console.log(this.searchText)
+  }
 
   ngOnInit(): void {
   }
