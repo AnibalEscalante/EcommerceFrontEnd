@@ -42,14 +42,14 @@
   </div>
   <p class="my-2 fs-6">¿Quien va a retirar el pedido?</p>
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioMe" id="flexRadioMe" checked>
-    <label class="form-check-label" for="flexRadioMe">
+    <input class="form-check-input" type="radio" [name]="'flexRadioMe'+i" [id]="'flexRadioMe'+i" checked>
+    <label class="form-check-label" [for]="'flexRadioMe'+i">
       <p class="mb-0 fs-6">Yo lo voy a retirar</p>
     </label>
   </div>
   <div class="form-check">
-    <input class="form-check-input" type="radio" name="flexRadioMe" id="flexRadioOther" data-bs-toggle="modal" [attr.data-bs-target]="'#pickUpOtherPersonModal'+i">
-    <label class="form-check-label" for="flexRadioOther" data-bs-toggle="modal" [attr.data-bs-target]="'#pickUpOtherPersonModal'+i">
+    <input class="form-check-input" type="radio" [name]="'flexRadioMe'+i" [id]="'flexRadioOther'+i" data-bs-toggle="modal" [attr.data-bs-target]="'#pickUpOtherPersonModal'+i">
+    <label class="form-check-label" [for]="'flexRadioOther'+i" data-bs-toggle="modal" [attr.data-bs-target]="'#pickUpOtherPersonModal'+i">
       <p class="mb-0 fs-6">Otra Persona lo va a retirar</p>
     </label>
   </div>
