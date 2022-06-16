@@ -28,7 +28,7 @@ export class BasketScreenComponent implements OnInit {
         brand: 'Sony',
         description: 'Audifonos Inalambricos Bluetooth a1 Azules',
         price: 21990,
-        image: '/assets/img/desct-home/a1.jpg',
+        image: '/assets/img/a1.jpg',
         discount: 0,
         features: null
       },
@@ -45,7 +45,7 @@ export class BasketScreenComponent implements OnInit {
         brand: 'SoundCore',
         description: 'Audifonos Inalambricos Bluetooth a2 rojo',
         price: 34990,
-        image: '/assets/img/desct-home/a2.jpg',
+        image: '/assets/img/a2.jpg',
         discount: 0,
         features: null
       },

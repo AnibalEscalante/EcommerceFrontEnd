@@ -84,6 +84,27 @@
   margin-bottom: 0px;
 }
 
+.card{
+  border-top-style: solid;
+  border-bottom-style: none;
+  border-left-style: none;
+  border-right-style: none;
+  border-top-width: 2px;
+  border-radius: 0px;
+  margin-top: 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 1rem;
+}
+
+.product-img{
+  width: 150px;
+}
+
+.info-product{
+  font-size: 20px;
+}
 
 @media(max-width: 600px){
   .type-distribution{
@@ -92,6 +113,14 @@
 
   .type-distribution-active{
       display: none;
+  }
+
+  .product-img{
+    width: 80px;
+  }
+
+  .info-product{
+    font-size: 15px;
   }
 }
 
