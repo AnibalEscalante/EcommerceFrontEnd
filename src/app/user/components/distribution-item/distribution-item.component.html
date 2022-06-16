@@ -1,3 +1,11 @@
+<div class="card">
+	<img class="product-img" [src]="distribution.product!.image">
+	<div>
+		<p class="info-product">{{distribution.product!.brand}}</p>
+		<p class="info-product">{{distribution.product!.description}}</p>
+	</div>
+</div>
+
 <div (click)="changeActiveStore()" [ngClass]="{'type-distribution': !activeStore, 'type-distribution-active': activeStore}" class="mt-3">
   <div class="d-flex align-items-center">
     <i [ngClass]="{'fa-delivery-option': !activeStore, 'fa-delivery-option-active': activeStore}" class="fas fa-store"></i>
