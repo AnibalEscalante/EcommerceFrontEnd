@@ -39,7 +39,6 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchIsSubCategory()
-
   }
   
   async fetchSubCategory() {
@@ -48,6 +47,8 @@ export class CategoryComponent implements OnInit {
       this.subCategory = response.message;
       if (this.subCategory.products) {
         this.products = this.subCategory.products
+        console.log(this.products);
+        
       }
     }
     catch (error) {
@@ -62,11 +63,12 @@ export class CategoryComponent implements OnInit {
       for(let category of this.categories){
         if (category.subCategories) {
           for(let subCategory of category.subCategories){
-            console.log(subCategory.products);
-            
+            if(subCategory.products){
+              this.products = subCategory.products
+              console.log(this.products);
+            }
           }
         }
-        
       }
       if (this.subCategory.products) {
         this.products = this.subCategory.products
