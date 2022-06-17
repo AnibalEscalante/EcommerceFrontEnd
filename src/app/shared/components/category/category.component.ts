@@ -39,6 +39,8 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit(): void {
     this.fetchIsSubCategory()
+    console.log(this.activatedRoute.routeConfig);
+    
   }
   
   async fetchSubCategory() {
