@@ -11,7 +11,7 @@
         <form class="form-search-d">
             <div class="input-group">
                 <input class="form-control btn-no-shadow" type="text" name="search" [(ngModel)]="enteredSearchValue" (input)="onSearchTextChanged()"  placeholder="Buscar producto" aria-label="Search" aria-describedby="searchButton">
-                <button class="btn btn-search bc-mouse-selected btn-no-shadow" type="button" id="searchButton"> 
+                <button class="btn btn-search bc-mouse-selected btn-no-shadow" type="button" id="searchButton" (click)="isHome()"> 
                     <span><i class="fas fa-search"></i></span>
                 </button>
             </div>
