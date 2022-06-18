@@ -74,7 +74,7 @@
     <i [ngClass]="{'fa-delivery-option': !activeDelivery, 'fa-delivery-option-active': activeDelivery}" class="fas fa-truck"></i>
     <p class="date-delivery me-2">Llega entre el 20 y 24 de Mayo</p>
   </div>
-  <p class="price-delivery">$1.590</p>
+  <p class="price-delivery">${{cost}}</p>
   <p type="button" class="mb-0" data-bs-toggle="collapse" [attr.data-bs-target]="'#editStoreOptionCollapse'+i">
     cambiar
     <i class="fas fa-edit"></i>
@@ -90,7 +90,7 @@
   </div>
   <div class="d-flex justify-content-between align-items-center">
     <p class="date-delivery me-2">Llega entre el 20 y 24 de Mayo</p>
-    <p class="price-delivery">$1.590</p>
+    <p class="price-delivery">${{cost}}</p>
   </div>
 </div>
 
