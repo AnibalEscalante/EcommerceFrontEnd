@@ -46,7 +46,6 @@ export class NavbarComponent{
   isHome(){
     if(this.activatedRoute.routeConfig?.path){
       this.homePath = this.activatedRoute.routeConfig?.path
-      console.log(this.homePath);
       
       if (this.homePath === 'home'){
         this.allCategories()
