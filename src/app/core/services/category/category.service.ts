@@ -41,10 +41,10 @@ export class CategoryService {
     return this.http.get<Category>( environment.baseUrl + '/category/name/' + id)
   }
 
- /*  getCategoriesName(): Observable<Category[]>{
-    const response = this.http.get<Category[]>( environment.baseUrl + '/category/all/name/')
+  getProductCategoriesName(name: string): Observable<Category[]>{
+    const response = this.http.get<Category[]>( environment.baseUrl + '/category/filter/' + name)
     return response;
-  } */
+  }
 
 
 
