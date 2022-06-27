@@ -15,6 +15,8 @@ export class DistributionItemComponent implements OnInit {
   @Input() distribution!: Distribution;
   @Input() i!: number;
 
+  public cost: number;
+
   public activeStore: boolean;
   public activeDelivery: boolean;
 
@@ -33,6 +35,7 @@ export class DistributionItemComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder
   ) {
+    this.cost = 0;
     this.selectPoint = null,
     this.activeStore = false,
     this.activeDelivery = false,
@@ -56,7 +59,7 @@ export class DistributionItemComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
+    this.costDistribution();
   }
 
   /////////////////////////// Pick up other person form ///////////////////////////
@@ -155,6 +158,19 @@ export class DistributionItemComponent implements OnInit {
       if (this.activeStore == false){
         this.activeStore = true;
         this.activeDelivery = false;
+      }
+    }
+  }
+
+  public costDistribution(){
+    let value = Math.round(this.distribution.product!.price*0.05);
+    if (value < 1000){
+      this.cost = 1000;
+    } else{
+      if (value > 7990){
+        this.cost = 7990;
+      } else {
+        this.cost = value;
       }
     }
   }
