@@ -59,7 +59,7 @@ export class CategoryComponent implements OnInit {
   }
   async fetchCategories(){
     try {
-      const response: any = await this.getCategoryService.getAllCategory().toPromise();
+      const response: any = await this.getCategoryService.getProductCategoriesName(this.searchText).toPromise();
       this.categories = response;
       
       for(let category of this.categories){
