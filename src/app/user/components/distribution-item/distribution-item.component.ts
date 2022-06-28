@@ -58,8 +58,9 @@ export class DistributionItemComponent implements OnInit {
     })
   }
 
-  ngOnInit(): void {
-    this.costDistribution();
+  ngOnInit(): void {    
+    this.distributionCost();
+    this.distributionDateDelivery();
   }
 
   /////////////////////////// Pick up other person form ///////////////////////////
@@ -162,7 +163,7 @@ export class DistributionItemComponent implements OnInit {
     }
   }
 
-  public costDistribution(){
+  private distributionCost(){
     let value = Math.round(this.distribution.product!.price*0.05);
     if (value < 1000){
       this.cost = 1000;
@@ -173,6 +174,13 @@ export class DistributionItemComponent implements OnInit {
         this.cost = value;
       }
     }
+  }
+
+  public distributionDateDelivery(){
+    if(this.distribution.date){
+      this.distribution.date.setDate(this.distribution.date.getDate() + Math.floor(Math.random() * 5) + 3);
+    }
+    console.log(this.distribution.date);
   }
 
 }

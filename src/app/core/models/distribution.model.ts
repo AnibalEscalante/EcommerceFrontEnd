@@ -10,7 +10,7 @@ export interface Distribution{
   product: Product | null;
   address: Address | null;
   receiver: Reciever | null;
-  date: Date;
+  date: Date | null;
   updatedAt?: Date;
   createdAt?: Date;
 }

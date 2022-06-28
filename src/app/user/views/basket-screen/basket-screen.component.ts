@@ -32,7 +32,9 @@ export class BasketScreenComponent implements OnInit {
         discount: 0,
         features: null
       },
-      address: null
+      receiver: null,
+      address: null,
+      date: null
     },
     {
       id: '01',
@@ -49,7 +51,9 @@ export class BasketScreenComponent implements OnInit {
         discount: 0,
         features: null
       },
-      address: null
+      receiver: null,
+      address: null,
+      date: null
     }
   ]
 
