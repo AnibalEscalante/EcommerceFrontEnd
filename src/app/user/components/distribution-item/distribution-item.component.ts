@@ -16,6 +16,7 @@ export class DistributionItemComponent implements OnInit {
   @Input() i!: number;
 
   public cost: number;
+  public dateDelivery: string;
 
   public activeStore: boolean;
   public activeDelivery: boolean;
@@ -35,6 +36,7 @@ export class DistributionItemComponent implements OnInit {
   constructor(
     private formBuilder: FormBuilder
   ) {
+    this.dateDelivery = 'No se puede establecer';
     this.cost = 0;
     this.selectPoint = null,
     this.activeStore = false,
@@ -177,10 +179,18 @@ export class DistributionItemComponent implements OnInit {
   }
 
   public distributionDateDelivery(){
+    this.distribution.date = new Date;
     if(this.distribution.date){
       this.distribution.date.setDate(this.distribution.date.getDate() + Math.floor(Math.random() * 5) + 3);
+      this.dateDelivery = this.formatDate(this.distribution.date);
     }
-    console.log(this.distribution.date);
+  }
+
+  private formatDate(date: Date): string{
+    const weekday = ["Domingo","Lunes","Martes","Miercoles","Jueves","Viernes","Sábado"];
+    const months = ["Enero","Febrero","Marzo","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre"];
+    let formatted_date = weekday[date.getDay()] + " " + date.getDate() + " de " + months[date.getMonth()] + " del " + date.getFullYear()
+    return formatted_date;
   }
 
 }
