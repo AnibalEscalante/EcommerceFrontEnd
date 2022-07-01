@@ -18,7 +18,11 @@ export class NavbarComponent{
   @Output() 
   searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
 
+  @Output()
+  isTextActivated: EventEmitter<boolean> = new EventEmitter<boolean>();
+
   public enteredSearchValue: string = '';
+  public isSearch: boolean = true;
   public categories: Category[] = [];
   public subCategories: SubCategory[] = [];
   public id: string;
@@ -42,15 +46,16 @@ export class NavbarComponent{
   public onSearchTextChanged() {
     this.searchTextChanged.emit(this.enteredSearchValue);
   }
+  public onSearch(){
+    this.isTextActivated.emit(this.isSearch)
+  }
   
   isHome(){
     if(this.activatedRoute.routeConfig?.path){
       this.homePath = this.activatedRoute.routeConfig?.path
-      
       if (this.homePath === 'home'){
         this.allCategories()
       }
-
     }
   }
   allCategories(){

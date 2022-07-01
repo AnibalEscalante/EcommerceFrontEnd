@@ -31,9 +31,14 @@ export class CategoryScreenComponent implements OnInit {
   }
 
   public searchText: string = '';
-  onSearchTextEntered(searchValue: string) {
-    this.searchText = searchValue;
+  onSearchTextEntered(event: string) {
+    this.searchText = event;
     console.log(this.searchText)
+  }
+  
+  public isTextActivated: boolean = true;
+  onSearchActivated(event: boolean){
+    this.isTextActivated = event
   }
 
   ngOnInit(): void {
