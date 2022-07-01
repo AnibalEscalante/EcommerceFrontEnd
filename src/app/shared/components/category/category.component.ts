@@ -19,6 +19,7 @@ export class CategoryComponent implements OnInit {
   @Input() searchText: any;
   @Input() category!: Category;
   @Input() isSubCategory: any;
+  @Input() isTextActivated!: boolean;
 
   public subCategory!: SubCategory;
   public categories!: Category [];
@@ -35,12 +36,19 @@ export class CategoryComponent implements OnInit {
   ) { 
     this.idSubCategory = this.activatedRoute.snapshot.params['id'];
     this.productLength = 0;
+
+    if(this.searchText !== '' && this.isTextActivated === true){
+      this.fetchCategories()
+    }
   }
 
   ngOnInit(): void {
     this.fetchIsSubCategory()
-    console.log(this.activatedRoute.routeConfig);
+    console.log(this.searchText);
     
+    if(this.searchText !== '' && this.isTextActivated === true){
+      this.fetchCategories()
+    }
   }
   
   async fetchSubCategory() {
@@ -61,6 +69,7 @@ export class CategoryComponent implements OnInit {
     try {
       const response: any = await this.getCategoryService.getProductCategoriesName(this.searchText).toPromise();
       this.categories = response;
+      console.log(this.searchText);
       
       for(let category of this.categories){
         if (category.subCategories) {
@@ -83,8 +92,11 @@ export class CategoryComponent implements OnInit {
   fetchIsSubCategory(){
     if(this.isSubCategory === 'subCat'){
       this.fetchSubCategory()
-    }else{
-      this.fetchCategories()
+    }
+    if(this.isSubCategory === 'allCat'){
+      if(this.searchText !== '' && this.isTextActivated === true){
+        this.fetchCategories()
+      }
     }
   }
   handlePage(e: PageEvent){
@@ -95,9 +107,7 @@ export class CategoryComponent implements OnInit {
     if(this.searchText == ""){
       this.ngOnInit();
     }else{
-      this.products = this.products.filter(res =>{
-        return res.brand.toLocaleLowerCase().match(this.searchText.toLocaleLowerCase())
-      })
+     
     }
   }
   //////// ver despues subject rxjs pagination ////////////

@@ -11,11 +11,19 @@ export class AllCategoryScreenComponent implements OnInit {
   constructor() {
 
     this.isSubCategory = 'allCat'
-   }
+  }
+
    public searchText: string = '';
    onSearchTextEntered(searchValue: string) {
     this.searchText = searchValue;
     console.log(this.searchText)
+  }
+
+  public isTextActivated: boolean = true;
+  onSearchActivated(event: boolean){
+    this.isTextActivated = event
+    console.log(this.isTextActivated);
+    
   }
 
   ngOnInit(): void {
