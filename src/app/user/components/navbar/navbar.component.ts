@@ -22,7 +22,7 @@ export class NavbarComponent{
   isTextActivated: EventEmitter<boolean> = new EventEmitter<boolean>();
 
   public enteredSearchValue: string = '';
-  public isSearch: boolean = true;
+  public isSearch: boolean;
   public categories: Category[] = [];
   public subCategories: SubCategory[] = [];
   public id: string;
@@ -36,6 +36,7 @@ export class NavbarComponent{
     this.id = ''
     this.name = ''
     this.homePath =''
+    this.isSearch = false;
   }
   
   ngOnInit(): void {
@@ -47,6 +48,7 @@ export class NavbarComponent{
     this.searchTextChanged.emit(this.enteredSearchValue);
   }
   public onSearch(){
+    this.isSearch = true;
     this.isTextActivated.emit(this.isSearch)
   }
   
