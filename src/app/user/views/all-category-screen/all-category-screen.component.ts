@@ -13,8 +13,8 @@ export class AllCategoryScreenComponent implements OnInit {
     this.isSubCategory = 'allCat'
   }
 
-   public searchText: string = '';
-   onSearchTextEntered(searchValue: string) {
+  public searchText: string = '';
+  onSearchTextEntered(searchValue: string) {
     this.searchText = searchValue;
     console.log(this.searchText)
   }
