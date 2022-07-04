@@ -16,7 +16,7 @@ import { SubCategoryService } from 'src/app/core/services/subCategory/sub-catego
 })
 export class CategoryComponent implements OnInit {
 
-  @Input() searchText: any;
+  @Input() searchText!: string;
   @Input() category!: Category;
   @Input() isSubCategory: any;
   @Input() isTextActivated!: boolean;
@@ -24,7 +24,7 @@ export class CategoryComponent implements OnInit {
   public subCategory!: SubCategory;
   public categories!: Category [];
   public idSubCategory: string;
-  public products!: Product[];
+  public products!: any[];
   public isTextSearch: boolean
   public page_size: number = 2
   public page_number: number = 1
@@ -68,6 +68,7 @@ export class CategoryComponent implements OnInit {
   async fetchCategories(){
     try {
       const response: any = await this.getCategoryService.getProductCategoriesName(this.searchText).toPromise();
+      console.log(response);
       this.products = response.message.productList
       console.log(this.products);
     }
@@ -81,9 +82,8 @@ export class CategoryComponent implements OnInit {
     }
     if(this.isSubCategory === 'allCat'){
       this.sText = this.searchText;
-      if(this.sText === 'apple'){
-        this.fetchCategories()
-      }
+      this.fetchCategories()
+
     }
   }
   handlePage(e: PageEvent){
