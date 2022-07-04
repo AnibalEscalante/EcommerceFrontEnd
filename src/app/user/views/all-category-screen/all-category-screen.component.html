@@ -1,4 +1,4 @@
 <app-navbar (searchTextChanged)="onSearchTextEntered($event)" (isTextActivated)="onSearchActivated($event)"></app-navbar>
-<app-category [searchText]="searchText" [isSubCategory]="isSubCategory"  [isTextActivated]="isTextActivated"></app-category>
+<app-category *ngIf="searchText !== ''"[searchText]="searchText" [isSubCategory]="isSubCategory"  [isTextActivated]="isTextActivated"></app-category>
 <app-footer></app-footer>
 <app-oc-filters></app-oc-filters>
