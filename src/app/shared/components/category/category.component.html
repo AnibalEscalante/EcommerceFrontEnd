@@ -34,16 +34,16 @@
               <div class="card my-4 filters-card">
                 <h3 *ngIf="subCategory" class="product-title">{{subCategory.name}}</h3>
                   <div class="card-body filters-card">
-                    <app-filters></app-filters>
+                 <!--    <app-filters></app-filters> -->
                   </div>
               </div>
           </div>
           <div class="col-12 col-lg-9">
-              <div class="row">
+             <!--  <div class="row">
                   <div *ngFor="let product of products | paginate:page_size:page_number" class="col-6 col-lg-4 my-4">
                       <app-product [product]="product"></app-product>
                   </div>
-              </div>
+              </div> -->
           </div>
       </div>
       <div class="pagination-bottom row">
@@ -93,9 +93,9 @@
       <div class="row align-items-start">
           <div class="col-12 col-lg-9">
             <div class="row">
-              <div *ngFor="let product of products | paginate:page_size:page_number" class="col-6 col-lg-4 my-4">
+             <!--  <div *ngFor="let product of products | paginate:page_size:page_number" class="col-6 col-lg-4 my-4">
                   <app-product [product]="product"></app-product>
-              </div>
+              </div> -->
           </div>
           </div>
       </div>
