@@ -22,6 +22,8 @@ import { NavbarTreeComponent } from './components/navbar-tree/navbar-tree.compon
 import { DistributionItemComponent } from './components/distribution-item/distribution-item.component';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { AllCategoryScreenComponent } from './views/all-category-screen/all-category-screen.component';
+import { PaginatePipe } from '../shared/components/pipes/paginate.pipe';
+import { FiltersComponent } from '../shared/components/filters/filters.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +43,8 @@ import { AllCategoryScreenComponent } from './views/all-category-screen/all-cate
     MyPasswordComponent,
     NavbarTreeComponent,
     DistributionItemComponent,
-    AllCategoryScreenComponent
+    AllCategoryScreenComponent,
+    PaginatePipe,
   ],
   imports: [
     CommonModule,

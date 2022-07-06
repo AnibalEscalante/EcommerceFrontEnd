@@ -24,9 +24,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     ProductInfoComponent,
     OcFiltersComponent,
     MenuComponent,
-    FiltersComponent,
     PickUpPointComponent,
-    PaginatePipe,
+    FiltersComponent
     
   ],
   exports: [
@@ -35,7 +34,8 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     CategoryComponent,
     OcFiltersComponent,
     ProductInfoComponent,
-    PickUpPointComponent
+    PickUpPointComponent,
+    FiltersComponent
   ],
   imports: [
     CommonModule,

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { PageEvent } from '@angular/material/paginator';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/core/models/product.model';
 import { CategoryService } from 'src/app/core/services/category/category.service';
@@ -11,13 +12,16 @@ import { CategoryService } from 'src/app/core/services/category/category.service
 export class AllCategoryScreenComponent implements OnInit {
   
  /*  public isSubCategory: string; */
+   public page_size: number = 2
+   public page_number: number = 1
+   public productLength: number;
   public products!: Product[];
   constructor(
     public activatedRoute: ActivatedRoute,
     public getCategoryService: CategoryService
   ) {
-
-/*     this.isSubCategory = 'allCat' */
+    this.productLength = 0;
+  /*   this.isSubCategory = 'allCat' */
     
   }
 
@@ -44,6 +48,10 @@ export class AllCategoryScreenComponent implements OnInit {
   public isTextActivated: boolean = true;
   onSearchActivated(event: boolean){
     this.isTextActivated = event
+  }
+  handlePage(e: PageEvent){
+    this.page_size = e.pageSize
+    this.page_number = e.pageIndex + 1
   }
 
   ngOnInit(): void {
