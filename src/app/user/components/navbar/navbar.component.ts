@@ -41,7 +41,6 @@ export class NavbarComponent{
   
   ngOnInit(): void {
     this.fetchCategoriesName();
-    console.log(this.activatedRoute.routeConfig?.path)
   }
 
   public onSearchTextChanged() {
@@ -68,7 +67,6 @@ export class NavbarComponent{
     try {
       const response: any = await this.categoryService.getCategoriesName().toPromise();
       this.categories = response;
-      console.log(this.categories)
     }
     catch (error) {
       console.log('Algo ha salido mal');

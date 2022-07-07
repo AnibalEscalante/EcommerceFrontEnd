@@ -42,7 +42,7 @@
           </div>
           <div class="col-12 col-lg-9">
               <div class="row">
-                  <div *ngFor="let product of products | paginate:page_size:page_number" class="col-6 col-lg-4 my-4">
+                  <div *ngFor="let product of products" class="col-6 col-lg-4 my-4">
                       <app-product [product]="product"></app-product>
                   </div>
               </div>
@@ -95,7 +95,7 @@
       <div class="row align-items-start">
           <div class="col-12 col-lg-9">
             <div class="row">
-              <div *ngFor="let product of products | paginate:page_size:page_number" class="col-6 col-lg-4 my-4">
+              <div *ngFor="let product of products" class="col-6 col-lg-4 my-4">
                   <app-product [product]="product"></app-product>
               </div>
           </div>
