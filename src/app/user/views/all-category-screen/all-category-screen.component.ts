@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Product } from 'src/app/core/models/product.model';
 import { CategoryService } from 'src/app/core/services/category/category.service';
 
@@ -11,26 +11,28 @@ import { CategoryService } from 'src/app/core/services/category/category.service
 })
 export class AllCategoryScreenComponent implements OnInit {
   
- /*  public isSubCategory: string; */
-   public page_size: number = 2
-   public page_number: number = 1
-   public productLength: number;
+  public page_size: number = 2
+  public page_number: number = 1
+  public productLength: number;
   public products!: Product[];
+  public search: string;
+  public searchText: string = '';
+
   constructor(
     public activatedRoute: ActivatedRoute,
     public getCategoryService: CategoryService
   ) {
     this.productLength = 0;
-  /*   this.isSubCategory = 'allCat' */
-    
+    this.search = '';
   }
 
-  public searchText: string = '';
   onSearchTextEntered(searchValue: string) {
     this.searchText = searchValue;
     console.log(this.searchText);
-    this.fetchCategories();
-    
+    if(this.searchText != ''){
+      this.searchText = this.activatedRoute.snapshot.params['id'];
+      this.fetchCategories();
+    }
   }
 
   async fetchCategories(){
@@ -38,7 +40,6 @@ export class AllCategoryScreenComponent implements OnInit {
       const response: any = await this.getCategoryService.getProductCategoriesName(this.searchText).toPromise();
       console.log(response);
       this.products = response.message.productList
-      console.log(this.products)
     }
     catch (error) {
       console.log('Algo ha salido mal');

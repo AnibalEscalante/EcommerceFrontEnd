@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Category } from 'src/app/core/models/category.model';
 import { Product } from 'src/app/core/models/product.model';
 import { SubCategory } from 'src/app/core/models/subCategory.model';
@@ -27,11 +27,11 @@ export class CategoryScreenComponent implements OnInit {
   constructor(
     public activatedRoute: ActivatedRoute,
     public getSubCategoryService: SubCategoryService,
-    public getCategoryService: CategoryService
+    public getCategoryService: CategoryService,
+    public router: Router
   ) { 
    this.id = this.activatedRoute.snapshot.params['id'];
    this.idSubCategory = this.activatedRoute.snapshot.params['id'];
-  /*  this.isSubCategory = 'subCat' */
    this.productLength = 0;
   }
 
@@ -41,8 +41,7 @@ export class CategoryScreenComponent implements OnInit {
       this.subCategory = response.message;
       if (this.subCategory.products) {
         this.products = this.subCategory.products
-        console.log(this.products);
-        console.log(this.searchText);
+        
       }
     }
     catch (error) {
@@ -53,29 +52,20 @@ export class CategoryScreenComponent implements OnInit {
   async fetchCategories(){
     try {
       const response: any = await this.getCategoryService.getProductCategoriesName(this.searchText).toPromise();
-      console.log(response);
       this.products = response.message.productList
-      console.log(this.products)
     }
     catch (error) {
       console.log('Algo ha salido mal');
     }
   }
   
-  /* fetchIsSubCategory(){
-    if(this.isSubCategory === 'subCat'){
-      this.fetchSubCategory()
-    }
-    if(this.isSubCategory === 'allCat'){
-      this.sText = this.searchText;
-      this.fetchCategories()
-
-    }
-  } */
   public searchText: string = '';
   onSearchTextEntered(event: string) {
     this.searchText = event;
     console.log(this.searchText)
+    if(this.searchText !== ''){
+      this.router.navigate(['/user/category/all/name/',this.searchText]);
+    }
   }
   
   public isTextActivated: boolean = true;
@@ -96,6 +86,7 @@ export class CategoryScreenComponent implements OnInit {
      }else {
        localStorage.removeItem('key') 
      }
+     this.fetchSubCategory()
   }
 
 

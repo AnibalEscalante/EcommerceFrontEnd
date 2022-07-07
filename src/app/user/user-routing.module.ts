@@ -27,7 +27,7 @@ const routes: Routes = [
     
   },
   {
-    path: 'category/all/name',
+    path: 'category/all/name/:id',
     component: AllCategoryScreenComponent,
     
   },
