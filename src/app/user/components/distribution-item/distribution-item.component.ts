@@ -144,14 +144,16 @@ export class DistributionItemComponent implements OnInit {
   ////////////////////////////////////////////////////////////////////////////////
 
   public changeActiveDelivery(){
-    if (this.activeDelivery == false && this.activeStore == false)
+    if (this.activeDelivery == false && this.activeStore == false){
       this.activeDelivery = true;
+    }
     else{
       if (this.activeDelivery == false){
         this.activeDelivery = true;
         this.activeStore = false;
       }
     }
+    this.distribution.type = 'delivery';
   }
 
   public changeActiveStore(){
@@ -163,6 +165,7 @@ export class DistributionItemComponent implements OnInit {
         this.activeDelivery = false;
       }
     }
+    this.distribution.type = 'pickUpStore';
   }
 
   private distributionCost(){
