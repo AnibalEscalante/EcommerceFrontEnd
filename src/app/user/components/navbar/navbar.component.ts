@@ -51,7 +51,7 @@ export class NavbarComponent{
     this.isTextActivated.emit(this.isSearch)
   }
   
-  isHome(){
+ /*  isHome(){
     if(this.activatedRoute.routeConfig?.path){
       this.homePath = this.activatedRoute.routeConfig?.path
       if (this.homePath === 'home'){
@@ -61,7 +61,7 @@ export class NavbarComponent{
   }
   allCategories(){
     this.router.navigate(['/user/category/all/name']);
-  }
+  } */
 
   async fetchCategoriesName() {
     try {

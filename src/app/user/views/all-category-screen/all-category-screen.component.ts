@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PageEvent } from '@angular/material/paginator';
-import { ActivatedRoute, Params } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Product } from 'src/app/core/models/product.model';
 import { CategoryService } from 'src/app/core/services/category/category.service';
 
@@ -20,7 +20,8 @@ export class AllCategoryScreenComponent implements OnInit {
 
   constructor(
     public activatedRoute: ActivatedRoute,
-    public getCategoryService: CategoryService
+    public getCategoryService: CategoryService,
+    public router: Router
   ) {
     this.productLength = 0;
     this.search = '';
@@ -29,10 +30,8 @@ export class AllCategoryScreenComponent implements OnInit {
   onSearchTextEntered(searchValue: string) {
     this.searchText = searchValue;
     console.log(this.searchText);
-    if(this.searchText != ''){
-      this.searchText = this.activatedRoute.snapshot.params['id'];
-      this.fetchCategories();
-    }
+    this.fetchCategories();
+    this.router.navigate(['/user/category/all/name/',this.searchText]);
   }
 
   async fetchCategories(){
@@ -56,6 +55,10 @@ export class AllCategoryScreenComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    if(this.searchText === ''){
+      this.searchText = this.activatedRoute.snapshot.params['id'];
+      this.fetchCategories()
+    }
   }
 
 }
