@@ -1,4 +1,242 @@
-<app-navbar></app-navbar>
-<app-category></app-category>
+<app-navbar (searchTextChanged)="onSearchTextEntered($event)"></app-navbar>
+<div class="container">
+  <div class="container-fluid d-none d-lg-block">
+    <div class="row">
+      <div class="col-3">
+        <div class="card recomended my-4">
+          <h4 class="result-letter m-0">Resultados(5)</h4>
+        </div>
+      </div>
+      <div class="col-9">
+        <div class="card  my-4">
+          <div class="row">
+            <div class="col-4 body filter">
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Ordenar por</option>
+                <option value="1">Precio de mayor a menor</option>
+                <option value="2">Precio de menor a mayor</option>
+                <option value="3">Marca</option>
+              </select>
+            </div>
+            <div class="col-8">
+              <mat-paginator
+                [pageSize]="page_size"
+                [pageSizeOptions]="[2, 3, 5, 10]"
+                (page)="handlePage($event)"
+                aria-label="Select page">
+              </mat-paginator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="row align-items-start">
+          <div class="col-12 col-lg-3">
+              <div class="card my-4 filters-card">
+                <!-- <h3 *ngIf="subCategory" class="product-title">{{subCategory.name}}</h3> -->
+                  <div class="card-body filters-card">
+                    
+                    <app-filters></app-filters>
+                  </div>
+              </div>
+          </div>
+          <div class="col-12 col-lg-9">
+              <div class="row">
+                  <div *ngFor="let product of products" class="col-6 col-lg-4 my-4">
+                      <app-product [product]="product"></app-product>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="pagination-bottom row">
+        <div class="col col-lg-3">
+          
+        </div>
+        <div class="col-12 col-lg-9">
+          <div class="card my-4">
+            <mat-paginator 
+              [length]="productLength"
+              [pageSize]="page_size"
+              [pageSizeOptions]="[2, 3, 5, 10]"
+              (page)="handlePage($event)"
+              aria-label="Select page">
+          </mat-paginator>
+          </div>
+        </div>
+      </div>
+  </div>
+ <!--  <div class="container-no-products">
+
+  </div> -->
+  <!--------------------------------------------- Responsive Start ------------------------------------------------>
+  <!--------------------------------------------- Responsive Start ------------------------------------------------>
+  <!--------------------------------------------- Responsive Start ------------------------------------------------>
+  <!--------------------------------------------- Responsive Start ------------------------------------------------>
+  <!--------------------------------------------- Responsive Start ------------------------------------------------>
+  <!--------------------------------------------- Responsive Start ------------------------------------------------>
+  <div class="container-fluid d-bloc d-lg-none">
+    <div class="card my-4">
+      <div class="row">
+        <div class="col-6 body">
+          <button class="btn btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"  aria-controls="offcanvasRight">
+            <span><i class="fas fa-bars"></i></span>
+          </button>
+        </div>
+        <div class=" col-6 body filter-r">
+          <select class="form-select form-select-r" aria-label="Default select example">
+            <option selected>Ordenar por</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      </div>
+    </div>
+      <div class="row align-items-start">
+          <div class="col-12 col-lg-9">
+            <div class="row">
+              <div *ngFor="let product of products" class="col-6 col-lg-4 my-4">
+                  <app-product [product]="product"></app-product>
+              </div>
+          </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col col-lg-3">
+          
+        </div>
+        <div class="col-12 col-lg-9">
+          <div class="card my-4">
+            <mat-paginator 
+              [length]="productLength"
+              [pageSize]="page_size"
+              [pageSizeOptions]="[2, 3, 5, 10]"
+              (page)="handlePage($event)"
+              aria-label="Select page">
+          </mat-paginator>
+          </div>
+        </div>
+      </div>
+  </div>
+</div><div class="container">
+  <div class="container-fluid d-none d-lg-block">
+    <div class="row">
+      <div class="col-3">
+        <div class="card recomended my-4">
+          <h4 class="result-letter m-0">Resultados(5)</h4>
+        </div>
+      </div>
+      <div class="col-9">
+        <div class="card  my-4">
+          <div class="row">
+            <div class="col-4 body filter">
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Ordenar por</option>
+                <option value="1">Precio de mayor a menor</option>
+                <option value="2">Precio de menor a mayor</option>
+                <option value="3">Marca</option>
+              </select>
+            </div>
+            <div class="col-8">
+             <!--  <mat-paginator
+                [pageSize]="page_size"
+                [pageSizeOptions]="[2, 3, 5, 10]"
+                (page)="handlePage($event)"
+                aria-label="Select page">
+              </mat-paginator> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+      <div class="row align-items-start">
+          <div class="col-12 col-lg-3">
+              <div class="card my-4 filters-card">
+                <!-- <h3 *ngIf="subCategory" class="product-title">{{subCategory.name}}</h3> -->
+                  <div class="card-body filters-card">
+                    
+                    <app-filters></app-filters>
+                  </div>
+              </div>
+          </div>
+          <div class="col-12 col-lg-9">
+              <div class="row">
+                  <div *ngFor="let product of products" class="col-6 col-lg-4 my-4">
+                      <app-product [product]="product"></app-product>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="pagination-bottom row">
+        <div class="col col-lg-3">
+          
+        </div>
+        <div class="col-12 col-lg-9">
+          <div class="card my-4">
+           <!--  <mat-paginator 
+              [length]="productLength"
+              [pageSize]="page_size"
+              [pageSizeOptions]="[2, 3, 5, 10]"
+              (page)="handlePage($event)"
+              aria-label="Select page">
+          </mat-paginator> -->
+          </div>
+        </div>
+      </div>
+  </div>
+ <!--  <div class="container-no-products">
+
+  </div> -->
+  <!--------------------------------------------- Responsive Start ------------------------------------------------>
+  <!--------------------------------------------- Responsive Start ------------------------------------------------>
+  <!--------------------------------------------- Responsive Start ------------------------------------------------>
+  <!--------------------------------------------- Responsive Start ------------------------------------------------>
+  <!--------------------------------------------- Responsive Start ------------------------------------------------>
+  <!--------------------------------------------- Responsive Start ------------------------------------------------>
+  <div class="container-fluid d-bloc d-lg-none">
+    <div class="card my-4">
+      <div class="row">
+        <div class="col-6 body">
+          <button class="btn btn-menu" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"  aria-controls="offcanvasRight">
+            <span><i class="fas fa-bars"></i></span>
+          </button>
+        </div>
+        <div class=" col-6 body filter-r">
+          <select class="form-select form-select-r" aria-label="Default select example">
+            <option selected>Ordenar por</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+          </select>
+        </div>
+      </div>
+    </div>
+      <div class="row align-items-start">
+          <div class="col-12 col-lg-9">
+            <div class="row">
+              <div *ngFor="let product of products" class="col-6 col-lg-4 my-4">
+                  <app-product [product]="product"></app-product>
+              </div>
+          </div>
+          </div>
+      </div>
+      <div class="row">
+        <div class="col col-lg-3">
+          
+        </div>
+        <div class="col-12 col-lg-9">
+          <div class="card my-4">
+         <!--    <mat-paginator 
+              [length]="productLength"
+              [pageSize]="page_size"
+              [pageSizeOptions]="[2, 3, 5, 10]"
+              (page)="handlePage($event)"
+              aria-label="Select page">
+          </mat-paginator> -->
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
 <app-footer></app-footer><!-- 
 <app-filters></app-filters> -->
