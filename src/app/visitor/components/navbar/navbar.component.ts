@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Category } from 'src/app/core/models/category.model';
 import { SubCategory } from 'src/app/core/models/subCategory.model';
@@ -13,7 +13,10 @@ import { CategoryService } from 'src/app/core/services/category/category.service
 export class NavbarComponent implements OnInit {
 
   
- 
+  @Output() 
+  searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
+
+  public enteredSearchValue: string = '';
   public categories: Category[] = [];
   public subCategories: SubCategory[] = [];
   public id: string;
@@ -30,6 +33,11 @@ export class NavbarComponent implements OnInit {
     this.fetchCategoriesName();
   }
   
+
+  public onSearchTextChanged() {
+    this.searchTextChanged.emit(this.enteredSearchValue);
+  }
+
   async fetchCategoriesName() {
     try {
       const response: any = await this.categoryService.getCategoriesName().toPromise();
