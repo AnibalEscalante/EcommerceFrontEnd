@@ -75,7 +75,7 @@ export class CategoryScreenComponent implements OnInit {
     this.searchText = event;
     console.log(this.searchText)
     if(this.searchText !== ''){
-      this.router.navigate(['/user/category/all/name/',this.searchText]);
+      this.router.navigate(['/visitor/category/all/name/',this.searchText]);
     }
   }
 

@@ -9,8 +9,8 @@
         </div>
         <form class="form-search-d">
             <div class="input-group">
-                <input class="form-control btn-no-shadow" type="search" placeholder="Buscar producto" aria-label="Search" aria-describedby="searchButton">
-                <button class="btn btn-search bc-mouse-selected btn-no-shadow" type="button" id="searchButton"> 
+                <input class="form-control btn-no-shadow" type="text" name="search" [(ngModel)]="enteredSearchValue" placeholder="Buscar producto" aria-label="Search" aria-describedby="searchButton">
+                <button class="btn btn-search bc-mouse-selected btn-no-shadow" type="button" id="searchButton" (click)="onSearchTextChanged()"  (click)="onSearch()"> 
                     <span><i class="fas fa-search"></i></span>
                 </button>
             </div>

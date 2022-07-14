@@ -12,6 +12,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SharedModule } from '../shared/shared.module';
 import { ProductInfoScreenComponent } from './views/product-info-screen/product-info-screen.component';
 import { NavbarTreeComponent } from './components/navbar-tree/navbar-tree.component';
+import { AllCategoryScreenComponent } from './views/all-category-screen/all-category-screen.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { NavbarTreeComponent } from './components/navbar-tree/navbar-tree.compon
     CategoryScreenComponent,
     NavbarComponent,
     ProductInfoScreenComponent,
-    NavbarTreeComponent
+    NavbarTreeComponent,
+    AllCategoryScreenComponent
   ],
   imports: [
     CommonModule,
