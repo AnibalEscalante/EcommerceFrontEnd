@@ -15,7 +15,11 @@ export class NavbarComponent implements OnInit {
   
   @Output() 
   searchTextChanged: EventEmitter<string> = new EventEmitter<string>();
+  
+  @Output()
+  isTextActivated: EventEmitter<boolean> = new EventEmitter<boolean>();
 
+  public isSearch: boolean;
   public enteredSearchValue: string = '';
   public categories: Category[] = [];
   public subCategories: SubCategory[] = [];
@@ -27,6 +31,7 @@ export class NavbarComponent implements OnInit {
   ) {
     this.id = ''
     this.name = ''
+    this.isSearch = false;
   }
   
   ngOnInit(): void {
@@ -36,6 +41,11 @@ export class NavbarComponent implements OnInit {
 
   public onSearchTextChanged() {
     this.searchTextChanged.emit(this.enteredSearchValue);
+  }
+
+  public onSearch(){
+    this.isSearch = true;
+    this.isTextActivated.emit(this.isSearch)
   }
 
   async fetchCategoriesName() {
